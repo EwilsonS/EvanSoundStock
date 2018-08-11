@@ -3,6 +3,23 @@ import { Container, Row, Col } from "../Grid";
 import Nav from "../Navbar/Nav";
 import API from "../../utils/API";
 
+const styles = {
+  cardHeader: {
+    // backgroundColor: "#02183a",
+    borderTop: "3px solid #13a2b8",
+    color: "#02183a"
+  },
+  cardFooter: {
+    backgroundColor: "#02183a",
+    borderTop: "3px solid #13a2b8",
+    color: "#237c9a"
+  },
+  input: {
+    borderColor: "#237c9a",
+    boxShadow: "0 0 0 3px rgba(35,124,154, .25)",
+    color: "white"
+  }
+}
 export class ArtistSignUp extends Component {
   state = {
     email: "",
@@ -51,16 +68,15 @@ export class ArtistSignUp extends Component {
             <Col size="md-3">
               <br />
               <form>
-                <div className="form-group">
+                <div className="form-group" >
                   <input
                     value={this.state.name}
                     onChange={this.handleInputChange}
                     type="text"
                     className="form-control"
                     aria-describedby="emailHelp"
-                    placeholder="Name"
+                    placeholder="Artist Name"
                     name="name"
-
                   />
                 </div>
                 <div className="form-group">
@@ -86,13 +102,14 @@ export class ArtistSignUp extends Component {
                   />
                 </div>
                 <div className="form-group">
+                  {/* use ternary to show green or red alert for validation */}
                   <input
-
                     onChange={this.handleInputChange}
                     type="password"
                     className="form-control"
-                    placeholder="Password"
+                    placeholder="Confirm Password"
                     name="confirm"
+
                   />
                 </div>
                 <div className="form-group">
@@ -101,7 +118,7 @@ export class ArtistSignUp extends Component {
                     onChange={this.handleInputChange}
                     type="text"
                     className="form-control"
-                    placeholder="Image"
+                    placeholder="Image URL"
                     name="imageLink"
                   />
                 </div>
@@ -111,7 +128,7 @@ export class ArtistSignUp extends Component {
                     onChange={this.handleInputChange}
                     type="text"
                     className="form-control"
-                    placeholder="Song"
+                    placeholder="Media URL"
                     name="songLink"
                   />
                 </div>
@@ -123,6 +140,7 @@ export class ArtistSignUp extends Component {
                     name="bio"
                     cols="50"
                     rows="5"
+                    placeholder="Type or paste bio here"
                   />
                 </div>
                 <div className="form-group">
@@ -133,32 +151,37 @@ export class ArtistSignUp extends Component {
                     name="goal"
                     cols="50"
                     rows="5"
-                    placeholder="I'm selling 10% of all future publishing for $50 per share out of 100 shares" />
+                    placeholder="Description of investment opportunity (i.e. I'm selling 10% of all future publishing for $50 per share out of 100 shares)" />
                 </div>
                 <br />
-
                 <button
                   onClick={this.handleFormSubmit}
                   type="submit"
                   className="btn btn-info">
                   Submit
                 </button>
-
               </form>
               <br />
             </Col>
             <Col size="md-3">
-              <div className="card mt-5 sticky-top">
-                <div className="card-header bg-light">
+              <div className="card mt-5 sticky-top rounded">
+                <div className="card-header bg-secondary" style={styles.cardHeader}>
                   <h3>
                     {this.state.name}
                   </h3>
                 </div>
-                  <div className="card-body">
-                    <img src={this.state.imageLink} />
-                    <br />
-                    <h6>Bio: {this.state.bio}</h6>
-                  </div>
+                <div className="card-body">
+                  <img className="text-center rounded-circle" height="200px" width="200px" src={this.state.imageLink} />
+                  <br />
+                  <br />
+                  <h5>About me: {this.state.bio}</h5>
+                  <br />
+                  <p>Investment Opprtunity: {this.state.goal}</p>
+                  <br/>
+                  <p>Media Links: <a href={this.state.songLink}>{this.state.songLink}</a></p>
+                </div>
+                <div className="card-footer" style={styles.cardFooter}>
+                </div>
               </div>
             </Col>
             <Col size="md-3" />

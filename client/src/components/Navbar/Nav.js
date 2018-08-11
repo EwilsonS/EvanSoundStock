@@ -16,13 +16,13 @@ const styles = {
 }
 
 export const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark" style={styles.nav} >
+  <nav className="navbar navbar-expand-lg navbar-dark sticky-top" style={styles.nav} >
     <a className="navbar-brand text-info" href="/">
       <strong> Sound Stock</strong>
     </a>
     <SignIn />
     <SignUp />
-    <Search />
+    <Search/>
   </nav>
 );
 

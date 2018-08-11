@@ -59,7 +59,7 @@ export class SignIn extends Component {
 							onChange={this.handleInputChange}
 						/>
 					</label>
-					<button className="btn btn-sm btn-info m-1" onClick={this.handleFormSubmit}>Sign In</button>
+					<button className="btn btn-sm btn-info m-1 p-1" onClick={this.handleFormSubmit}>Sign In</button>
 				</div>
 			</div>
 		)
