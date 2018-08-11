@@ -39,7 +39,7 @@ export class SignIn extends Component {
 	render() {
 		return (
 			<div className="nav-item dropdown">
-				<button className="btn btn-sm btn-outline-info nav-link dropdown-toggle m-1" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign In</button>
+				<button className="btn btn-sm btn-outline-info nav-link dropdown-toggle m-1 p-1" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign In</button>
 				<div className="dropdown-menu" style={styles.dropdown}>
 					<label className="text-light">Email
            <input

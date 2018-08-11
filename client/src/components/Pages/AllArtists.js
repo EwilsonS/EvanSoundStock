@@ -67,7 +67,8 @@ export class AllArtists extends Component {
 				<Container fluid>
 					<Row>
 						<Col size="md-3" style={styles.wrapDiv}>
-							<div className="card" style={styles.sidebar}>
+						{/* create own component for reuse */}
+							<div className="card " style={styles.sidebar}>
 								<div className="card-header text-info">
 									<h4>Calculate Your Ownership %</h4>
 								</div>

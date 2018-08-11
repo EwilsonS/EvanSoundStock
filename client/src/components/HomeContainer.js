@@ -3,6 +3,8 @@ import { Container, Row, Col } from "./Grid";
 import { Nav, Search, SignIn } from "./Navbar";
 import { CardDiv } from "./Artist";
 import API from "../utils/API";
+import WelcomeDiv from "./LayoutWithContent/WelcomeDiv"
+import HowItWorks from "./Pages/HowItWorks";
 
 // Import db controllers page and render Carddiv for each person in db collection with artists
 // in the form of a function that will be called in the onclick for the submit button
@@ -32,8 +34,14 @@ class HomeContainer extends Component {
     return (
       <div>
         <Nav />
-        <Container>
-            <CardDiv />
+        <Container fluid >
+          <Row>
+            <Col size="md-12">
+              <WelcomeDiv />
+              <HowItWorks/>
+            </ Col>
+          </Row>
+          <CardDiv />
         </Container>
       </div>
     )

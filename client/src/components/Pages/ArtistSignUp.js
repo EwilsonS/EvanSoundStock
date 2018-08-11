@@ -18,7 +18,13 @@ const styles = {
     borderColor: "#237c9a",
     boxShadow: "0 0 0 3px rgba(35,124,154, .25)",
     color: "white"
-  }
+  },
+	card: {
+		// width: "190px",
+		position: "fixed",
+		marginLeft: "2%",
+		marginTop: "1%"
+	}
 }
 export class ArtistSignUp extends Component {
   state = {
@@ -163,8 +169,8 @@ export class ArtistSignUp extends Component {
               </form>
               <br />
             </Col>
-            <Col size="md-3">
-              <div className="card mt-5 sticky-top rounded">
+            <Col size="md-3 ">
+              <div className="card mt-3 rounded" style={styles.card} >
                 <div className="card-header bg-secondary" style={styles.cardHeader}>
                   <h3>
                     {this.state.name}

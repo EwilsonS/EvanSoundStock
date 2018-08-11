@@ -1,5 +1,6 @@
 import React from "react";
 import { SignIn, Search, SignUp } from "./"
+import { AllArtistsBtn } from "./AllArtistButton";
 
 const styles = {
   nav: {
@@ -22,6 +23,7 @@ export const Nav = () => (
     </a>
     <SignIn />
     <SignUp />
+    <AllArtistsBtn/>
     <Search/>
   </nav>
 );
