@@ -72,7 +72,9 @@ export class ArtistSignUp extends Component {
           <Row>
             <Col size="md-3" />
             <Col size="md-3">
-              <br />
+              <h2 className="text-info m-3">
+              Artist Sign Up
+              </h2>
               <form>
                 <div className="form-group" >
                   <input

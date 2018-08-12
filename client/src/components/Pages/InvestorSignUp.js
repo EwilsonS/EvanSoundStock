@@ -38,10 +38,12 @@ export class InvestorSignUp extends Component {
         <Nav />
         <Container fluid>
           <Row>
-            <Col size="8">
-              <form className="investor-form">
-                <p className="h4 text-center mb-4">Sign up</p>
-
+            <Col size="2" />
+            <Col size="4">
+            <h2 className="text-info m-3">
+              Investor Sign Up
+              </h2>
+              <form>
                 <input
                   value={this.state.email}
                   onChange={this.handleInputChange}
@@ -73,11 +75,11 @@ export class InvestorSignUp extends Component {
                 <button
                   onClick={this.handleFormSubmit}
                   type="submit"
-                  className="btn btn-info">
-                  Submit
+                  className="btn btn-info ml-2">Submit
                 </button>
               </form>
             </Col>
+            <Col size="6" />
           </Row>
         </Container>
       </div>

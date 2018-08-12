@@ -5,6 +5,7 @@ import { CardDiv } from "./Artist";
 import API from "../utils/API";
 import WelcomeDiv from "./LayoutWithContent/WelcomeDiv"
 import HowItWorks from "./Pages/HowItWorks";
+import FeaturedArtists from "./LayoutWithContent/Featured";
 
 // Import db controllers page and render Carddiv for each person in db collection with artists
 // in the form of a function that will be called in the onclick for the submit button
@@ -39,6 +40,7 @@ class HomeContainer extends Component {
             <Col size="md-12">
               <WelcomeDiv />
               <HowItWorks/>
+              <FeaturedArtists />
             </ Col>
           </Row>
           <CardDiv />

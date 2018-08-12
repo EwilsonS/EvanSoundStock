@@ -7,7 +7,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const investorSchema = new Schema({
   name: { type: String },
   email: { type: String },
-  password: {type:String},
+  password: {type:String}
 });
 
 investorSchema.plugin(passportLocalMongoose);
