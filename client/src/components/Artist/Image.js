@@ -2,11 +2,11 @@ import React from "react";
 
 const styles = {
     img: {
-        height: "150px",
-        width: "150px"
+        height: "75px",
+        width: "75px"
     }
 }
 
-const Image = props => <img style={styles.img} src={props.img} alt="" />;
+const Image = props => <img className="rounded-circle float-left" style={styles.img} src={props.img} alt="artist image" />;
 
 export default Image;

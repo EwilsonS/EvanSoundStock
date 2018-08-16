@@ -13,4 +13,9 @@ router
   .put(investorsController.update)
   .delete(investorsController.remove);
 
+// Matches with "/api/investors/login"
+
+router
+  .route("/login")
+  .post(investorsController.findAll)
 module.exports = router;

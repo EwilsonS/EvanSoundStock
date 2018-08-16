@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "./Grid";
-import { Nav, Search, SignIn } from "./Navbar";
-import { CardDiv } from "./Artist";
+import { Nav } from "./Navbar";
+// import { CardDiv } from "./Artist";
 import API from "../utils/API";
 import WelcomeDiv from "./LayoutWithContent/WelcomeDiv"
 import HowItWorks from "./Pages/HowItWorks";
 import FeaturedArtists from "./LayoutWithContent/Featured";
-
+import Footer from "./LayoutWithContent/Footer"
+// import Carousel from "./Carousel/Carousel"
 // Import db controllers page and render Carddiv for each person in db collection with artists
 // in the form of a function that will be called in the onclick for the submit button
 // summary div in card has props children to use to give it the mapped out data
@@ -34,16 +35,18 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav >
+          </Nav>
         <Container fluid >
           <Row>
             <Col size="md-12">
               <WelcomeDiv />
-              <HowItWorks/>
+              <HowItWorks />
               <FeaturedArtists />
+              {/* <Carousel /> */}
+              <Footer />
             </ Col>
           </Row>
-          <CardDiv />
         </Container>
       </div>
     )

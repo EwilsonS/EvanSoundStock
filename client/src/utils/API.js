@@ -21,10 +21,6 @@ export default {
    getInvestors: function() {
     return axios.get("/api/investors");
   },
-  // Gets the investor with the given id
-  getInvestor: function(id) {
-    return axios.get("/api/investors/" + id);
-  },
   // Deletes the investor with the given id
   deleteInvestor: function(id) {
     return axios.delete("/api/investors/" + id);
@@ -34,8 +30,27 @@ export default {
     return axios.post("/api/investors", investorData);
   },
   // ??
-  saveUser: function(userData){
-    return axios.post("/api/users", userData)
+  investorLogin: function(userData){
+    return axios.post("/api/investors/login", userData)
+  },
+  artistLogin: function(userData){
+    return axios.post("/api/artists/login", userData)
+  },
+  saveUser: function(user) {
+    return axios.post("/api/users", user)
+  },
+  // Gets the user with the given id
+  getUser: function(id) {
+    return axios.get("/api/user/" + id);
+  },
+   // Gets all users
+   getUsers: function() {
+    return axios.get("/api/users");
+  },
+  getUsersLogin: function(data) {
+    return axios.post("/api/users/login", data);
+  },
+  saveUserSession: function(userSession){
+    return axios.post("/api/account/login" )
   }
-  
 };

@@ -18,7 +18,7 @@ export class InvestorSignUp extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.saveInvestor({
+    API.saveUser({
       email: this.state.email,
       password: this.state.password,
       name: this.state.name

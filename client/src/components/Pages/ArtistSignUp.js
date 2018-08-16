@@ -34,7 +34,8 @@ export class ArtistSignUp extends Component {
     imageLink: "",
     songLink: "",
     bio: "",
-    goal: ""
+    goal: "",
+    isDeleted: false
   };
 
   handleInputChange = event => {
@@ -46,14 +47,15 @@ export class ArtistSignUp extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.saveArtist({
+    API.saveUser({
       email: this.state.email,
       password: this.state.password,
       name: this.state.name,
       imageLink: this.state.imageLink,
       songLink: this.state.songLink,
       bio: this.state.bio,
-      goal: this.state.goal
+      goal: this.state.goal,
+      isDeleted: this.state.isDeleted
     })
       .then(res => {
         console.log(res)
@@ -159,7 +161,7 @@ export class ArtistSignUp extends Component {
                     name="goal"
                     cols="50"
                     rows="5"
-                    placeholder="Description of investment opportunity (i.e. I'm selling 10% of all future publishing for $50 per share out of 100 shares)" />
+                    placeholder="Description of investment opportunity (i.e. I'm selling 10% of all future publishing for $15,000)" />
                 </div>
                 <br />
                 <button
@@ -172,14 +174,14 @@ export class ArtistSignUp extends Component {
               <br />
             </Col>
             <Col size="md-3 ">
-              <div className="card mt-3 rounded" style={styles.card} >
+              <div className="card mt-3 rounded sticky-top"  >
                 <div className="card-header bg-secondary" style={styles.cardHeader}>
                   <h3>
                     {this.state.name}
                   </h3>
                 </div>
                 <div className="card-body">
-                  <img className="text-center rounded-circle" height="200px" width="200px" src={this.state.imageLink} />
+                  <img className="text-center rounded-circle" alt="null" height="200px" width="200px" src={`${this.state.imageLink ? this.state.imageLink: "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}`} />
                   <br />
                   <br />
                   <h5>About me: {this.state.bio}</h5>

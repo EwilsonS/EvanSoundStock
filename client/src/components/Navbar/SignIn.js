@@ -1,5 +1,8 @@
 import React, { Component } from "react"
+// import { Router } from 'react-router'
 import API from "../../utils/API";
+import { withRouter } from "react-router-dom";
+// import setInStorage from "../../utils/storage"
 
 const styles = {
 	dropdown: {
@@ -7,12 +10,12 @@ const styles = {
 	},
 }
 
-
-export class SignIn extends Component {
+class SignIn extends Component {
 
 	state = {
+		verify: [],
 		email: "",
-		password: ""
+		password: "",
 	}
 
 	// handle any changes to the input fields
@@ -26,14 +29,27 @@ export class SignIn extends Component {
 
 	handleFormSubmit = event => {
 		event.preventDefault();
-		API.saveUser({
-			email: this.state.email,
-			password: this.state.password
-	}).then(res => {
-		this.console.log(res)
-		this.props.history.push('/')
-	})
-			.catch(err => console.log(err))
+		// if (!this.state.email || !this.state.password) {
+		// 	alert("Please don't leave any fields blank")
+		// }
+			API.getUsersLogin({
+				email: this.state.email,
+				password: this.state.password
+			}).then(res => {
+				this.setState({ verify: res.data })
+				console.log(res.data)
+				if ((this.state.verify.email !== this.state.email) ||
+					(this.state.verify.password !== this.state.password)||
+					(!this.state.email) || 
+					(!this.state.password))
+					{
+					alert(`Oops...Something went wrong`)
+				} else{
+					this.props.history.push(`/api/user/${this.state.verify._id}`)
+				}
+			})
+				.catch(err => console.log(err))
+		
 	};
 
 	render() {
@@ -55,13 +71,22 @@ export class SignIn extends Component {
 							className="form-control my-2 my-sm-1 bg-secondary text-light"
 							placeholder="Password"
 							name="password"
+							type="password"
 							value={this.state.password}
 							onChange={this.handleInputChange}
 						/>
 					</label>
-					<button className="btn btn-sm btn-info m-1 p-1" onClick={this.handleFormSubmit}>Sign In</button>
+					{/* <Link to="/"> */}
+					<button className="btn btn-sm btn-info m-1 p-1"
+						onClick={this.handleFormSubmit}
+						type="submit"
+						value="Log In"
+					>Sign In</button>
+					{/* </Link> */}
 				</div>
 			</div>
 		)
 	}
 }
+
+export default withRouter(SignIn)

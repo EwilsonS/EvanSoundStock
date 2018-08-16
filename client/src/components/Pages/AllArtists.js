@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "../Grid";
 import Nav from "../Navbar/Nav";
 import API from "../../utils/API";
-import MiniCard from "../Artist/MiniCard"
+// import MiniCard from "../Artist/MiniCard"
 
 const styles = {
 	cardHeader: {
@@ -42,16 +42,28 @@ export class AllArtists extends Component {
 		imageLink: "",
 		songLink: "",
 		bio: "",
-		goal: ""
+		goal: "",
+		percent: null,
+		price: 0,
+		spend: 0,
+		own: 0
 	};
 
+	
 	componentDidMount() {
 		this.loadArtists();
 	}
+	handleInputChange = event => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
 
+	};
 	loadArtists = () => {
-		API.getArtists()
+		API.getUsers()
 			.then(res =>
+
 				this.setState({
 					artists: res.data
 				}))
@@ -66,9 +78,9 @@ export class AllArtists extends Component {
 				<Nav />
 				<Container fluid>
 					<Row>
-						<Col size="md-3" style={styles.wrapDiv}>
-						{/* create own component for reuse */}
-							<div className="card " style={styles.sidebar}>
+						<Col size="md-3">
+							{/* create own component for reuse */}
+							<div className="card mt-3 sticky-top">
 								<div className="card-header text-info">
 									<h4>Calculate Your Ownership %</h4>
 								</div>
@@ -77,19 +89,41 @@ export class AllArtists extends Component {
 										<div className="form-group ">
 											<div>
 												<label className="text-secondary">Available %</label>
-												<input className="form-control" type="number" />
+												<input
+													className="form-control"
+													type="number"
+													name="percent"
+													value={this.state.percent}
+													onChange={this.handleInputChange} />
 											</div>
 											<div>
 												<label className="text-secondary">Total Asking Price</label>
-												<input className="form-control" type="number" />
+												<input 
+												className="form-control" 
+												type="number"
+												name="price"
+												value={this.state.price}
+												onChange={this.handleInputChange}
+												/>
 											</div>
 											<div>
 												<label className="text-secondary">Amount You Wish To Invest</label>
-												<input className="form-control" type="number" sh to />
+												<input 
+												className="form-control" 
+												type="number"
+												name="spend"
+												value={this.state.spend}
+												onChange={this.handleInputChange}
+												 />
 											</div>
 											<hr />
-											<label className="text-secondary">Your Ownership</label>
-											<input className="form-control" type="number" />
+											<label className=" h4 text-info">Your Ownership</label>
+											{/* fix math-To calculate a percentage of a percentage, 
+											convert both percentages to fractions of 100, or to decimals,
+											 and multiply them. 
+											 For example, 50% of 40% is: ​50⁄100 × ​40⁄100 = 0.50 × 0.40 = 0.20 = ​20⁄100 = 20%.
+											  It is not correct to divide by 100 and use the percent sign at the same time. */}
+											<h1 className="text-success">{(((100*this.state.spend)/this.state.price)*(this.state.percent/100)).toFixed(3)} %</h1>
 										</div>
 									</form>
 								</div>
@@ -98,16 +132,16 @@ export class AllArtists extends Component {
 						<Col size="md-6">
 							<div className="card-columns">
 								{/* <MiniCard /> */}
-								{this.state.artists.map(artist => (
+								{this.state.artists.map(artist => artist.imageLink ? (
 									<div className="card mt-2 rounded">
 										<div className="card-header bg-secondary" style={styles.cardHeader}>
 											<h3>
 												{artist.name}
-												<button className="btn btn-sm btn-danger right p-2 bd-highlight  float-right">Invest</button>
+												<button className="btn btn-sm btn-danger right p-2 d-inline bd-highlight  float-right">Invest</button>
 											</h3>
 										</div>
 										<div className="card-body">
-											<img className="text-center rounded-circle" height="150px" width="150px" src={artist.imageLink} />
+											<img className="text-center rounded-circle" alt="null" height="150px" width="150px" src={artist.imageLink} />
 											<h5>About me: {artist.bio}</h5>
 											<p>Investment Opprtunity: {artist.goal}</p>
 											<p>Media Links: <a href={artist.songLink}>{artist.songLink}</a></p>
@@ -115,7 +149,7 @@ export class AllArtists extends Component {
 										<div className="card-footer" style={styles.cardFooter}>
 										</div>
 									</div>
-								))}
+								) : (null))}
 							</div>
 						</Col>
 						<Col size="md-3" />

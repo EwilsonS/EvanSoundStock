@@ -3,7 +3,7 @@ import React from "react";
 const Progress = () => (
   <div className="progress">
     <div
-      className="progress-bar"
+      className="progress-bar bg-info"
       role="progressbar"
       style={{width: "50%"}}
       aria-valuenow="50"

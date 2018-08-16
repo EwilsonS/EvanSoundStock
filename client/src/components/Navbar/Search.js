@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
 
 const styles = {
     input: {
@@ -7,7 +9,7 @@ const styles = {
     }
 }
 
-export const Search = props => (
+const Search = props => (
     <div className="offset-md-6">
         <form className="form-inline mr-sm-2"  type="search" placeholder="Search">
             <span>
@@ -17,3 +19,5 @@ export const Search = props => (
         </form>
     </div>
 )
+
+export default withRouter(Search)

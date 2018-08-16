@@ -2,6 +2,7 @@ import React from "react";
 import Progress from "./Progress";
 import Music from "./Music";
 import Image from "./Image";
+import InvestBtn from "./Invest";
 
 const styles = {
   padding: {
@@ -10,30 +11,33 @@ const styles = {
   },
   card: {
     marginTop: 50
+  },
+
+  invest: {
+    paddingLeft: 140,
+    paddingTop: 30
   }
 };
 
-export const CardDiv = (props) => (
-  <div className="card" style={styles.card}>
-    <h5 className="card-header">Featured: {props.name}</h5>
+const CardDiv = (props) => (
+  <div className="card my-3" style={styles.card}>
+    <h5 className="card-header"  >Featured: {props.name}
+    </h5>
     <div className="card-body">
-      <div className="row">
-        <div className="col-md-2">
-          <Image img={props.img}/>
-        </div>
-        <div className="col-md-6">
-        {/* added child to this so that we can assaign the this.props.summary that we get from db */}
+      <div className="">
+        <div className="">
+          <Image  img={props.img}/>
+        <div className="float-left">
           <p>{props.bio}</p>
         </div>
-        <div className="col-md-4">
-          <Music src={props.src}/>
-          <div className="row">
-            <div className="col-md-10" style={styles.padding}>
-              <Progress />
-            </div>
-          </div>
+        <div className="float-right">
+              <InvestBtn />
+        </div>
         </div>
       </div>
     </div>
+    <Progress />
   </div>
 );
+
+export default CardDiv

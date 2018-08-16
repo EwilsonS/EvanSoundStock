@@ -1,6 +1,9 @@
 import React from "react";
-import { SignIn, Search, SignUp } from "./"
-import { AllArtistsBtn } from "./AllArtistButton";
+import Search  from "./Search"
+import SignUp from "./SignUp"
+import AllArtistsBtn  from "./AllArtistButton";
+import SignIn from "./SignIn"
+import {Link} from "react-router-dom"
 
 const styles = {
   nav: {
@@ -17,13 +20,17 @@ const styles = {
 }
 
 export const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark sticky-top" style={styles.nav} >
+  <nav className="navbar navbar-expand-lg navbar-dark" style={styles.nav} >
     <a className="navbar-brand text-info" href="/">
       <strong> Sound Stock</strong>
     </a>
+    
     <SignIn />
     <SignUp />
+    <Link to="/allArtists">
     <AllArtistsBtn/>
+    </Link>
+    
     <Search/>
   </nav>
 );
