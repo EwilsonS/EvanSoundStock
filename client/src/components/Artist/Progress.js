@@ -5,12 +5,12 @@ const Progress = () => (
     <div
       className="progress-bar bg-info"
       role="progressbar"
-      style={{width: "50%"}}
-      aria-valuenow="50"
+      style={{width: "25%"}}
+      aria-valuenow="25"
       aria-valuemin="0"
       aria-valuemax="100"
     >
-      50% invested
+      25% invested
     </div>
   </div>
 );

@@ -13,7 +13,7 @@ const Search = props => (
     <div className="offset-md-6">
         <form className="form-inline mr-sm-2"  type="search" placeholder="Search">
             <span>
-                <input className="form-control h-25 bg-secondary text-light" type="search" style={styles.input} />
+                <input className="form-control h-25 bg-secondary text-light" type="text" style={styles.input} id="myInput" />
                 <button className="btn btn-sm btn-outline-info bd-highlight">Search</button>
             </span>
         </form>

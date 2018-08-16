@@ -19,12 +19,12 @@ const styles = {
     boxShadow: "0 0 0 3px rgba(35,124,154, .25)",
     color: "white"
   },
-	card: {
-		// width: "190px",
-		position: "fixed",
-		marginLeft: "2%",
-		marginTop: "1%"
-	}
+  card: {
+    // width: "190px",
+    position: "fixed",
+    marginLeft: "2%",
+    marginTop: "1%"
+  }
 }
 export class ArtistSignUp extends Component {
   state = {
@@ -75,7 +75,7 @@ export class ArtistSignUp extends Component {
             <Col size="md-3" />
             <Col size="md-3">
               <h2 className="text-info m-3">
-              Artist Sign Up
+                Artist Sign Up
               </h2>
               <form>
                 <div className="form-group" >
@@ -165,9 +165,10 @@ export class ArtistSignUp extends Component {
                 </div>
                 <br />
                 <button
-                  onClick={this.handleFormSubmit}
-                  type="submit"
-                  className="btn btn-info">
+                  type="button"
+                  className="btn btn-info"
+                  data-toggle="modal"
+                  data-target="#exampleModalLong">
                   Submit
                 </button>
               </form>
@@ -181,13 +182,13 @@ export class ArtistSignUp extends Component {
                   </h3>
                 </div>
                 <div className="card-body">
-                  <img className="text-center rounded-circle" alt="null" height="200px" width="200px" src={`${this.state.imageLink ? this.state.imageLink: "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}`} />
+                  <img className="text-center rounded-circle" alt="null" height="200px" width="200px" src={`${this.state.imageLink ? this.state.imageLink : "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}`} />
                   <br />
                   <br />
                   <h5>About me: {this.state.bio}</h5>
                   <br />
                   <p>Investment Opprtunity: {this.state.goal}</p>
-                  <br/>
+                  <br />
                   <p>Media Links: <a href={this.state.songLink}>{this.state.songLink}</a></p>
                 </div>
                 <div className="card-footer" style={styles.cardFooter}>
@@ -197,6 +198,29 @@ export class ArtistSignUp extends Component {
             <Col size="md-3" />
           </Row>
         </Container>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Terms of Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <object type="text/html" data="https://app.termly.io/document/terms-of-use-for-online-marketplace/60c8782c-a8e3-4fa3-88dd-ae95197eaf32" width="450px" height="700px">
+    </object>
+      </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn btn-info"data-dismiss="modal"
+                  onClick={this.handleFormSubmit}
+                  >Accept</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

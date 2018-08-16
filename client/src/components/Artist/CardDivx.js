@@ -24,6 +24,8 @@ const CardDiv = (props) => (
         <div className="col-md-6">
         {/* added child to this so that we can assaign the this.props.summary that we get from db */}
           <p>{props.bio}</p>
+          <hr/>
+          <p>{props.goal}</p>
         </div>
         <div className="col-md-4">
           <Music src={props.src}/>

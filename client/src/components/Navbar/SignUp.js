@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 const styles = {
     dropdown: {
-        backgroundColor: "#02183a"
+        backgroundColor: "#02183a",
+        zIndex:200000
     }
 }
 

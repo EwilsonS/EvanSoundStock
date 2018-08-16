@@ -137,7 +137,7 @@ export class AllArtists extends Component {
 										<div className="card-header bg-secondary" style={styles.cardHeader}>
 											<h3>
 												{artist.name}
-												<button className="btn btn-sm btn-danger right p-2 d-inline bd-highlight  float-right">Invest</button>
+												<button className="btn btn-sm btn-danger right p-0 d-inline bd-highlight  float-right"><small>Add to portfolio</small></button>
 											</h3>
 										</div>
 										<div className="card-body">

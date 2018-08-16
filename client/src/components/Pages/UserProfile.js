@@ -3,16 +3,16 @@ import API from "../../utils/API"
 class UserProfile extends Component {
 
   state = {
-    user: []
+    user:""
   };
 
   componentDidMount() {
     this.loadUser()
   };
 
+  
   loadUser = () => {
-    API.getUsers({
-     
+    API.getUser({
       
     })
       .then(res =>{

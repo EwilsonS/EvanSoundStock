@@ -4,11 +4,11 @@ const InvestBtn = () => (
   <div>
     <button
       type="button"
-      className="btn btn-danger"
       data-toggle="modal"
       data-target="#exampleModal"
+      className="btn btn-lg btn-danger right p-3 d-inline bd-highlight float-right"
     >
-      Invest
+      Add to Portfolio
     </button>
 
     <div
@@ -43,6 +43,7 @@ const InvestBtn = () => (
                   className="form-control-range"
                   // id="formControlRange"
                 />
+                
               </div>
             </form>
           </div>

@@ -73,6 +73,8 @@ class FeaturedArtists extends Component {
                       <img className="rounded-circle float-left" alt="null" style={styles.img} src={artist.imageLink} />
                       <div className="float-left">
                         <p className="text-dark">{artist.bio}</p>
+                        <hr/>
+                        <p className="text-info">{artist.goal}</p>
                       </div>
                       <div className="float-right">
                         <InvestBtn />
