@@ -8,7 +8,8 @@ const morgan = require('morgan');
 const routes = require("./routes");
 const app = express();
 var passport = require("./config/passport");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT ? process.env.PORT: 3001;
+
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/soundstock");
 app.use(morgan('dev'))
@@ -27,8 +28,6 @@ app.use(passport.session());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-}else{
-  app.use(express.static("./client/public"))
 }
 
 // Add routes, both API and view
