@@ -59,7 +59,8 @@ export class ArtistSignUp extends Component {
     })
       .then(res => {
         console.log(res)
-        this.props.history.push('/')
+        setTimeout(function(){
+        this.props.history.push('/')},1000)
       })
       .catch(err => {
         console.log(err)
