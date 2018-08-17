@@ -3,18 +3,18 @@ import API from "../../utils/API"
 class UserProfile extends Component {
 
   state = {
-    user:""
+    user:[],
+    name:""
   };
 
   componentDidMount() {
-    this.loadUser()
+    // this.loadUser()
   };
 
-  
   loadUser = () => {
-    API.getUser({
-      
-    })
+    API.getUser(this.req.params.id)
+
+    
       .then(res =>{
         console.log(res.data)
         this.setState({user: res.data})
