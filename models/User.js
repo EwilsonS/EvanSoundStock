@@ -18,7 +18,13 @@ const UserSchema = new mongoose.Schema({
     default: "",
     required:true
   },
-  songLink: {
+  mediaLink1: {
+    type: String
+  },
+  mediaLink2: {
+    type: String
+  },
+  mediaLink3: {
     type: String
   },
   imageLink: {
@@ -32,6 +38,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: ""
   },
+  availablePercentage:{
+    type: Number,
+    default:5
+  },
+    totalPrice:{
+      type: Number,
+      default: 0
+    },
   isDeleted: {
     type: Boolean,
     default: false

@@ -5,25 +5,29 @@ import API from "../../utils/API";
 
 const styles = {
   cardHeader: {
-    // backgroundColor: "#02183a",
-    borderTop: "3px solid #13a2b8",
+    backgroundColor: "white",
+    // borderTop: "8px solid #13a2b8",
     color: "#02183a"
   },
   cardFooter: {
-    backgroundColor: "#02183a",
-    borderTop: "3px solid #13a2b8",
+    backgroundColor: "white",
+    // borderTop: "5px solid #13a2b8",
     color: "#237c9a"
   },
   input: {
     borderColor: "#237c9a",
-    boxShadow: "0 0 0 3px rgba(35,124,154, .25)",
+    boxShadow: "0 0  3px rgba(35,124,154, .25)",
     color: "white"
   },
   card: {
-    // width: "190px",
-    position: "fixed",
-    marginLeft: "2%",
-    marginTop: "1%"
+    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)"
+  },
+  image: {
+    border: "7px solid white"
+  },
+  blueText: {
+    color: "#02183a",
+    fontWeight: "bold"
   }
 }
 export class ArtistSignUp extends Component {
@@ -32,10 +36,15 @@ export class ArtistSignUp extends Component {
     password: "",
     name: "",
     imageLink: "",
-    songLink: "",
+    mediaLink1: "",
+    mediaLink2: "",
+    mediaLink3: "",
     bio: "",
     goal: "",
+    availablePercentage: null,
+    totalPrice: null,
     isDeleted: false
+
   };
 
   handleInputChange = event => {
@@ -52,10 +61,14 @@ export class ArtistSignUp extends Component {
       password: this.state.password,
       name: this.state.name,
       imageLink: this.state.imageLink,
-      songLink: this.state.songLink,
       bio: this.state.bio,
       goal: this.state.goal,
-      isDeleted: this.state.isDeleted
+      isDeleted: this.state.isDeleted,
+      availablePercentage: this.state.availablePercentage,
+      totalPrice: this.state.totalPrice,
+      mediaLink1: this.state.mediaLink1,
+      mediaLink2: this.state.mediaLink2,
+      mediaLink3: this.state.mediaLink3
     })
       .then(res => {
         console.log(res)
@@ -134,12 +147,32 @@ export class ArtistSignUp extends Component {
                 </div>
                 <div className="form-group">
                   <input
-                    value={this.state.songLink}
+                    value={this.state.mediaLink1}
                     onChange={this.handleInputChange}
                     type="text"
                     className="form-control"
                     placeholder="Media URL"
-                    name="songLink"
+                    name="mediaLink1"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    value={this.state.mediaLink2}
+                    onChange={this.handleInputChange}
+                    type="text"
+                    className="form-control"
+                    placeholder="Media URL"
+                    name="mediaLink2"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    value={this.state.mediaLink3}
+                    onChange={this.handleInputChange}
+                    type="text"
+                    className="form-control"
+                    placeholder="Media URL"
+                    name="mediaLink3"
                   />
                 </div>
                 <div className="form-group">
@@ -161,7 +194,27 @@ export class ArtistSignUp extends Component {
                     name="goal"
                     cols="50"
                     rows="5"
-                    placeholder="Description of investment opportunity (i.e. I'm selling 10% of all future publishing for $15,000)" />
+                    placeholder="Description of product (i.e. My song 'on the run' is available to you)" />
+                </div>
+                <div className="form-group">
+                  <input
+                    value={this.state.availablePercentage}
+                    onChange={this.handleInputChange}
+                    type="number"
+                    className="form-control"
+                    placeholder="Enter percentage 0-100"
+                    name="avilablePercentage"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    value={this.state.totalPrice}
+                    onChange={this.handleInputChange}
+                    type="number"
+                    className="form-control"
+                    placeholder="Price. (e.g. for $12,000 enter 12000)"
+                    name="totalPrice"
+                  />
                 </div>
                 <br />
                 <button
@@ -175,23 +228,32 @@ export class ArtistSignUp extends Component {
               <br />
             </Col>
             <Col size="md-3 ">
-              <div className="card mt-3 rounded sticky-top"  >
-                <div className="card-header bg-secondary" style={styles.cardHeader}>
+              <div 
+              className="card mt-3 rounded-0 sticky-top"
+              style={styles.card}  >
+                <div className="alert alert-dark rounded-0">
                   <h3>
-                    {this.state.name}
+                    <img
+                      className="text-center rounded-circle m-2"
+                      alt="null"
+                      height="125px"
+                      width="125px"
+                      src={`${this.state.imageLink ? this.state.imageLink : "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}`}
+                      style={styles.image}
+                    />
+                    <br />
+                    <span className="m-2" style={styles.blueText}>{this.state.name}</span>
                   </h3>
                 </div>
                 <div className="card-body">
-                  <img className="text-center rounded-circle" alt="null" height="200px" width="200px" src={`${this.state.imageLink ? this.state.imageLink : "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}`} />
-                  <br />
-                  <br />
-                  <h5>About me: {this.state.bio}</h5>
-                  <br />
-                  <p>Investment Opprtunity: {this.state.goal}</p>
-                  <br />
-                  <p>Media Links: <a href={this.state.songLink}>{this.state.songLink}</a></p>
+                 <p><span style={styles.blueText}>About me: </span>{this.state.bio}</p>
+                  <p><span style={styles.blueText}>Investment Opprtunity: </span>{this.state.goal}</p>
+                  <span style={styles.blueText}>Media Links:</span> <br/>
+                  <a href={this.state.mediaLink1} target="_blank">{this.state.mediaLink1}</a><br />
+                  <a href={this.state.mediaLink2} target="_blank">{this.state.mediaLink2}</a><br />
+                  <a href={this.state.mediaLink3} target="_blank">{this.state.mediaLink3}</a><br />
                 </div>
-                <div className="card-footer" style={styles.cardFooter}>
+                <div className="" style={styles.cardFooter}>
                 </div>
               </div>
             </Col>
@@ -199,24 +261,24 @@ export class ArtistSignUp extends Component {
           </Row>
         </Container>
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Terms of Service</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLongTitle">Terms of Service</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-              <object type="text/html" data="https://app.termly.io/document/terms-of-use-for-online-marketplace/60c8782c-a8e3-4fa3-88dd-ae95197eaf32" width="450px" height="700px">
-    </object>
-      </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn btn-info"data-dismiss="modal"
+              <div className="modal-body">
+                <object type="text/html" data="https://app.termly.io/document/terms-of-use-for-online-marketplace/60c8782c-a8e3-4fa3-88dd-ae95197eaf32" width="450px" height="700px">
+                </object>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn btn-info" data-dismiss="modal"
                   onClick={this.handleFormSubmit}
-                  >Accept</button>
+                >Accept</button>
               </div>
             </div>
           </div>
