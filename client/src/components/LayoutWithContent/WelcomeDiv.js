@@ -12,9 +12,8 @@ const styles = {
 
 const WelcomeDiv = props => (
 
-  <div className="row alert bg-alert-dark m-0" >
-    <div className="col-md-3" />
-    <div className="col-md-6 text-center text-dark">
+  <div className="row alert mt-3 rounded-0 alert-dark" >
+    <div className="col-md-12 text-center text-dark">
       <br />
       <br/>
       <h2>Welcome to <span className="text-info h1"><strong> <span style={styles.infoDark}>S</span>ound<span style={styles.infoDark}>S</span>tock</strong></span></h2>
@@ -25,7 +24,7 @@ const WelcomeDiv = props => (
       <br />
       <br/>
       <br/><br/>
-      <h2 className="text-center" style={styles.infoDark}>Here's How It Works...</h2>
+      {/* <h2 className="text-center" style={styles.infoDark}>Here's How It Works...</h2> */}
       <br/>
       {/* use below as own component to open on same page  */}
       {/* <Link to={`/howitworks`} role="button">
@@ -34,8 +33,6 @@ const WelcomeDiv = props => (
       <Route path={`/howitworks`} component={HowItWorks} /> */}
 
     </div>
-    <div className="col-md-3" />
-
   </div>
 );
 

@@ -14,6 +14,9 @@ const styles = {
   },
   card: {
     boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)"
+  },
+  dashboard:{
+    background:"#237c9a"
   }
 }
 
@@ -50,21 +53,24 @@ export class LoginDashboard extends Component {
         (!this.state.password)) {
         alert(`Oops...Something went wrong`)
       } else {
-        this.props.history.push(`/api/user/${this.state.verify._id}`)
+        console.log(this.props)
+        this.context.history.push(`/api/user/login/${this.state.verify._id}`)
       }
     })
       .catch(err => console.log(err))
 
   };
   render() {
+    if ((this.state.verify.email !== this.state.email) ||
+    (this.state.verify.password !== this.state.password)){
     return (
       <div
         className="card mt-3 sticky-top rounded-0"
         style={styles.card}>
         <div
-          className="card-header"
+          className="card-header rounded-0"
           style={styles.login}>
-          <span className="text-light">Login</span>
+          <span className="text-light h5">Login</span>
         </div>
         <div
           className="card-body"
@@ -74,7 +80,7 @@ export class LoginDashboard extends Component {
             <label className="text-light mb-0">Email
             </label><br />
             <input
-              className=" mb-2 bg-secondary text-light rounded-0"
+              className=" form-control mb-2 bg-secondary text-light rounded-0"
               placeholder="Email"
               name="email"
               value={this.state.email}
@@ -83,7 +89,7 @@ export class LoginDashboard extends Component {
             <label className="text-light mb-0">Password
             </label><br />
             <input
-              className="mb-2 bg-secondary text-light rounded-0"
+              className="form-control mb-2 bg-secondary text-light rounded-0"
               placeholder="Password"
               name="password"
               type="password"
@@ -93,7 +99,7 @@ export class LoginDashboard extends Component {
             <div className="row mt-2">
               <div className="col-md-3">
                 {/* <Link to="/"> */}
-                <button className="btn btn-sm btn-info m-1 p-1"
+                <button className="rounded-0 btn btn-sm btn-outline-info m-1 p-1"
                   onClick={this.handleFormSubmit}
                   type="submit"
                   value="Log In"
@@ -109,7 +115,26 @@ export class LoginDashboard extends Component {
           </div>
         </div>
       </div>
-    )
+    )}else{
+      return(
+      <div
+        className="card mt-3 sticky-top rounded-0"
+        style={styles.card}>
+        <div
+          className="card-header rounded-0"
+          style={styles.login}>
+          <span className="text-light h5">Logged in as: {this.state.verify.name}</span>
+        </div>
+        <div
+          className="card-body"
+          style={styles.dashboard}
+        >
+         <h5 className="text-light ">My Portfolio</h5>
+        </div>
+      </div>
+      )
+
+    }
   }
 }
 

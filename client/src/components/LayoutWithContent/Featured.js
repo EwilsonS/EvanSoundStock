@@ -54,16 +54,15 @@ class FeaturedArtists extends Component {
   render() {
     return (
 
-      <div className="row bg-secondary text-light my-0">
-        <div className="col-md-2 " />
+      <div className="row alert alert-dark rounded-0 text-light">
 
-        <div className="col-md-8 ">
+        <div className="col-md-12 ">
           <br /><br />
-          <p className="h1 text-light text-center mt-5">Featured Artists</p>
+          <p className="h1 text-dark text-center mt-5">Featured Artists</p>
           <br />
 
           <div>
-            {this.state.artists.map(artist => artist.imageLink ? (
+            {this.state.artists.map(artist => ((artist.name=== "Wilson Wright")||(artist.name=== "Lady Bug")) ? (
               <div className="card my-3" key={artist._id} style={styles.card}>
                 <h5 className="card-header text-info"  >{artist.name}
                 </h5>
@@ -90,7 +89,6 @@ class FeaturedArtists extends Component {
 
           <br /><br />
         </div>
-        <div className="col-md-2 " />
 
       </div>
     )

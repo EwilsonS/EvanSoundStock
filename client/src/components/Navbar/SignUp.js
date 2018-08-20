@@ -15,14 +15,14 @@ const styles = {
 
 const SignUp = () =>
     <div className="nav-item dropdown">
-        <button className="btn btn-info btn-sm nav-link dropdown-toggle m-1 p-1" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign Up</button>
+        <button className="btn btn-info btn-sm nav-link dropdown-toggle m-1 p-1 rounded-0" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign Up</button>
         <div className="dropdown-menu" style={styles.dropdown}>
             <br />
             <Link to="/artistSignUp" className="m-1">
-                <button className="btn btn-info btn-sm m-1 ">Artist Sign Up</button>
+                <button className="btn btn-info btn-sm m-1 rounded-0 ">Artist Sign Up</button>
             </Link>
             <Link to="/investorSignUp" className="m-1">
-                <button className="btn btn-info btn-sm m-1 ">Investor Sign Up</button>
+                <button className="btn btn-info btn-sm m-1 rounded-0">Investor Sign Up</button>
             </Link>
         </div>
     </div>

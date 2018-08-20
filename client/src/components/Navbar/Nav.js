@@ -1,8 +1,6 @@
 import React from "react";
 import Search  from "./Search"
-import SignUp from "./SignUp"
 import AllArtistsBtn  from "./AllArtistButton";
-import SignIn from "./SignIn"
 import {Link} from "react-router-dom"
 
 const styles = {
@@ -25,8 +23,6 @@ export const Nav = () => (
       <strong> Sound Stock</strong>
     </a>
     
-    <SignIn />
-    <SignUp />
     <Link to="/allArtists">
     <AllArtistsBtn/>
     </Link>

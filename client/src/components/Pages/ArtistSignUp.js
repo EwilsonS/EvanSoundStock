@@ -41,6 +41,7 @@ export class ArtistSignUp extends Component {
     mediaLink3: "",
     bio: "",
     goal: "",
+    genre:"",
     availablePercentage: null,
     totalPrice: null,
     isDeleted: false
@@ -68,7 +69,8 @@ export class ArtistSignUp extends Component {
       totalPrice: this.state.totalPrice,
       mediaLink1: this.state.mediaLink1,
       mediaLink2: this.state.mediaLink2,
-      mediaLink3: this.state.mediaLink3
+      mediaLink3: this.state.mediaLink3,
+      genre: this.state.genre
     })
       .then(res => {
         console.log(res)
@@ -214,6 +216,16 @@ export class ArtistSignUp extends Component {
                     className="form-control"
                     placeholder="Price. (e.g. for $12,000 enter 12000)"
                     name="totalPrice"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    value={this.state.genre}
+                    onChange={this.handleInputChange}
+                    type="text"
+                    className="form-control"
+                    placeholder="Pop"
+                    name="genre"
                   />
                 </div>
                 <br />

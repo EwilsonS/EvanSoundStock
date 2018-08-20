@@ -31,11 +31,11 @@ class Calculator extends Component {
         </div>
         <div className="card-body bg-light">
           <form >
-            <div className="form-group ">
+            <div className="form-group">
               <div>
                 <label className="text-secondary mb-0"><small>Available %</small></label>
                 <input
-                  className="mb-2"
+                  className="mb-2 form-control rounded-0"
                   type="number"
                   name="percent"
                   value={this.state.percent}
@@ -45,7 +45,7 @@ class Calculator extends Component {
               <div>
                 <label className="text-secondary mb-0"><small>Total Asking Price</small></label>
                 <input
-                  className="mb-2"
+                  className="form-control rounded-0 mb-2"
                   type="number"
                   name="price"
                   value={this.state.price}
@@ -55,7 +55,7 @@ class Calculator extends Component {
               <div>
                 <label className="text-secondary mb-0"><small>Amount You Wish To Invest</small></label>
                 <input
-                  className="mb-2"
+                  className="mb-2 form-control rounded-0"
                   type="number"
                   name="spend"
                   value={this.state.spend}

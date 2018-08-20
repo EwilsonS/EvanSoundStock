@@ -42,6 +42,11 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default:5
   },
+  genre:{
+    type: String,
+    default:""
+
+  },
     totalPrice:{
       type: Number,
       default: 0

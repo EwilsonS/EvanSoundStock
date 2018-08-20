@@ -10,11 +10,11 @@ const styles = {
 }
 
 const Search = props => (
-    <div className="offset-md-6">
+    <div className="offset-md-2">
         <form className="form-inline mr-sm-2"  type="search" placeholder="Search">
             <span>
-                <input className="form-control h-25 bg-secondary text-light" type="text" style={styles.input} id="myInput" />
-                <button className="btn btn-sm btn-outline-info bd-highlight">Search</button>
+                <input className="form-control h-25 bg-secondary text-light rounded-0"size="50" type="text" style={styles.input} id="myInput" />
+                <button className="btn btn-sm btn-outline-info bd-highlight rounded-0">Search</button>
             </span>
         </form>
     </div>

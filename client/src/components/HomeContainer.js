@@ -37,18 +37,31 @@ class HomeContainer extends Component {
     return (
       <div>
         <Nav >
-          </Nav>
+        </Nav>
         <Container fluid >
           <Row>
-            <Col size="md-12">
-              <WelcomeDiv />
+            <Col size="md-1" />
+            <Col size="md-2">
               <HowItWorks />
-              <FeaturedArtists />
-              {/* <Carousel /> */}
-              <Footer />
+            </Col>
+            <Col size="md-6">
+              <WelcomeDiv />
+            <FeaturedArtists />
             </ Col>
+            <Col size="md-2">
+              <LoginDashboard />
+            </Col>
+            <Col size="md-1" />
+          </Row>
+          <Row>
+            <Col size="md-12">
+            </Col>
+          </Row>
+          <Row>
+            {/* <Carousel /> */}
           </Row>
         </Container>
+        <Footer />
       </div>
     )
   }
