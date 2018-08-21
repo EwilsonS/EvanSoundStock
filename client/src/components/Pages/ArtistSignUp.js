@@ -41,10 +41,11 @@ export class ArtistSignUp extends Component {
     mediaLink3: "",
     bio: "",
     goal: "",
-    genre:"",
+    genre: "",
     availablePercentage: null,
     totalPrice: null,
-    isDeleted: false
+    isDeleted: false,
+    account: "artist"
 
   };
 
@@ -70,7 +71,8 @@ export class ArtistSignUp extends Component {
       mediaLink1: this.state.mediaLink1,
       mediaLink2: this.state.mediaLink2,
       mediaLink3: this.state.mediaLink3,
-      genre: this.state.genre
+      genre: this.state.genre,
+      account: this.state.account
     })
       .then(res => {
         console.log(res)
@@ -98,7 +100,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.name}
                     onChange={this.handleInputChange}
                     type="text"
-                    className="form-control"
+                    className="form-control rounded-0"
                     aria-describedby="emailHelp"
                     placeholder="Artist Name"
                     name="name"
@@ -109,7 +111,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.email}
                     onChange={this.handleInputChange}
                     type="email"
-                    className="form-control"
+                    className="form-control rounded-0"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     name="email"
@@ -121,7 +123,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.password}
                     onChange={this.handleInputChange}
                     type="password"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Password"
                     name="password"
                   />
@@ -131,7 +133,7 @@ export class ArtistSignUp extends Component {
                   <input
                     onChange={this.handleInputChange}
                     type="password"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Confirm Password"
                     name="confirm"
 
@@ -142,7 +144,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.imageLink}
                     onChange={this.handleInputChange}
                     type="text"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Image URL"
                     name="imageLink"
                   />
@@ -152,7 +154,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.mediaLink1}
                     onChange={this.handleInputChange}
                     type="text"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Media URL"
                     name="mediaLink1"
                   />
@@ -162,7 +164,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.mediaLink2}
                     onChange={this.handleInputChange}
                     type="text"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Media URL"
                     name="mediaLink2"
                   />
@@ -172,7 +174,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.mediaLink3}
                     onChange={this.handleInputChange}
                     type="text"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Media URL"
                     name="mediaLink3"
                   />
@@ -181,7 +183,7 @@ export class ArtistSignUp extends Component {
                   <textarea
                     value={this.state.bio}
                     onChange={this.handleInputChange}
-                    className="form-control"
+                    className="form-control rounded-0"
                     name="bio"
                     cols="50"
                     rows="5"
@@ -192,7 +194,7 @@ export class ArtistSignUp extends Component {
                   <textarea
                     value={this.state.goal}
                     onChange={this.handleInputChange}
-                    className="form-control"
+                    className="form-control rounded-0"
                     name="goal"
                     cols="50"
                     rows="5"
@@ -203,9 +205,9 @@ export class ArtistSignUp extends Component {
                     value={this.state.availablePercentage}
                     onChange={this.handleInputChange}
                     type="number"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Enter percentage 0-100"
-                    name="avilablePercentage"
+                    name="availablePercentage"
                   />
                 </div>
                 <div className="form-group">
@@ -213,7 +215,7 @@ export class ArtistSignUp extends Component {
                     value={this.state.totalPrice}
                     onChange={this.handleInputChange}
                     type="number"
-                    className="form-control"
+                    className="form-control rounded-0"
                     placeholder="Price. (e.g. for $12,000 enter 12000)"
                     name="totalPrice"
                   />
@@ -223,10 +225,12 @@ export class ArtistSignUp extends Component {
                     value={this.state.genre}
                     onChange={this.handleInputChange}
                     type="text"
-                    className="form-control"
-                    placeholder="Pop"
+                    className="form-control rounded-0"
+                    placeholder="Pop, Rap..."
                     name="genre"
                   />
+                </div>
+                <div className="form-group">
                 </div>
                 <br />
                 <button
@@ -240,9 +244,9 @@ export class ArtistSignUp extends Component {
               <br />
             </Col>
             <Col size="md-3 ">
-              <div 
-              className="card mt-3 rounded-0 sticky-top"
-              style={styles.card}  >
+              <div
+                className="card mt-3 rounded-0 sticky-top"
+                style={styles.card}  >
                 <div className="alert alert-dark rounded-0">
                   <h3>
                     <img
@@ -258,9 +262,9 @@ export class ArtistSignUp extends Component {
                   </h3>
                 </div>
                 <div className="card-body">
-                 <p><span style={styles.blueText}>About me: </span>{this.state.bio}</p>
+                  <p><span style={styles.blueText}>About me: </span>{this.state.bio}</p>
                   <p><span style={styles.blueText}>Investment Opprtunity: </span>{this.state.goal}</p>
-                  <span style={styles.blueText}>Media Links:</span> <br/>
+                  <span style={styles.blueText}>Media Links:</span> <br />
                   <a href={this.state.mediaLink1} target="_blank">{this.state.mediaLink1}</a><br />
                   <a href={this.state.mediaLink2} target="_blank">{this.state.mediaLink2}</a><br />
                   <a href={this.state.mediaLink3} target="_blank">{this.state.mediaLink3}</a><br />

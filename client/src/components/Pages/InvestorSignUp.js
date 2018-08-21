@@ -7,7 +7,8 @@ export class InvestorSignUp extends Component {
   state = {
     email: "",
     password: "",
-    name: ""
+    name: "",
+    account: "investor"
   };
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -21,15 +22,16 @@ export class InvestorSignUp extends Component {
     API.saveUser({
       email: this.state.email,
       password: this.state.password,
-      name: this.state.name
+      name: this.state.name,
+      account: this.state.account
     })
-        .then(res => {
-            console.log(res) 
-            this.props.history.push('/')
-        })
-        .catch(err => {
-            console.log(err)
-        })
+      .then(res => {
+        console.log(res)
+        this.props.history.push('/')
+      })
+      .catch(err => {
+        console.log(err)
+      })
   };
 
   render() {
@@ -40,38 +42,37 @@ export class InvestorSignUp extends Component {
           <Row>
             <Col size="2" />
             <Col size="4">
-            <h2 className="text-info m-3">
-              Investor Sign Up
+              <h2 className="text-info m-3">
+                Investor Sign Up
               </h2>
               <form>
                 <input
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   name="email"
-                  className="form-control m-2"
+                  className="form-control rounded-0 m-2"
                   type="text"
                   placeholder="email" />
                 <input
                   value={this.state.password}
                   onChange={this.handleInputChange}
                   name="password"
-                  className="form-control m-2"
+                  className="form-control rounded-0 m-2"
                   type="text"
                   placeholder="password" />
                 <input
                   onChange={this.handleInputChange}
                   name="confirm"
-                  className="form-control m-2"
+                  className="form-control rounded-0 m-2"
                   type="text"
                   placeholder="confirm password" />
                 <input
                   value={this.state.name}
                   onChange={this.handleInputChange}
                   name="name"
-                  className="form-control m-2"
+                  className="form-control rounded-0 m-2"
                   type="text"
                   placeholder="name" />
-
                 <button
                   onClick={this.handleFormSubmit}
                   type="submit"

@@ -6,17 +6,18 @@ const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     default: "",
-    required:true
+    required: true
   },
   email: {
     type: String,
     default: "",
-    required:true
+    required: true,
+    unique: true
   },
   password: {
     type: String,
     default: "",
-    required:true
+    required: true
   },
   mediaLink1: {
     type: String
@@ -38,19 +39,23 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: ""
   },
-  availablePercentage:{
+  availablePercentage: {
     type: Number,
-    default:5
+    default: 5
   },
-  genre:{
+  genre: {
     type: String,
-    default:""
+    default: ""
 
   },
-    totalPrice:{
-      type: Number,
-      default: 0
-    },
+  totalPrice: {
+    type: Number,
+    default: 0
+  },
+  account: {
+    type: String,
+    default: ""
+  },
   isDeleted: {
     type: Boolean,
     default: false

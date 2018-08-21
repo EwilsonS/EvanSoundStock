@@ -28,7 +28,7 @@ class HomeContainer extends Component {
   }
 
   loadArtist = () => {
-    API.getArtists()
+    API.getUsers()
       .then(res => this.setState({ artists: res.data }))
       .catch(err => console.log(err));
   };
