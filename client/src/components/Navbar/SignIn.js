@@ -47,7 +47,7 @@ class SignIn extends Component {
 					{
 					alert(`Oops...Something went wrong`)
 				} else{
-					this.props.history.push(`/api/user/${this.state.verify._id}`)
+					this.props.history.push(`/api/login/${this.state.verify._id}`)
 				}
 			})
 				.catch(err => console.log(err))

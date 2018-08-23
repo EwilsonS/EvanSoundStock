@@ -2,7 +2,9 @@ import React from "react";
 
 const styles = {
   card: {
-    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)"
+    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)",
+    fontSize:"15px"
+
   }
 }
 

@@ -36,30 +36,22 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <Nav >
-        </Nav>
-        <Container fluid >
+        <Nav />
+        
+        <Container  >
           <Row>
-            <Col size="md-1" />
-            <Col size="md-2">
+            <Col size="md-3">
               <HowItWorks />
             </Col>
-            <Col size="md-6">
+            <Col size="md-7">
               <WelcomeDiv />
             <FeaturedArtists />
             </ Col>
             <Col size="md-2">
               <LoginDashboard />
             </Col>
-            <Col size="md-1" />
           </Row>
-          <Row>
-            <Col size="md-12">
-            </Col>
-          </Row>
-          <Row>
-            {/* <Carousel /> */}
-          </Row>
+          
         </Container>
         <Footer />
       </div>

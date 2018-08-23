@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => (
 
-  <div className="row bg-dark text-light my-0 pt-3">
+  <div className="row bg-dark text-light m-0 pt-3">
     <div className="col-md-3 ">
       <a href="http://" className="text-info">Link to somewhere</a><br />
       <a href="http://" className="text-info">Link to somewhere</a><br />

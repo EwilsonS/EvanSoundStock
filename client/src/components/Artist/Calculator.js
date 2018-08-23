@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const styles = {
   calc: {
-    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)"
+    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)",
   }
 }
 

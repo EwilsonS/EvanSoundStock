@@ -1,0 +1,29 @@
+.cardHeader{
+    background-color: white;
+    color: #02183a
+  }
+.cardFooter{
+    background-color: white;
+    color: #237c9a
+  }
+.input{
+    border-color: #237c9a;
+    box-shadow: 0 0  3px rgba(35,124,154, .25);
+    color: white
+  }
+.card{
+    box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
+    border: none
+  }
+.image{
+    border: 7px solid white
+  }
+ .image:hover{
+  border: 7px solid rgba(35,124,154, .25);
+  transition: .25s;
+   
+ } 
+.blueText{
+    color: #02183a;
+    font-weight: bold
+  }

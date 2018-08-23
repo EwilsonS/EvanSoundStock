@@ -58,13 +58,13 @@ export class InvestorSignUp extends Component {
                   onChange={this.handleInputChange}
                   name="password"
                   className="form-control rounded-0 m-2"
-                  type="text"
+                  type="password"
                   placeholder="password" />
                 <input
                   onChange={this.handleInputChange}
                   name="confirm"
                   className="form-control rounded-0 m-2"
-                  type="text"
+                  type="password"
                   placeholder="confirm password" />
                 <input
                   value={this.state.name}

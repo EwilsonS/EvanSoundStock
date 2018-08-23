@@ -13,7 +13,8 @@ const styles = {
     backgroundColor: "#02183a",
   },
   card: {
-    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)"
+    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)",
+    fontSize:"15px"
   },
   dashboard:{
     background:"#237c9a"
@@ -53,8 +54,9 @@ export class LoginDashboard extends Component {
         (!this.state.password)) {
         alert(`Oops...Something went wrong`)
       } else {
-        console.log(this.props)
-        this.context.history.push(`/api/user/login/${this.state.verify._id}`)
+       
+        // console.log(this.props)
+        // window.location.replace(`/api/users/login/`)
       }
     })
       .catch(err => console.log(err))
@@ -123,13 +125,14 @@ export class LoginDashboard extends Component {
         <div
           className="card-header rounded-0"
           style={styles.login}>
-          <span className="text-light h5">Logged in as: {this.state.verify.name}</span>
+          <span className="text-light">Hi {this.state.verify.name}!</span>
         </div>
         <div
           className="card-body"
           style={styles.dashboard}
         >
          <h5 className="text-light ">My Portfolio</h5>
+         
         </div>
       </div>
       )
