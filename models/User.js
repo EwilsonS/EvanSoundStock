@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
-const bcrypt = require("bcrypt");
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 const passportLocalMongoose = require('passport-local-mongoose')
 const UserSchema = new mongoose.Schema({
 
-  name: {
+  firstName: {
     type: String,
     default: "",
-    required: true
+  },
+  lastName: {
+    type: String,
+    default: "",
   },
   email: {
     type: String,
@@ -46,7 +50,6 @@ const UserSchema = new mongoose.Schema({
   genre: {
     type: String,
     default: ""
-
   },
   totalPrice: {
     type: Number,
@@ -56,7 +59,20 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: ""
   },
+  pro: {
+    type: String,
+    default: ""
+  },
+  ipi: {
+    type: String,
+    default:"",
+    unique: true
+  },
   isDeleted: {
+    type: Boolean,
+    default: false
+  },
+  online:{
     type: Boolean,
     default: false
   }
@@ -70,5 +86,5 @@ UserSchema.methods.generateHash = function (password) {
 UserSchema.methods.validPassword = function (password) {
   return bcrypt.compareSync(password, this.password);
 }
-
+ 
 module.exports = mongoose.model("User", UserSchema);

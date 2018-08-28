@@ -58,11 +58,11 @@ class FeaturedArtists extends Component {
 
         <div className="col-md-12 ">
           <br /><br />
-          <p className="h1 text-dark text-center mt-5">Featured Artists</p>
+          <p className="h4 text-dark text-center">Featured Artists</p>
           <br />
 
           <div>
-            {this.state.artists.map(artist => ((artist.name=== "Wilson Wright")||(artist.name=== "Lady Bug")) ? (
+            {this.state.artists.map(artist => (artist.name=== "Wilson Wright") ? (
               <div className="card my-3" key={artist._id} style={styles.card}>
                 <h5 className="card-header text-info"  >{artist.name}
                 </h5>

@@ -1,24 +1,27 @@
 import axios from "axios";
 
 export default {
-  saveUser: function(user) {
+  saveUser: function (user) {
     return axios.post("/api/users", user)
   },
   // Gets the user with the given id
-  getUser: function(id) {
+  getUser: function (id) {
     return axios.get("/api/user/" + id);
   },
-   // Gets all users
-   getUsers: function() {
+  // Gets all users
+  getUsers: function () {
     return axios.get("/api/users");
   },
-  getUsersLogin: function(data) {
+  getUsersLogin: function (data) {
 
     return axios.post("/api/users/login", data);
   },
-  saveUserSession: function(userSession){
-    return axios.post("/api/account/login" )
+  saveUserSession: function (userSession) {
+    return axios.post("/api/account/login")
   },
+  updateUserOnline: function (id) {
+    return axios.put("/api/users/" + id)
+  }
   // // Gets all artists
   // getArtists: function() {
   //   return axios.get("/api/artists");

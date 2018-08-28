@@ -1,5 +1,5 @@
 const db = require("../models");
-
+const bcrypt = require("bcrypt")
 // Defining methods for the UsersController
 module.exports = {
   findAll: function(req, res) {
@@ -24,8 +24,11 @@ module.exports = {
   },
   create: function(req, res) {
     db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
+    .create(req.body)
+    .then(dbModel => {
+        res.json(dbModel) 
+        console.log(`dbModel ${dbModel}`)
+      })
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {

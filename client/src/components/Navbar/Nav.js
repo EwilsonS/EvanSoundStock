@@ -29,8 +29,8 @@ export const Nav = () => (
     <div className="col-md-3"></div>
     <div className="col-md-6">
       <div className="row">
-        <div className="col-md-2">
-          <a className="navbar-brand text-info" href="/">
+        <div className="col-md-3">
+          <a className="navbar-brand text-info float-right" href="/">
           <span className="text-info h4"><strong> <span style={styles.infoDark}>S</span>ound<span style={styles.infoDark}>S</span>tock</strong></span>
           </a>
         </div>
@@ -39,12 +39,12 @@ export const Nav = () => (
             <button className="btn btn-danger text-light btn-sm m-1 rounded-0 ">View All Artists</button>
           </Link>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-5">
 
           <form className="form-inline mr-sm-2 float-right" type="search" placeholder="Search">
-            <span>
-              <input className="form-control h-25 bg-secondary text-light rounded-0" size="20" type="text" style={styles.input2} id="myInput" />
-              <button className="btn btn-sm btn-outline-info bd-highlight rounded-0">Search</button>
+            <span className="float-right">
+              <input className="form-control h-25 bg-secondary text-light rounded-0" type="text" style={styles.input2} id="myInput" />
+              <button className="btn btn-sm btn-outline-info bd-highlight rounded-0 float-right">Search</button>
             </span>
           </form>
         </div>

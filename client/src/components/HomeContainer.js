@@ -43,11 +43,11 @@ class HomeContainer extends Component {
             <Col size="md-3">
               <HowItWorks />
             </Col>
-            <Col size="md-7">
+            <Col size="md-6">
               <WelcomeDiv />
             <FeaturedArtists />
             </ Col>
-            <Col size="md-2">
+            <Col size="md-3">
               <LoginDashboard />
             </Col>
           </Row>

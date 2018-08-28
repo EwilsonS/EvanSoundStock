@@ -17,9 +17,6 @@ router
 // Matches with "/api/users/login"
 
 router
-  .route("/login", passport.authenticate("local"), function(req, res) {
-    console.log(req.body)
-    // res.send("/investorProfile");
-  })
+  .route("/login")
   .post(usersController.findOne)
 module.exports = router;

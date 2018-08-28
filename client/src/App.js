@@ -16,12 +16,32 @@ class App extends Component {
       <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={HomeContainer} />
-          <Route exact path="/artistSignUp" component={ArtistSignUp} />
-          <Route exact path="/investorSignUp" component={InvestorSignUp} />
+          <Route 
+          exact path="/" 
+          component={HomeContainer} 
+          
+          />
+          <Route 
+          exact path="/artistSignUp" 
+          component={ArtistSignUp} 
+          
+          />
+          <Route 
+          exact path="/investorSignUp" 
+          component={InvestorSignUp} 
+          
+          />
           {/* we may need to create separate sign in btns */}
-          <Route exact path="/api/user/:id" component={UserProfile} />
-          <Route exact path="/allArtists" component={AllArtists} />
+          <Route 
+          exact path="/api/user/:id" 
+          component={UserProfile} 
+          
+          />
+          <Route 
+          exact path="/allArtists" 
+          component={AllArtists} 
+          
+          />
 
         </Switch>
       </div>
