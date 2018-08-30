@@ -239,7 +239,7 @@ export class ArtistSignUp extends Component {
                 <br />
                 <button
                   type="button"
-                  className="btn btn-info"
+                  className="btn btn-info rounded-0"
                   data-toggle="modal"
                   data-target="#exampleModalLong">
                   Submit
@@ -281,11 +281,11 @@ export class ArtistSignUp extends Component {
           </Row>
         </Container>
 
-        <div className="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLongTitle">Terms of Service</h5>
+        <div className=" rounded-0 modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div className=" rounded-0 modal-dialog" role="document">
+            <div className=" rounded-0 modal-content">
+              <div className=" rounded-0 modal-header">
+                <h5 className=" rounded-0 modal-title" id="exampleModalLongTitle">Terms of Service</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -295,8 +295,8 @@ export class ArtistSignUp extends Component {
                 </object>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn btn-info" data-dismiss="modal"
+                <button type="button" className="btn btn-sm btn-secondary rounded-0" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn btn-info rounded-0" data-dismiss="modal"
                   onClick={this.handleFormSubmit}
                 >Accept</button>
               </div>

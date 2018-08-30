@@ -5,8 +5,8 @@ const InvestBtn = () => (
     <button
       type="button"
       data-toggle="modal"
-      data-target="#exampleModal"
-      className="btn btn-lg btn-danger right p-3 d-inline bd-highlight float-right"
+      // data-target="#exampleModal"
+      className=" rounded-0 btn btn-lg btn-danger right p-3 d-inline bd-highlight float-right"
     >
       Add to Portfolio
     </button>

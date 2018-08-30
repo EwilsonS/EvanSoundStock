@@ -20,10 +20,10 @@ const styles = {
 };
 
 const CardDiv = (props) => (
-  <div className="card my-3" style={styles.card}>
-    <h5 className="card-header"  >Featured: {props.name}
+  <div className="card my-3 rounded-0" style={styles.card}>
+    <h5 className="card-header rounded-0"  >Featured: {props.name}
     </h5>
-    <div className="card-body">
+    <div className="card-body rounded-0">
       <div className="">
         <div className="">
           <Image  img={props.img}/>
