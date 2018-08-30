@@ -8,6 +8,8 @@ import InvestorSignUp from "./components/Pages/InvestorSignUp"
 // import ArtistProfile from "./components/Pages/ArtistProfile"
 import UserProfile from "./components/Pages/UserProfile"
 import { AllArtists } from "./components/Pages/AllArtists";
+// import { LoginDashboard } from "./components/Artist/LoginDashboard";
+
 
 
 class App extends Component {
@@ -19,28 +21,23 @@ class App extends Component {
           <Route 
           exact path="/" 
           component={HomeContainer} 
-          
           />
           <Route 
           exact path="/artistSignUp" 
           component={ArtistSignUp} 
-          
           />
           <Route 
           exact path="/investorSignUp" 
           component={InvestorSignUp} 
-          
           />
           {/* we may need to create separate sign in btns */}
           <Route 
-          exact path="/api/user/:id" 
+          exact path="/api/user/:id"
           component={UserProfile} 
-          
           />
           <Route 
           exact path="/allArtists" 
-          component={AllArtists} 
-          
+          component={AllArtists}
           />
 
         </Switch>

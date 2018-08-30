@@ -3,7 +3,8 @@ const usersController = require("../../controllers/usersController");
 var passport = require("../../config/passport");
 
 // Matches with "/api/users"
-router.route("/")
+router
+  .route("/")
   .get(usersController.findAll)
   .post(usersController.create);
 
@@ -14,8 +15,11 @@ router
   .put(usersController.update)
   .delete(usersController.remove);
 
-// Matches with "/api/users/login"
+  router
+  .route("/logout/:id")
+  .put(usersController.updateOffline)
 
+// Matches with "/api/users/login"
 router
   .route("/login")
   .post(usersController.findOne)

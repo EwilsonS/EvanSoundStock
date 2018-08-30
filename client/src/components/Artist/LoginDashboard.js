@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { withRouter } from "react-router-dom";
 import SignUp from "../Navbar/SignUp";
+import { withRouter } from "react-router-dom";
 
 const styles = {
   dropdown: {
@@ -26,8 +26,11 @@ export class LoginDashboard extends Component {
     verify: [],
     email: "",
     password: "",
-    online: false
+    online: false,
+    id: ""
   }
+
+
 
   // handle any changes to the input fields
   handleInputChange = event => {
@@ -38,46 +41,75 @@ export class LoginDashboard extends Component {
     });
   };
 
+  // using local storage to set state
+  componentDidMount = () => {
+    // console.log(localStorage.getItem("id"))
+    if (localStorage.getItem("id") !== null) {
+      this.setState({
+        // online: localStorage.getItem("online"),
+        online: localStorage.getItem("online"),
+        id: localStorage.getItem("id"),
+        email: localStorage.getItem("email")
+      })
+      console.log(this.state)
+    }
+    return
+  }
+
+
   logout = event => {
     event.preventDefault()
-    API.updateUserOnline(this.state.verify._id)
-    .then(res =>{
-      this.setState({online:false})
-    })
+    API.updateUserOffline(localStorage.getItem("id"))
+      .then(() => {
+        this.setState({
+          online: false,
+          id: "",
+          email: ""
+        })
+      }).then(() => {
+        localStorage.removeItem("online")
+        localStorage.removeItem("id")
+        localStorage.removeItem("email")
+
+      }).then(res => {
+        console.log("online? " + this.state.verify.online)
+
+      })
   }
+
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // if (!this.state.email || !this.state.password) {
-    // 	alert("Please don't leave any fields blank")
-    // }
+
     API.getUsersLogin({
       email: this.state.email,
       password: this.state.password
     }).then(res => {
       this.setState({ verify: res.data })
-      console.log(res.config)
-      // console.log(res.status);
-      // console.log(res.statusText);
-      // console.log(res.headers);
-      // console.log(res.config);
-      if ((this.state.verify.email !== this.state.email) ||
+      console.log(res)
+    }).then(() => {
+      // check email and password to get user info
+      if (
+        (this.state.verify.email !== this.state.email) ||
         (this.state.verify.password !== this.state.password) ||
         (!this.state.email) ||
         (!this.state.password)) {
         alert(`Oops...Something went wrong`)
       } else {
         API.updateUserOnline(this.state.verify._id)
-        .then(res =>{
-          this.setState({online:true})
-        })
-        // console.log(this.props)
-        // window.location.replace(`/api/users/login/`)
       }
-    })
-      .catch(err => console.log(err))
-
+    }).then(() => {
+      // set local storage
+      localStorage.setItem("id", this.state.verify._id)
+      localStorage.setItem("email", this.state.verify.email)
+      localStorage.setItem("online", this.state.verify.online)
+      this.setState({ online: true })
+    }).then(() => {
+      console.log("online? " + this.state.verify.online)
+      console.log(window.location.href)
+    }).catch(err => console.log(err))
   };
+
   render() {
     if (this.state.online === false) {
       return (
@@ -141,10 +173,10 @@ export class LoginDashboard extends Component {
           <div
             className="card-header rounded-0"
             style={styles.login}>
-            <span className="text-light">Hi {this.state.verify.name}!</span>
-            <button 
-            className="btn btn-sm btn-info float-right rounded-0" 
-            onClick={this.logout} 
+            <span className="text-light">Hi {this.state.email}!</span>
+            <button
+              className="btn btn-sm btn-info float-right rounded-0"
+              onClick={this.logout}
             >Logout
             </button>
           </div>

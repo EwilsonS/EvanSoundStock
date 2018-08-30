@@ -21,7 +21,11 @@ export default {
   },
   updateUserOnline: function (id) {
     return axios.put("/api/users/" + id)
+  },
+  updateUserOffline: function (id) {
+    return axios.put("/api/users/logout/" + id)
   }
+  // logout:
   // // Gets all artists
   // getArtists: function() {
   //   return axios.get("/api/artists");

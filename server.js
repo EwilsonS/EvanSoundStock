@@ -27,9 +27,18 @@ app.use(cookieParser())
 // app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'keyboard-cat',
-  resave: false,
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: true,
+  cookie: {secure:false}
 }));
+
+// Access the session as req.session
+app.get('/api/users/:id', function(req, res, next) {
+  var sessData = req.session;
+  sessData.online = true;
+  res.send('Returning with some text');
+  console.log(`Session on server: ${req.session}`)
+});
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
