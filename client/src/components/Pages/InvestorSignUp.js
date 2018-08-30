@@ -47,6 +47,13 @@ export class InvestorSignUp extends Component {
               </h2>
               <form>
                 <input
+                  value={this.state.name}
+                  onChange={this.handleInputChange}
+                  name="name"
+                  className="form-control rounded-0 m-2"
+                  type="text"
+                  placeholder="name" />
+                <input
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   name="email"
@@ -66,17 +73,11 @@ export class InvestorSignUp extends Component {
                   className="form-control rounded-0 m-2"
                   type="password"
                   placeholder="confirm password" />
-                <input
-                  value={this.state.name}
-                  onChange={this.handleInputChange}
-                  name="name"
-                  className="form-control rounded-0 m-2"
-                  type="text"
-                  placeholder="name" />
+
                 <button
                   onClick={this.handleFormSubmit}
                   type="submit"
-                  className="btn btn-info ml-2">Submit
+                  className="btn btn-info ml-2 rounded-0">Submit
                 </button>
               </form>
             </Col>
