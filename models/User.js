@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: "",
     required: true,
-    unique: true
+    // unique: true
   },
   password: {
     type: String,
@@ -70,7 +70,7 @@ const UserSchema = new mongoose.Schema({
   ipi: {
     type: String,
     default:"",
-    unique: true
+    // unique: true
   },
   isDeleted: {
     type: Boolean,
@@ -82,7 +82,7 @@ const UserSchema = new mongoose.Schema({
   },
   artists:{
     type: Array,
-    unique:true
+    // unique:true
 
   } 
 });
