@@ -27,10 +27,10 @@ export class LoginDashboard extends Component {
     email: "",
     password: "",
     online: false,
-    id: ""
+    id: "",
+    valid: true,
+    artistImage:[]
   }
-
-
 
   // handle any changes to the input fields
   handleInputChange = event => {
@@ -49,13 +49,18 @@ export class LoginDashboard extends Component {
         // online: localStorage.getItem("online"),
         online: localStorage.getItem("online"),
         id: localStorage.getItem("id"),
-        email: localStorage.getItem("email")
+        email: localStorage.getItem("email"),
+        // artistImage: localStorage.getItem("artistImage")        
       })
-      console.log(this.state)
+        
+    }else{
+      this.setState({
+        online: false,
+        id: "",
+        email: ""
+      })
     }
-    return
   }
-
 
   logout = event => {
     event.preventDefault()
@@ -77,8 +82,17 @@ export class LoginDashboard extends Component {
       })
   }
 
+  viewPortfolio =(e)=>{
+    e.preventDefault()
+    API.getUser(localStorage.getItem("id"))
+    .then(res => {
+      console.log(res.data.artists)
+      this.setState({artistImage:res.data.artists})
+      console.log(this.state.artistImage)
+    })
+  }
 
-  handleFormSubmit = event => {
+  login = event => {
     event.preventDefault();
 
     API.getUsersLogin({
@@ -95,15 +109,21 @@ export class LoginDashboard extends Component {
         (!this.state.email) ||
         (!this.state.password)) {
         alert(`Oops...Something went wrong`)
-      } else {
+        this.setState({valid:false})
+        window.location.reload("/")
+      } else{
         API.updateUserOnline(this.state.verify._id)
       }
+      
     }).then(() => {
       // set local storage
+      if(this.state.valid===true){
       localStorage.setItem("id", this.state.verify._id)
       localStorage.setItem("email", this.state.verify.email)
       localStorage.setItem("online", this.state.verify.online)
       this.setState({ online: true })
+      }
+      return console.log("invalid login")
     }).then(() => {
       console.log("online? " + this.state.verify.online)
       console.log(window.location.href)
@@ -149,7 +169,7 @@ export class LoginDashboard extends Component {
                 <div className="col-md-3">
                   {/* <Link to="/"> */}
                   <button className="rounded-0 btn btn-sm btn-outline-info m-1 p-1"
-                    onClick={this.handleFormSubmit}
+                    onClick={this.login}
                     type="submit"
                     value="Log In"
                   >Sign In</button>
@@ -184,7 +204,19 @@ export class LoginDashboard extends Component {
             className="card-body"
             style={styles.dashboard}
           >
-            <h5 className="text-light ">My Portfolio</h5>
+            <h5 className="text-light ">My Portfolio
+            <button
+            className="btn btn-sm btn-info rounded-0 float-right"
+            onClick={this.viewPortfolio}
+            >view</button>
+            </h5>
+            <br/>
+            {this.state.artistImage.map(img => img ?(
+            <img className="rounded-circle m-2" src={img} height="50px" alt=""/>
+            ):(null)
+            )}
+            
+             
 
           </div>
         </div>

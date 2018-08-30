@@ -18,7 +18,8 @@ class MiniCard extends Component {
     goal: "",
     availablePercentage: null,
     totalPrice: null,
-    _id: ""
+    _id: "",
+    image:""
   };
 
   componentDidMount() {
@@ -31,8 +32,26 @@ class MiniCard extends Component {
         this.setState({
           artists: res.data
         }))
+      .then(() => {
+
+      })
       .catch(err => console.log(err));
   };
+  addToPortfolio = (id, image) => {
+    if (localStorage.getItem("id") !== null) {
+      console.log(id, image)
+      localStorage.setItem("artistImage", image)
+      localStorage.setItem("artistId", id)
+      API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistImage"))
+        .then((res) => {
+          // console.log(res.data.artists)
+          // console.log(localStorage.getItem("artistImage"))
+        })
+
+      // window.location.reload()
+    }
+
+  }
 
   render() {
     return (
@@ -54,7 +73,11 @@ class MiniCard extends Component {
                   src={artist.imageLink}
                 // style={styles.image}
                 />
-                <button className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight  float-right rounded-0"><small>Add to portfolio</small></button>
+                <button
+                  className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight  float-right rounded-0"
+                  value={artist._id}
+                  onClick={() => this.addToPortfolio(artist._id, artist.imageLink)}
+                ><small>Add to portfolio</small></button>
                 <br />
                 <span className="m-2 blueText"
                 // style={styles.blueText}

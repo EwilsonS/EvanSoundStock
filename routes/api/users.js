@@ -16,6 +16,11 @@ router
   .delete(usersController.remove);
 
   router
+  .route("/addArtist/:id")
+  .put(usersController.updateArray)
+
+
+  router
   .route("/logout/:id")
   .put(usersController.updateOffline)
 

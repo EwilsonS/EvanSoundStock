@@ -6,7 +6,7 @@ export default {
   },
   // Gets the user with the given id
   getUser: function (id) {
-    return axios.get("/api/user/" + id);
+    return axios.get("/api/users/" + id);
   },
   // Gets all users
   getUsers: function () {
@@ -21,6 +21,9 @@ export default {
   },
   updateUserOnline: function (id) {
     return axios.put("/api/users/" + id)
+  },
+  updateUserArtist: function (id, data) {
+    return axios.put("/api/users/addArtist/" + id, data)
   },
   updateUserOffline: function (id) {
     return axios.put("/api/users/logout/" + id)

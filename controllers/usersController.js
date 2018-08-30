@@ -14,10 +14,10 @@ module.exports = {
     db.User
       .findOne({
         email: req.body.email
-      }, function(err, user){
-        if(user){
-        req.session.user= user
-        console.log("find one: " + user._id)
+      }, function (err, user) {
+        if (user) {
+          req.session.user = user
+          console.log("find one: " + user._id)
         }
       })
       .sort({ date: -1 })
@@ -25,7 +25,7 @@ module.exports = {
 
         res.json(dbModel)
       })
-     
+
       .catch(err => res.status(422).json(err));
   },
   findById: function (req, res) {
@@ -46,9 +46,11 @@ module.exports = {
   },
 
   update: function (req, res) {
+    // console.log(req.session)
     db.User
       .findOneAndUpdate(
         { _id: req.params.id }, { $set: { online: true } })
+      // .populate("artist")
       .then(dbModel => {
         res.json(dbModel)
       })
@@ -59,16 +61,31 @@ module.exports = {
   },
   updateOffline: function (req, res) {
     // console.log("offline: "+ req.session.user._id)
-
     db.User
       .findOneAndUpdate(
-        { _id: req.params.id}, { $set: { online: false } })
+        { _id: req.params.id }, { $set: { online: false } })
       .then(dbModel => {
 
         res.json(dbModel)
       })
       .catch(err => res.status(422).json(err));
   },
+
+  updateArray: function (req, res) {
+    // console.log("offline: "+ req.session.user._id)
+    console.log(Object.keys(req.body))
+    
+    
+    db.User
+      .findOneAndUpdate(
+        { _id: req.params.id }, { $push: { artists: Object.keys(req.body) }})
+      .then(dbModel => {
+
+        res.json(dbModel)
+      })
+      .catch(err => res.status(422).json(err));
+  },
+
 
   remove: function (req, res) {
     db.User

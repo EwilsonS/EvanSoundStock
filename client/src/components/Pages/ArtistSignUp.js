@@ -45,7 +45,9 @@ export class ArtistSignUp extends Component {
     availablePercentage: null,
     totalPrice: null,
     isDeleted: false,
-    account: "artist"
+    account: "artist",
+    pro:"",
+    ipi:""
 
   };
 
@@ -73,6 +75,8 @@ export class ArtistSignUp extends Component {
       mediaLink3: this.state.mediaLink3,
       genre: this.state.genre,
       account: this.state.account
+
+
     })
       .then(res => {
         console.log(res)
@@ -206,7 +210,7 @@ export class ArtistSignUp extends Component {
                     onChange={this.handleInputChange}
                     type="number"
                     className="form-control rounded-0"
-                    placeholder="Enter percentage 0-100"
+                    placeholder="Enter percentage to share 0-100"
                     name="availablePercentage"
                   />
                 </div>

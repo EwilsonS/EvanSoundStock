@@ -4,11 +4,15 @@ const saltRounds = 10;
 const passportLocalMongoose = require('passport-local-mongoose')
 const UserSchema = new mongoose.Schema({
 
-  firstName: {
-    type: String,
-    default: "",
-  },
-  lastName: {
+  // firstName: {
+  //   type: String,
+  //   default: "",
+  // },
+  // lastName: {
+  //   type: String,
+  //   default: "",
+  // },
+  name: {
     type: String,
     default: "",
   },
@@ -75,7 +79,12 @@ const UserSchema = new mongoose.Schema({
   online:{
     type: Boolean,
     default: false
-  }
+  },
+  artists:{
+    type: Array,
+    unique:true
+
+  } 
 });
 UserSchema.plugin(passportLocalMongoose)
 
