@@ -1,0 +1,22 @@
+.image2{
+  border: 3px solid rgba(255, 255, 255, 0.514);
+  transition: .25s
+}
+.image2:hover{
+border: 3px solid rgba(3, 33, 43, 0.411);
+}
+.dropdown {
+  background-color: #02183a;
+  z-index: 20000000;
+  padding: 20%
+}
+.login{
+  background-color: #02183a;
+}
+.card{
+  box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
+  font-size: 15px
+}
+.dashboard{
+  background: #237c9a
+}

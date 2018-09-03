@@ -2,24 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import SignUp from "../Navbar/SignUp";
 import { withRouter } from "react-router-dom";
-
-const styles = {
-  dropdown: {
-    backgroundColor: "#02183a",
-    zIndex: 20000000,
-    padding: "20%"
-  },
-  login: {
-    backgroundColor: "#02183a",
-  },
-  card: {
-    boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)",
-    fontSize: "15px"
-  },
-  dashboard: {
-    background: "#237c9a"
-  }
-}
+import "./loginDashboard.css"
 
 export class LoginDashboard extends Component {
   state = {
@@ -28,14 +11,15 @@ export class LoginDashboard extends Component {
     password: "",
     online: false,
     id: "",
-    valid: true,
-    artistImage:[]
+    valid: true, //Changes in db also
+    artistImage:[],
+    key: ""
   }
 
   // handle any changes to the input fields
-  handleInputChange = event => {
-    // Pull the name and value properties off of the event.target (the element which triggered the event)
-    const { name, value } = event.target;
+  handleInputChange = e => {
+    // Pull the name and value properties off of the e.target (the element which triggered the event)
+    const { name, value } = e.target;
     this.setState({
       [name]: value
     });
@@ -46,13 +30,12 @@ export class LoginDashboard extends Component {
     // console.log(localStorage.getItem("id"))
     if (localStorage.getItem("id") !== null) {
       this.setState({
-        // online: localStorage.getItem("online"),
         online: localStorage.getItem("online"),
         id: localStorage.getItem("id"),
         email: localStorage.getItem("email"),
-        // artistImage: localStorage.getItem("artistImage")        
+        key: localStorage.getItem("artistId")
       })
-        
+      this.viewPortfolio()
     }else{
       this.setState({
         online: false,
@@ -62,33 +45,31 @@ export class LoginDashboard extends Component {
     }
   }
 
-  logout = event => {
-    event.preventDefault()
+  componentDidUpdate = () => {
+    // this.viewPortfolio()
+  }
+
+  logout = e => {
+    e.preventDefault()
     API.updateUserOffline(localStorage.getItem("id"))
       .then(() => {
         this.setState({
           online: false,
           id: "",
-          email: ""
+          email: "",
+          verify: [],
+          artistImage:[]
         })
       }).then(() => {
-        localStorage.removeItem("online")
-        localStorage.removeItem("id")
-        localStorage.removeItem("email")
-
-      }).then(res => {
-        console.log("online? " + this.state.verify.online)
-
+        localStorage.clear()
       })
   }
 
   viewPortfolio =(e)=>{
-    e.preventDefault()
+    // e.preventDefault()
     API.getUser(localStorage.getItem("id"))
     .then(res => {
-      console.log(res.data.artists)
       this.setState({artistImage:res.data.artists})
-      console.log(this.state.artistImage)
     })
   }
 
@@ -100,7 +81,6 @@ export class LoginDashboard extends Component {
       password: this.state.password
     }).then(res => {
       this.setState({ verify: res.data })
-      console.log(res)
     }).then(() => {
       // check email and password to get user info
       if (
@@ -135,15 +115,14 @@ export class LoginDashboard extends Component {
       return (
         <div
           className="card mt-3 sticky-top rounded-0"
-          style={styles.card}>
+          >
           <div
-            className="card-header rounded-0"
-            style={styles.login}>
+            className="card-header rounded-0 login"
+            >
             <span className="text-light h6">Login</span>
           </div>
           <div
-            className="card-body"
-            style={styles.login}
+            className="card-body login"
           >
             <div className="" >
               <label className="text-light mb-0">Email
@@ -167,18 +146,16 @@ export class LoginDashboard extends Component {
               />
               <div className="row mt-2">
                 <div className="col-md-3">
-                  {/* <Link to="/"> */}
-                  <button className="rounded-0 btn btn-sm btn-outline-info m-1 p-1"
+                  <button className="rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
                     onClick={this.login}
                     type="submit"
                     value="Log In"
                   >Sign In</button>
                 </div>
-                <div className="col-md-6">
-                  {/* </Link> */}
+                <div className="col-md-3">
                   <SignUp />
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-6">
                 </div>
               </div>
             </div>
@@ -189,10 +166,10 @@ export class LoginDashboard extends Component {
       return (
         <div
           className="card mt-3 sticky-top rounded-0"
-          style={styles.card}>
+          >
           <div
-            className="card-header rounded-0"
-            style={styles.login}>
+            className="card-header rounded-0 login"
+            >
             <span className="text-light">Hi {this.state.email}!</span>
             <button
               className="btn btn-sm btn-info float-right rounded-0"
@@ -201,23 +178,30 @@ export class LoginDashboard extends Component {
             </button>
           </div>
           <div
-            className="card-body"
-            style={styles.dashboard}
+            className="card-body dashboard"
           >
-            <h5 className="text-light ">My Portfolio
+            <h5 
+            className="text-light"
+            onChange={this.viewPortfolio}
+
+            >My Portfolio
             <button
             className="btn btn-sm btn-info rounded-0 float-right"
             onClick={this.viewPortfolio}
+            
             >view</button>
             </h5>
             <br/>
             {this.state.artistImage.map(img => img ?(
-            <img className="rounded-circle m-2" src={img} height="50px" alt=""/>
+            <img 
+            className="rounded-circle m-2 image2" 
+            src={img} 
+            height="50px" 
+            alt=""
+            key={this.state.key}
+            />
             ):(null)
             )}
-            
-             
-
           </div>
         </div>
       )

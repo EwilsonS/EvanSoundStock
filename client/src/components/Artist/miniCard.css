@@ -16,11 +16,11 @@
     border: none
   }
 .image{
-    border: 7px solid white
+    border: 7px solid white;
+    transition: .4s;
   }
- .image:hover{
+  .image:hover{
   border: 7px solid rgba(35,124,154, .25);
-  transition: .25s;
    
  } 
 .blueText{

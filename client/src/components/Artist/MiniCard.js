@@ -19,7 +19,8 @@ class MiniCard extends Component {
     availablePercentage: null,
     totalPrice: null,
     _id: "",
-    image:""
+    image: "",
+    key:""
   };
 
   componentDidMount() {
@@ -33,16 +34,32 @@ class MiniCard extends Component {
           artists: res.data
         }))
       .then(() => {
-
       })
       .catch(err => console.log(err));
   };
-  addToPortfolio = (id, image) => {
+
+  addToPortfolio = (artistId, image) => {
+    // if logged in
     if (localStorage.getItem("id") !== null) {
-      console.log(id, image)
-      localStorage.setItem("artistImage", image)
-      localStorage.setItem("artistId", id)
-      API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistImage"))
+      // get the user's artists array from db
+      API.getUser(localStorage.getItem("id"))
+      .then(res=>{
+        console.log(res.data.artists)
+        console.log(`"${image}"`)
+        // if not exists set local storage.
+        for( let i = 0; i < res.data.artists.length; i++){
+          console.log(res.data.artists[i])
+          if(res.data.artists[i] === image){
+
+            return console.log("Already in db")
+
+          } else {
+            localStorage.setItem("artistImage", image)
+            localStorage.setItem("artistId", artistId)
+          }
+        }
+        API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistImage"))
+      })
         .then((res) => {
           // console.log(res.data.artists)
           // console.log(localStorage.getItem("artistImage"))
@@ -58,10 +75,9 @@ class MiniCard extends Component {
       <div className="card-columns">
         {this.state.artists.map(artist => artist.imageLink ? (
           <div className="card mt-2 rounded-0"
-          // style={styles.card}
+          key={artist._id}
           >
             <div className="cardHeader"
-            // style={styles.cardHeader}
             >
               {/* on hover do alert-info */}
               <h5 className="alert alert-dark rounded-0">
@@ -71,7 +87,6 @@ class MiniCard extends Component {
                   height="125px"
                   width="125px"
                   src={artist.imageLink}
-                // style={styles.image}
                 />
                 <button
                   className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight  float-right rounded-0"
@@ -80,23 +95,19 @@ class MiniCard extends Component {
                 ><small>Add to portfolio</small></button>
                 <br />
                 <span className="m-2 blueText"
-                // style={styles.blueText}
                 >{artist.name}</span>
 
               </h5>
             </div>
             <div className="card-body"><small>
               <p><span className="blueText"
-              // style={styles.blueText}
               >About me:</span> {artist.bio}</p>
               <p><span className="blueText"
-              // style={styles.blueText}
               >Investment Opprtunity:</span> {artist.goal} <br />
                 I am offering a total of <strong>{this.state.availablePercentage} %</strong> for <strong>{this.state.totalPrice}.</strong>
 
               </p>
               <span className="blueText"
-              // style={styles.blueText}
               >Media Links: </span><br />
               <a href={artist.mediaLink1} target="_blank">{artist.mediaLink1}</a><br />
               <a href={artist.mediaLink2} target="_blank">{artist.mediaLink2}</a><br />
@@ -104,7 +115,6 @@ class MiniCard extends Component {
             </small>
             </div>
             <div className="cardFooter"
-            // style={styles.cardFooter}
             >
             </div>
           </div>
