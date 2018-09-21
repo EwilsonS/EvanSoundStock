@@ -34,6 +34,7 @@ export class ArtistSignUp extends Component {
   state = {
     email: "",
     password: "",
+    confirm: "",
     name: "",
     imageLink: "",
     mediaLink1: "",
@@ -60,6 +61,10 @@ export class ArtistSignUp extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+
+    if(this.state.password !== this.state.confirm){
+      return;
+    } 
     API.saveUser({
       email: this.state.email,
       password: this.state.password,
@@ -233,7 +238,18 @@ export class ArtistSignUp extends Component {
                     placeholder="Pop, Rap..."
                     name="genre"
                   />
+                  
                 </div>
+                <div className="form-group">
+                  <input
+                    value={this.state.genre}
+                    onChange={this.handleInputChange}
+                    type="text"
+                    className="form-control rounded-0"
+                    placeholder="Ascap, BMI, Sesac"
+                    name="pro"
+                  />
+                  </div>
                 <div className="form-group">
                 </div>
                 <br />

@@ -33,6 +33,9 @@
    animation-direction: alternate;
    animation-play-state: running;
 }
+.nav-title{
+  float: right
+};
 
 @keyframes flash {
    from {color: #027384;}
@@ -42,4 +45,18 @@
 @keyframes flash2 {
   from {color:#5bc0de;}
   to {color: #027384;}
+}
+
+@media (max-width: 1600px){
+  #search{
+    display: none;
+  }
+  .nav-title{
+    float: left;
+  }
+}
+@media (max-width: 1150px){
+.tr{
+  display: table-row;
+}
 }

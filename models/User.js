@@ -82,7 +82,7 @@ const UserSchema = new mongoose.Schema({
   },
   artists:{
     type: Array,
-    unique:true
+    // unique:true
 
   } 
 });
