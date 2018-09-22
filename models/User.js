@@ -81,7 +81,7 @@ const UserSchema = new mongoose.Schema({
     default: false
   },
   artists:{
-    type: Array,
+    type: Array
     // unique:true
 
   } 

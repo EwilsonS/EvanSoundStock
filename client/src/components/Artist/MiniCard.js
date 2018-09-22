@@ -44,20 +44,20 @@ class MiniCard extends Component {
       // get the user's artists array from db
       API.getUser(localStorage.getItem("id"))
       .then(res=>{
-        console.log(res.data.artists)
+        console.log(res.data)
         console.log(`"${image}"`)
         // if not exists set local storage.
-        for( let i = 0; i < res.data.artists.length; i++){
-          console.log(res.data.artists[i])
-          if(res.data.artists[i] === image){
+        // for( let i = 0; i < res.data.artists.length; i++){
+        //   console.log(res.data.artists[i])
+        //   if(res.data.artists[i] === image){
 
-            return console.log("Already in db")
+        //     return console.log("Already in db")
 
-          } else {
+          // } else {
             localStorage.setItem("artistImage", image)
             localStorage.setItem("artistId", artistId)
-          }
-        }
+          // }
+        // }
         API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistImage"))
       })
         .then((res) => {
@@ -104,7 +104,7 @@ class MiniCard extends Component {
               >About me:</span> {artist.bio}</p>
               <p><span className="blueText"
               >Investment Opprtunity:</span> {artist.goal} <br />
-                I am offering a total of <strong>{this.state.availablePercentage} %</strong> for <strong>{this.state.totalPrice}.</strong>
+                I am offering a total of <strong>{artist.availablePercentage} %</strong> for <strong>${artist.totalPrice}.</strong>
 
               </p>
               <span className="blueText"

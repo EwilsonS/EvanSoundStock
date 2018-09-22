@@ -74,11 +74,13 @@ module.exports = {
   updateArray: function (req, res) {
     // console.log("offline: "+ req.session.user._id)
     console.log(Object.keys(req.body))
+    // console.log(req)
     
+    console.log(req.params.id)
     
     db.User
       .findOneAndUpdate(
-        { _id: req.params.id }, { $push: { artists: Object.keys(req.body) }})
+        { _id: req.params.id },{ $push: { artists: Object.keys(req.body) }})
       .then(dbModel => {
 
         res.json(dbModel)

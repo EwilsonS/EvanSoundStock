@@ -63,7 +63,7 @@ export class ArtistSignUp extends Component {
     event.preventDefault();
 
     if(this.state.password !== this.state.confirm){
-      return;
+      return alert("Passwords must match");
     } 
     API.saveUser({
       email: this.state.email,
@@ -207,9 +207,10 @@ export class ArtistSignUp extends Component {
                     name="goal"
                     cols="50"
                     rows="5"
-                    placeholder="Description of product (i.e. My song 'on the run' is available to you)" />
+                    placeholder="Description of offer (i.e. My song 'on the run' is available to you)" />
                 </div>
                 <div className="form-group">
+                <label className="text-secondary">Available Percentage</label>
                   <input
                     value={this.state.availablePercentage}
                     onChange={this.handleInputChange}
@@ -220,36 +221,51 @@ export class ArtistSignUp extends Component {
                   />
                 </div>
                 <div className="form-group">
+                <label className="text-secondary">Total Price<small>(for $12,500 enter 12500)</small> </label>
                   <input
                     value={this.state.totalPrice}
                     onChange={this.handleInputChange}
                     type="number"
                     className="form-control rounded-0"
-                    placeholder="Price. (e.g. for $12,000 enter 12000)"
                     name="totalPrice"
                   />
                 </div>
                 <div className="form-group">
+                <label className="text-secondary">Genre</label>
                   <input
                     value={this.state.genre}
                     onChange={this.handleInputChange}
                     type="text"
                     className="form-control rounded-0"
-                    placeholder="Pop, Rap..."
                     name="genre"
-                  />
-                  
+                  />                  
                 </div>
                 <div className="form-group">
+                <label className="text-secondary">Performance Rights Organization</label>
+                <select 
+                  name="pro" 
+                  id=""
+                  onChange={this.handleInputChange}
+                  type="text"
+                  className="form-control rounded-0"
+                  >
+                  <option value={this.state.pro}>None</option>
+                  <option valuae={this.state.pro}>Ascap</option>
+                  <option valuae={this.state.pro}>BMI</option>
+                  <option valuae={this.state.pro}>Sesac</option>
+                  <option valuae={this.state.pro}>Other</option>
+                  </select>
+                  </div>
+                  <div className="form-group">
+                  <label className="text-secondary">IPI <small>(If applicable)</small></label>
                   <input
-                    value={this.state.genre}
+                    value={this.state.ipi}
                     onChange={this.handleInputChange}
                     type="text"
                     className="form-control rounded-0"
-                    placeholder="Ascap, BMI, Sesac"
-                    name="pro"
+                    name="ipi"
                   />
-                  </div>
+                </div>
                 <div className="form-group">
                 </div>
                 <br />
