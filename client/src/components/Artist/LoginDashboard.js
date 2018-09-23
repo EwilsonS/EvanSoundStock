@@ -105,6 +105,7 @@ export class LoginDashboard extends Component {
       }
       return console.log("invalid login")
     }).then(() => {
+      this.viewPortfolio()
       console.log("online? " + this.state.verify.online)
       console.log(window.location.href)
     }).catch(err => console.log(err))

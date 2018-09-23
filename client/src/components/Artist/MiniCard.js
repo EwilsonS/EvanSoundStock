@@ -20,7 +20,7 @@ class MiniCard extends Component {
     totalPrice: null,
     _id: "",
     image: "",
-    key:""
+    key: ""
   };
 
   componentDidMount() {
@@ -43,23 +43,21 @@ class MiniCard extends Component {
     if (localStorage.getItem("id") !== null) {
       // get the user's artists array from db
       API.getUser(localStorage.getItem("id"))
-      .then(res=>{
-        console.log(res.data)
-        console.log(`"${image}"`)
-        // if not exists set local storage.
-        // for( let i = 0; i < res.data.artists.length; i++){
-        //   console.log(res.data.artists[i])
-        //   if(res.data.artists[i] === image){
-
-        //     return console.log("Already in db")
-
+        .then(res => {
+          console.log(res.data)
+          console.log(`"${image}"`)
+          // if not exists set local storage.
+          // for( let i = 0; i < res.data.artists.length; i++){
+          //   console.log(res.data.artists[i])
+          //   if(res.data.artists[i] === image){
+          //     return console.log("Already in db")
           // } else {
-            localStorage.setItem("artistImage", image)
-            localStorage.setItem("artistId", artistId)
+          localStorage.setItem("artistImage", image)
+          localStorage.setItem("artistId", artistId)
           // }
-        // }
-        API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistImage"))
-      })
+          // }
+          API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistImage"))
+        })
         .then((res) => {
           // console.log(res.data.artists)
           // console.log(localStorage.getItem("artistImage"))
@@ -67,7 +65,10 @@ class MiniCard extends Component {
 
       // window.location.reload()
     }
+    else {
 
+      alert("You must be logged in to access this feature")
+    }
   }
 
   render() {
@@ -75,7 +76,7 @@ class MiniCard extends Component {
       <div className="card-columns">
         {this.state.artists.map(artist => artist.imageLink ? (
           <div className="card mt-2 rounded-0"
-          key={artist._id}
+            key={artist._id}
           >
             <div className="cardHeader"
             >
