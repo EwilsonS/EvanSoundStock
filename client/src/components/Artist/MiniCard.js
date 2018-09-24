@@ -56,7 +56,7 @@ class MiniCard extends Component {
           localStorage.setItem("artistId", artistId)
           // }
           // }
-          API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistImage"))
+          API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
         })
         .then((res) => {
           // console.log(res.data.artists)

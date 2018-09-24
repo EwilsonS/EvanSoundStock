@@ -7,13 +7,15 @@ import "./loginDashboard.css"
 export class LoginDashboard extends Component {
   state = {
     verify: [],
+    name: "",
     email: "",
     password: "",
     online: false,
     id: "",
     valid: true, //Changes in db also
-    artistImage:[],
-    key: ""
+    artists: [],
+    key: "",
+    artistsObjects:[]
   }
 
   // handle any changes to the input fields
@@ -33,10 +35,12 @@ export class LoginDashboard extends Component {
         online: localStorage.getItem("online"),
         id: localStorage.getItem("id"),
         email: localStorage.getItem("email"),
+        name: localStorage.getItem("name"),
         key: localStorage.getItem("artistId")
       })
       this.viewPortfolio()
-    }else{
+      // this.buildPortfolio()
+    } else {
       this.setState({
         online: false,
         id: "",
@@ -46,7 +50,6 @@ export class LoginDashboard extends Component {
   }
 
   componentDidUpdate = () => {
-    // this.viewPortfolio()
   }
 
   logout = e => {
@@ -58,18 +61,38 @@ export class LoginDashboard extends Component {
           id: "",
           email: "",
           verify: [],
-          artistImage:[]
+          artists: []
         })
       }).then(() => {
         localStorage.clear()
       })
   }
 
-  viewPortfolio =(e)=>{
+  viewPortfolio = () => {
     // e.preventDefault()
     API.getUser(localStorage.getItem("id"))
-    .then(res => {
-      this.setState({artistImage:res.data.artists})
+      .then(res => {
+        this.setState({ artists: res.data.artists })
+      })
+      .then(() => {
+        this.buildPortfolio()
+        // this.state.artists.forEach(element => {
+          // console.log(`element: ${element}`)
+          // API.getUser(element)
+        // });
+      })
+  }
+
+  buildPortfolio = () => {
+    this.state.artists.forEach(element => {
+      API.getUser(element)
+        .then((res) => {
+          console.log(`buildPortfolio(): ${res.data}`)
+          this.setState({artistsObjects: res.data})
+        })
+        .then(()=>{
+          console.log(this.state.artistsObjects)
+        })
     })
   }
 
@@ -89,19 +112,21 @@ export class LoginDashboard extends Component {
         (!this.state.email) ||
         (!this.state.password)) {
         alert(`Oops...Something went wrong`)
-        this.setState({valid:false})
+        this.setState({ valid: false })
         window.location.reload("/")
-      } else{
+      } else {
         API.updateUserOnline(this.state.verify._id)
       }
-      
+
     }).then(() => {
       // set local storage
-      if(this.state.valid===true){
-      localStorage.setItem("id", this.state.verify._id)
-      localStorage.setItem("email", this.state.verify.email)
-      localStorage.setItem("online", this.state.verify.online)
-      this.setState({ online: true })
+      if (this.state.valid === true) {
+        localStorage.setItem("id", this.state.verify._id)
+        localStorage.setItem("email", this.state.verify.email)
+        localStorage.setItem("online", this.state.verify.online)
+        localStorage.setItem("name", this.state.verify.name)
+
+        this.setState({ online: true })
       }
       return console.log("invalid login")
     }).then(() => {
@@ -116,10 +141,10 @@ export class LoginDashboard extends Component {
       return (
         <div
           className="card mt-3 sticky-top rounded-0"
-          >
+        >
           <div
             className="card-header rounded-0 login"
-            >
+          >
             <span className="text-light h6">Login</span>
           </div>
           <div
@@ -167,41 +192,48 @@ export class LoginDashboard extends Component {
       return (
         <div
           className="card mt-3 sticky-top rounded-0"
-          >
+        >
           <div
             className="card-header rounded-0 login"
-            >
-            <span className="text-light">Hi {this.state.email}!</span>
-            <button
+          >
+            <span className=" h5 text-light">Hi {this.state.name}!
+            <i
+                className="fas fa-sign-out-alt btn text-light float-right"
+                onClick={this.logout}></i>
+            </span>
+            {/* <button
               className="btn btn-sm btn-info float-right rounded-0"
               onClick={this.logout}
             >Logout
-            </button>
+            </button> */}
           </div>
           <div
             className="card-body dashboard"
           >
-            <h5 
-            className="text-light"
-            onChange={this.viewPortfolio}
+            <h6
+              className="text-light"
+              onChange={this.viewPortfolio}
 
             >My Portfolio
-            <button
-            className="btn btn-sm btn-info rounded-0 float-right"
-            onClick={this.viewPortfolio}
-            
-            >view</button>
-            </h5>
-            <br/>
-            {this.state.artistImage.map(img => img ?(
-            <img 
-            className="rounded-circle m-2 image2" 
-            src={img} 
-            height="50px" 
-            alt=""
-            key={this.state.key}
-            />
-            ):(null)
+            <i
+                className="fas fa-sync-alt btn float-right"
+                onClick={this.viewPortfolio}></i>
+              {/* <button
+                className="btn btn-sm btn-info rounded-0 float-right"
+                onClick={this.viewPortfolio}
+
+              >view</button> */}
+            </h6>
+            <br />
+            {this.state.artists.map(img => img ? (
+              <img
+                className="rounded-circle m-2 image2"
+                // src={img}
+                height="50px"
+                alt=""
+                key={this.state.key}
+              />
+            ) : (null)
             )}
           </div>
         </div>
