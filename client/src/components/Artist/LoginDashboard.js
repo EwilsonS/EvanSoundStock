@@ -15,7 +15,8 @@ export class LoginDashboard extends Component {
     valid: true, //Changes in db also
     artists: [],
     key: "",
-    artistsObjects:[]
+    artistsInfo: [],
+    reform: []
   }
 
   // handle any changes to the input fields
@@ -77,8 +78,8 @@ export class LoginDashboard extends Component {
       .then(() => {
         this.buildPortfolio()
         // this.state.artists.forEach(element => {
-          // console.log(`element: ${element}`)
-          // API.getUser(element)
+        // console.log(`element: ${element}`)
+        // API.getUser(element)
         // });
       })
   }
@@ -87,11 +88,18 @@ export class LoginDashboard extends Component {
     this.state.artists.forEach(element => {
       API.getUser(element)
         .then((res) => {
-          console.log(`buildPortfolio(): ${res.data}`)
-          this.setState({artistsObjects: res.data})
+          console.log(`buildPortfolio(): ${JSON.stringify(res.data)}`)
+          this.setState({ artistsInfo: res.data })
         })
-        .then(()=>{
-          console.log(this.state.artistsObjects)
+        .then(() => {
+          console.log(` ${this.state.artistsInfo}`)
+          let reformattedArray = this.state.artistsInfo.map(obj => {
+            var rObj = {};
+            rObj[obj.key] = obj.value;
+            this.setState({
+              reform: reformattedArray
+            })
+          });
         })
     })
   }
@@ -225,10 +233,10 @@ export class LoginDashboard extends Component {
               >view</button> */}
             </h6>
             <br />
-            {this.state.artists.map(img => img ? (
+            {this.state.reform.map(art => art ? (
               <img
                 className="rounded-circle m-2 image2"
-                // src={img}
+                src={art.imageLink}
                 height="50px"
                 alt=""
                 key={this.state.key}
