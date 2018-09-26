@@ -93,13 +93,6 @@ export class LoginDashboard extends Component {
         })
         .then(() => {
           console.log(` ${this.state.artistsInfo}`)
-          let reformattedArray = this.state.artistsInfo.map(obj => {
-            var rObj = {};
-            rObj[obj.key] = obj.value;
-            this.setState({
-              reform: reformattedArray
-            })
-          });
         })
     })
   }
