@@ -14,4 +14,4 @@ By Evan Wilson
 * Heroku
 
 ### Images
-![ss](./client/soundstock.JPG)
+![ss](/client/soundstock.JPG)
