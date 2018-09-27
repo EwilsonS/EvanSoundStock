@@ -29,7 +29,7 @@ app.use(session({
   cookie: {secure:false}
 }));
 
-// Access the session as req.session
+// Access the session as req.session 
 app.get('/api/user/:id', function(req, res, next) {
   var sessData = req.session;
   sessData.online = true;
