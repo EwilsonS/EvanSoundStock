@@ -29,7 +29,7 @@ app.use(session({
   cookie: {secure:false}
 }));
 
-// Access the session as req.session 
+// Access the session as req.session
 app.get('/api/user/:id', function(req, res, next) {
   var sessData = req.session;
   sessData.online = true;
@@ -44,8 +44,6 @@ if (process.env.NODE_ENV === "production") {
 
 // Add routes, both API and view
 app.use(routes);
-// Send every request to the React app
-// Define any API routes before this runs
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
