@@ -27,7 +27,7 @@ import "./nav.css";
 
 export const Nav = () => (
   <nav className="navbar navbar-expand-lg navbar-dark nav">
-    <div className="col-md-3"></div>
+    <div className="col-md-3 left-space"></div>
     <div className="col-md-6">
       <div className="row tr">
         <div className="col-md-3">

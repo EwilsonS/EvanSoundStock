@@ -25,7 +25,7 @@ class Calculator extends Component {
   
   render() {
     return (
-      <div className="card mt-3 sticky-top rounded-0" style={styles.calc}>
+      <div className="card mt-3 sticky-top rounded-0 calculator" style={styles.calc}>
         <div className="card-header text-info my-0">
           <span>Calculate Your Ownership %</span>
         </div>

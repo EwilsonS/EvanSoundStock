@@ -1,0 +1,21 @@
+@media (max-width: 1131px){
+/* .col-md-1{
+  display: none;
+} */
+.calculator{
+  width: 150px;
+  left: 10px;
+  top: 85px;
+  position: fixed;
+}
+.login{
+  width: 175px;
+  padding: 10px
+
+}
+.login button{
+  font-size: .75rem;
+  float: left;
+
+}
+}

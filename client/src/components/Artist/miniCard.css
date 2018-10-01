@@ -27,3 +27,24 @@
     color: #02183a;
     font-weight: bold
   }
+@media (max-width: 1850px){
+  .card-columns{
+    column-count: 2
+  }
+
+}
+
+@media (max-width: 1238px){
+.card-columns{
+  column-count: 1
+}
+.rounded-0{
+  padding: 0px;
+  margin: 0;
+}
+.card-body{
+  padding: 5px;
+  margin: 0;
+}
+
+}

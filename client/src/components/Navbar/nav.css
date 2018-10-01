@@ -59,4 +59,9 @@
 .tr{
   display: table-row;
 }
+@media(max-width: 770px){
+ .left-space{
+display: none;
+  }
+}
 }
