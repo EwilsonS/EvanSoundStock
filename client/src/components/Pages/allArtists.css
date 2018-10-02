@@ -18,4 +18,16 @@
   float: left;
 
 }
+
+
+}
+
+@media (max-width: 767px){
+.calculator{
+  /* width: 100%; */
+  display: none;
+}
+.login{
+  width: 100%;
+}
 }

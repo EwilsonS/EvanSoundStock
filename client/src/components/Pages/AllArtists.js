@@ -4,7 +4,7 @@ import Nav from "../Navbar/Nav";
 import Calculator from "../Artist/Calculator"
 import MiniCard from "../Artist/MiniCard"
 import { LoginDashboard } from "../Artist/LoginDashboard";
-import "./allArtists.css"
+// import "./allArtists.css"
 
 export class AllArtists extends Component {
 
