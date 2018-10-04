@@ -8,6 +8,7 @@ import HowItWorks from "./Pages/HowItWorks";
 import FeaturedArtists from "./LayoutWithContent/Featured";
 import Footer from "./LayoutWithContent/Footer"
 import { LoginDashboard } from "./Artist/LoginDashboard";
+import { ContactTheDev } from "./LayoutWithContent/ContactTheDev";
 // import Carousel from "./Carousel/Carousel"
 // Import db controllers page and render Carddiv for each person in db collection with artists
 // in the form of a function that will be called in the onclick for the submit button
@@ -49,6 +50,7 @@ class HomeContainer extends Component {
             </ Col>
             <Col size="md-3">
               <LoginDashboard />
+              <ContactTheDev />
             </Col>
           </Row>
           
