@@ -22,14 +22,14 @@ const HowItWorks = () => (
         <div className="my-2 px-0 mx-0 rounded-0 card text-white bg-info" style={styles.card}>
           <div className="card-header"><strong>Step 2</strong></div>
           <div className="card-body p-2">
-            <p className="card-text"><strong>Artist</strong><br /> Once you've COMPLETELY filled out all profile info during the sign up phase, you're job is done. You will have, described your art, provided links and set your terms for partnership with investors, now you can get back to work.</p>
+            <p className="card-text"><strong>Artist</strong><br /> Once you've COMPLETELY filled out all profile info during the sign up phase, your job is done. You will have, described your art, provided links and set your terms for partnership with investors, now you can get back to work.</p>
             <p className="card-text"><strong>Investor</strong><br /> After you sign up browse the "All Artists" page or search for a particular style of content</p>
           </div>
         </div>
         <div className="my-2 px-0 mx-0 rounded-0 card text-white bg-info" style={styles.card}>
           <div className="card-header"><strong>Step 3</strong></div>
           <div className="card-body p-2">
-            <p className="card-text">Behind the scenes <strong>Sound Stock</strong> publish the artists' song through <strong><u><a href="http://ascap.com" className="text-light">ASCAP</a></u></strong> and distribute uploaded works to all major digital platforms.</p>
+            <p className="card-text">Behind the scenes <strong>Sound Stock</strong> will publish the artists' song through <strong><u><a href="http://ascap.com" className="text-light">ASCAP</a></u></strong> and distribute uploaded works to all major digital platforms.</p>
           </div>
         </div>
         <div className="my-2 px-0 mx-0 rounded-0 card text-white bg-info" style={styles.card}>
