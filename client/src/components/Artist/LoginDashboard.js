@@ -146,25 +146,21 @@ export class LoginDashboard extends Component {
           <div
             className="card mt-3 rounded-0"
           >
-            <div
-              className="card-header rounded-0 login"
-            >
               <span className="text-light h6">Login</span>
-            </div>
             <div
               className="card-body login"
             >
-              <div className="" >
-                <label className="text-light mb-0">Email
+            <div className="form-group">
+                <label className="text-light mb-0"> <small>Email</small>
             </label><br />
                 <input
-                  className=" form-control  h-25 mb-2 bg-secondary text-light rounded-0"
+                  className=" form-control h-25 mb-2 bg-secondary text-light rounded-0"
                   placeholder="Email"
                   name="email"
                   value={this.state.email}
                   onChange={this.handleInputChange}
                 />
-                <label className="text-light mb-0">Password
+                <label className="text-light mb-0"> <small>Password</small>
             </label><br />
                 <input
                   className="form-control  h-25 mb-2 bg-secondary text-light rounded-0"
@@ -174,20 +170,13 @@ export class LoginDashboard extends Component {
                   value={this.state.password}
                   onChange={this.handleInputChange}
                 />
-                <div className="row mt-2">
-                  <div className="col-md-3">
                     <button className="rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
                       onClick={this.login}
                       type="submit"
                       value="Log In"
                     >Sign In</button>
-                  </div>
-                  <div className="col-md-3">
                     <SignUp />
-                  </div>
-                  <div className="col-md-6">
-                  </div>
-                </div>
+                  
               </div>
             </div>
           </div>
