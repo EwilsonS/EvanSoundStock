@@ -144,13 +144,10 @@ export class LoginDashboard extends Component {
         <div>
 
           <div
-            className="card mt-3 rounded-0"
+            className="card mt-3 rounded-0 login"
           >
-              <span className="text-light h6">Login</span>
-            <div
-              className="card-body login"
-            >
-            <div className="form-group">
+              <span className="text-light h6 p-2">Login</span>
+            <div className="form-group mx-3">
                 <label className="text-light mb-0"> <small>Email</small>
             </label><br />
                 <input
@@ -176,9 +173,7 @@ export class LoginDashboard extends Component {
                       value="Log In"
                     >Sign In</button>
                     <SignUp />
-                  
               </div>
-            </div>
           </div>
           <ContactTheDev />
         </div>

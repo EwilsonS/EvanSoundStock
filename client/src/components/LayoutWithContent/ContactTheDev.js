@@ -7,10 +7,18 @@ export class ContactTheDev extends Component {
 
   }
 
+  handleInputChange = e => {
+    // Pull the name and value properties off of the e.target (the element which triggered the event)
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
     return (
 
-      <div className="card mt-3 rounded-0 dev">
+      <div className="card mt-3 mb-1 rounded-0 dev">
         <span className="h6 text-light p-2">Contact the developer!</span>
         <div className="form-group mx-3">
           <label className="mb-0 mt-1 text-light"><small>Name</small></label>
@@ -22,8 +30,8 @@ export class ContactTheDev extends Component {
             value={this.state.name}
             onChange={this.handleInputChange}
           />
-       
-        <label className="mb-0 mt-1 text-light"><small>Email</small></label>
+
+          <label className="mb-0 mt-1 text-light"><small>Email</small></label>
 
           <input
             type="text"
@@ -33,8 +41,8 @@ export class ContactTheDev extends Component {
             value={this.state.email}
             onChange={this.handleInputChange}
           />
-        
-        <label className="mb-0 mt-1 text-light"><small>Message</small></label>
+
+          <label className="mb-0 mt-1 text-light"><small>Message</small></label>
 
           <textarea
             value={this.state.message}
@@ -45,12 +53,17 @@ export class ContactTheDev extends Component {
             rows="5"
             placeholder="Type message here"
           />
-        <button className="btn btn-sm btn-info rounded-0 mt-2">Send</button>
+          <button
+            className="btn btn-sm btn-info rounded-0 mt-2"
+            // onClick={this.send}
+            type="submit"
+            value="Send"
+          >Send</button>
         </div>
       </div>
-      )
-    }
-  
+    )
   }
-  
-  export default withRouter(ContactTheDev)
+
+}
+
+export default withRouter(ContactTheDev)
