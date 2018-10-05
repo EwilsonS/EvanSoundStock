@@ -38,7 +38,7 @@ class HomeContainer extends Component {
     return (
       <div>
         <Nav />
-        
+
         <Container  >
           <Row>
             <Col size="md-3">
@@ -46,14 +46,15 @@ class HomeContainer extends Component {
             </Col>
             <Col size="md-6">
               <WelcomeDiv />
-            <FeaturedArtists />
+              <FeaturedArtists />
             </ Col>
             <Col size="md-3">
-              <LoginDashboard />
-              <ContactTheDev />
+              <div className="sticky-top">
+                <LoginDashboard />
+                {/* <ContactTheDev /> */}
+              </div>
             </Col>
           </Row>
-          
         </Container>
         <Footer />
       </div>

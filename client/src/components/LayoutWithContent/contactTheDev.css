@@ -1,3 +1,5 @@
 .dev{
-  background-color: rgb(220,53,69)
+  background-color: rgb(2,24,58);
+  z-index: inherit;
+
 }

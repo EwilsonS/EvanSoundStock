@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import SignUp from "../Navbar/SignUp";
 import { withRouter } from "react-router-dom";
-import "./loginDashboard.css"
+import "./loginDashboard.css";
+import ContactTheDev from "../LayoutWithContent/ContactTheDev"
 
 export class LoginDashboard extends Component {
   state = {
@@ -140,104 +141,113 @@ export class LoginDashboard extends Component {
   render() {
     if (this.state.online === false) {
       return (
-        <div
-          className="card mt-3 sticky-top rounded-0"
-        >
+        <div>
+
           <div
-            className="card-header rounded-0 login"
+            className="card mt-3 rounded-0"
           >
-            <span className="text-light h6">Login</span>
-          </div>
-          <div
-            className="card-body login"
-          >
-            <div className="" >
-              <label className="text-light mb-0">Email
+            <div
+              className="card-header rounded-0 login"
+            >
+              <span className="text-light h6">Login</span>
+            </div>
+            <div
+              className="card-body login"
+            >
+              <div className="" >
+                <label className="text-light mb-0">Email
             </label><br />
-              <input
-                className=" form-control  h-25 mb-2 bg-secondary text-light rounded-0"
-                placeholder="Email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleInputChange}
-              />
-              <label className="text-light mb-0">Password
+                <input
+                  className=" form-control  h-25 mb-2 bg-secondary text-light rounded-0"
+                  placeholder="Email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                />
+                <label className="text-light mb-0">Password
             </label><br />
-              <input
-                className="form-control  h-25 mb-2 bg-secondary text-light rounded-0"
-                placeholder="Password"
-                name="password"
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
-              />
-              <div className="row mt-2">
-                <div className="col-md-3">
-                  <button className="rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
-                    onClick={this.login}
-                    type="submit"
-                    value="Log In"
-                  >Sign In</button>
-                </div>
-                <div className="col-md-3">
-                  <SignUp />
-                </div>
-                <div className="col-md-6">
+                <input
+                  className="form-control  h-25 mb-2 bg-secondary text-light rounded-0"
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                />
+                <div className="row mt-2">
+                  <div className="col-md-3">
+                    <button className="rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
+                      onClick={this.login}
+                      type="submit"
+                      value="Log In"
+                    >Sign In</button>
+                  </div>
+                  <div className="col-md-3">
+                    <SignUp />
+                  </div>
+                  <div className="col-md-6">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <ContactTheDev />
         </div>
+
       )
     } else {
       return (
-        <div
-          className="card mt-3 sticky-top rounded-0"
-        >
+        <div className="sticky-top">
           <div
-            className="card-header rounded-0 login"
+            className="card mt-3 rounded-0"
           >
-            <span className=" h5 text-light">Hi {this.state.name}!
+            <div
+              className="card-header rounded-0 login"
+            >
+              <span className=" h5 text-light">Hi {this.state.name}!
             <i
-                className="fas fa-sign-out-alt btn text-light float-right"
-                onClick={this.logout}></i>
-            </span>
-            {/* <button
+                  className="fas fa-sign-out-alt btn text-light float-right"
+                  onClick={this.logout}></i>
+              </span>
+              {/* <button
               className="btn btn-sm btn-info float-right rounded-0"
               onClick={this.logout}
             >Logout
             </button> */}
-          </div>
-          <div
-            className="card-body dashboard"
-          >
-            <h6
-              className="text-light"
-              onChange={this.viewPortfolio}
+            </div>
+            <div
+              className="card-body dashboard"
+            >
+              <h6
+                className="text-light"
+                onChange={this.viewPortfolio}
 
-            >My Portfolio
+              >My Portfolio
             <i
-                className="fas fa-sync-alt btn float-right"
-                onClick={this.viewPortfolio}></i>
-              {/* <button
+                  className="fas fa-sync-alt btn float-right"
+                  onClick={this.viewPortfolio}></i>
+                {/* <button
                 className="btn btn-sm btn-info rounded-0 float-right"
                 onClick={this.viewPortfolio}
 
               >view</button> */}
-            </h6>
-            <br />
-            {this.state.reform.map(art => art ? (
-              <img
-                className="rounded-circle m-2 image2"
-                src={art.imageLink}
-                height="50px"
-                alt=""
-                key={this.state.key}
-              />
-            ) : (null)
-            )}
+              </h6>
+              <br />
+              {this.state.reform.map(art => art ? (
+                <img
+                  className="rounded-circle m-2 image2"
+                  src={art.imageLink}
+                  height="50px"
+                  alt=""
+                  key={this.state.key}
+                />
+              ) : (null)
+              )}
+            </div>
           </div>
+          <ContactTheDev />
         </div>
+
       )
     }
   }
