@@ -1,5 +1,9 @@
 .dev{
   background-color: rgb(2,24,58);
   z-index: inherit;
-
+  opacity: .5;
+  transition: .25s
+}
+.dev:hover{
+  opacity: 1;
 }

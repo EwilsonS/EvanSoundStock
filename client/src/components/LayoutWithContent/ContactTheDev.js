@@ -27,8 +27,8 @@ export class ContactTheDev extends Component {
       message: this.state.message
     })
       .then(res => {
-        console.log(res)
-        this.props.history.push('/')
+        alert("Your message has been sent!")
+        window.location.reload("/")
       })
       .catch(err => {
         console.log(err)
