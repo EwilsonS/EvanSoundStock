@@ -160,7 +160,7 @@ export class LoginDashboard extends Component {
                 <label className="text-light mb-0"> <small>Password</small>
             </label><br />
                 <input
-                  className="form-control  h-25 mb-2 bg-secondary text-light rounded-0"
+                  className="form-control h-25 mb-2 bg-secondary text-light rounded-0"
                   placeholder="Password"
                   name="password"
                   type="password"

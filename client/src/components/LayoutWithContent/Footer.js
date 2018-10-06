@@ -15,10 +15,10 @@ const Footer = () => (
       </div>
       <div className="col-md-1 ">
         <a target="_blank" rel="noopener noreferrer" href="https://loc.gov/" className="text-info">Lib of Congress</a><br />
-        <a target="_blank" rel="noopener noreferrer" href="" className="text-info">Support</a><br />
+        {/* <a target="_blank" rel="noopener noreferrer" href="" className="text-info">Support</a><br /> */}
       </div>
       <div className="col-md-1 ">
-        <a target="_blank" rel="noopener noreferrer" href="" className="text-info">FAQs</a><br />
+        {/* <a target="_blank" rel="noopener noreferrer" href="" className="text-info">FAQs</a><br /> */}
         {/* <a target="_blank" rel="noopener noreferrer" href="" className="text-info">Partners</a><br /> */}
         {/* <a target="_blank" rel="noopener noreferrer" href="" className="text-info">Legal</a><br /> */}
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/EwilsonS/EvanSoundStock" className="text-info">Development</a><br />
@@ -26,8 +26,8 @@ const Footer = () => (
 
       </div>
       <div className="col-md-1 ">
-        <a target="_blank" rel="noopener noreferrer" href="" className="text-info">About</a><br />
-        <a target="_blank" rel="noopener noreferrer" href="" className="text-info">Contact</a><br />
+        <a target="_blank" rel="noopener noreferrer" href="https://ewilsons.github.io/#" className="text-info">About</a><br />
+        <a target="_blank" rel="noopener noreferrer" href="https://ewilsons.github.io/#contact" className="text-info">Contact</a><br />
       </div>
       <div className="col-md-4"></div>
 

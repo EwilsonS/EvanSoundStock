@@ -322,7 +322,7 @@ export class ArtistSignUp extends Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body p-0 m-0">
                 <object type="text/html" data="https://app.termly.io/document/terms-of-use-for-online-marketplace/60c8782c-a8e3-4fa3-88dd-ae95197eaf32" width="450px" height="700px">
                 </object>
               </div>

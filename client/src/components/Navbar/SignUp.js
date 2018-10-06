@@ -14,8 +14,8 @@ const styles = {
 }
 
 const SignUp = () =>
-    <div className="nav-item dropdown">
-        <button className="btn btn-info btn-sm nav-link dropdown-toggle m-0 mt-1 p-1 rounded-0" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign Up</button>
+    <div className="nav-item dropdown p-0 mt-2 float-right">
+        <button className="btn btn-info btn-sm nav-link dropdown-toggle m-0 p-1 rounded-0" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign Up</button>
         <div className="dropdown-menu" style={styles.dropdown}>
             <br />
             <Link to="/artistSignUp" className="m-1">

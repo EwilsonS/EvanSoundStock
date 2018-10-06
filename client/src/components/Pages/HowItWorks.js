@@ -3,7 +3,7 @@ import React from "react";
 const styles = {
   card: {
     boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)",
-    fontSize:"12px"
+    fontSize: "12px"
 
   }
 }
@@ -46,9 +46,7 @@ const HowItWorks = () => (
           </div>
         </div>
       </div>
-        <br/><br/><br/>
     </div>
-    <br/><br/><br/>
   </div>
 )
 
