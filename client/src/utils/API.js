@@ -27,6 +27,9 @@ export default {
   },
   updateUserOffline: function (id) {
     return axios.put("/api/users/logout/" + id)
+  },
+  saveMessage: function(message){
+    return axios.post("/api/messages", message)
   }
   // logout:
   // // Gets all artists

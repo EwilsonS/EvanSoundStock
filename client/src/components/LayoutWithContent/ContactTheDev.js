@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./contactTheDev.css"
 import { withRouter } from "react-router-dom";
+import API from "../../utils/API";
 
 export class ContactTheDev extends Component {
   state = {
-
+    name:"",
+    email:"",
+    message:""
   }
 
   handleInputChange = e => {
@@ -13,6 +16,23 @@ export class ContactTheDev extends Component {
     this.setState({
       [name]: value
     });
+  };
+
+  send = event => {
+    event.preventDefault();
+
+    API.saveMessage({
+      email: this.state.email,
+      name: this.state.name,
+      message: this.state.message
+    })
+      .then(res => {
+        console.log(res)
+        this.props.history.push('/')
+      })
+      .catch(err => {
+        console.log(err)
+      })
   };
 
   render() {
@@ -55,7 +75,7 @@ export class ContactTheDev extends Component {
           />
           <button
             className="btn btn-sm btn-info rounded-0 mt-2"
-            // onClick={this.send}
+            onClick={this.send}
             type="submit"
             value="Send"
           >Send</button>

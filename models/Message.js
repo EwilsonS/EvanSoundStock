@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose')
+var bcrypt = require('bcrypt');
+
 
 const MessageSchema = new mongoose.Schema({
 
@@ -9,12 +12,12 @@ const MessageSchema = new mongoose.Schema({
   email: {
     type: String,
     default: "",
-    required: true
+    // required: true
   },
   message: {
     type: String,
     default:"",
-    required: true
+    // required: true
 
   }
 });
