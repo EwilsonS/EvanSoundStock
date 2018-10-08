@@ -20,3 +20,13 @@ border: 3px solid rgba(3, 33, 43, 0.411);
 .dashboard{
   background: #237c9a
 }
+.portfolio-card{
+  background-color: rgb(84, 142, 161)
+}
+.portfolio-card:hover{
+  background-color: rgb(98, 165, 187);
+  transition: .3s
+}
+.artist-name{
+  font-weight: bold
+}

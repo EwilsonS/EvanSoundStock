@@ -32,8 +32,29 @@ class FeaturedArtists extends Component {
     songLink: "",
     bio: "",
     goal: "",
-    key:""
+    key: ""
   };
+
+  addToPortfolio = (artistId, image) => {
+    // if logged in
+    if (localStorage.getItem("id") !== null) {
+      // get the user's model from db
+      API.getUser(localStorage.getItem("id"))
+        .then(res => {
+          console.log(res.data)
+          console.log(`added to loc storage: "${image}"`)
+          console.log(`added to loc storage: "${artistId}"`)
+
+          localStorage.setItem("artistImage", image)
+          localStorage.setItem("artistId", artistId)
+
+          API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
+        })
+    }
+    else {
+      alert("You must be logged in to access this feature")
+    }
+  }
 
   componentDidMount() {
     this.loadArtist();
@@ -61,9 +82,9 @@ class FeaturedArtists extends Component {
           <br />
 
           <div>
-            {this.state.artists.map(artist => (artist.name=== "Wilson Wright") ? (
+            {this.state.artists.map(artist => (artist.name === "Wilson Wright") ? (
               <div className="card my-3" key={artist._id} style={styles.card}>
-                <h5 className="card-header text-info"  >{artist.name}
+                <h5 className="card-header text-info">{artist.name}
                 </h5>
                 <div className="card-body">
                   <div className="">
@@ -71,11 +92,20 @@ class FeaturedArtists extends Component {
                       <img className="rounded-circle float-left" alt="null" style={styles.img} src={artist.imageLink} />
                       <div className="float-left">
                         <p className="text-dark float-left">{artist.bio}</p>
-                        <hr/>
-                        <p className="text-info">{artist.goal}</p>
+                        <hr />
+                        <p className="text-info">{artist.goal}
+                          <br /> Seeking: <strong>${artist.totalPrice}</strong>
+                          <br /> For: <strong>{artist.availablePercentage}% </strong> of total album sales
+                        </p>
+
                       </div>
-                      <div className="float-right">
-                        <InvestBtn />
+                      <div className="">
+                        {/* <InvestBtn /> */}
+                        <button
+                          className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight float-right rounded-0"
+                          value={artist._id}
+                          onClick={() => this.addToPortfolio(artist._id, artist.imageLink)}
+                        >Add to portfolio</button>
                       </div>
                     </div>
                   </div>
@@ -83,12 +113,9 @@ class FeaturedArtists extends Component {
                 {/* <Progress /> */}
               </div>) : (null)
             )}
-
           </div>
-
           <br /><br />
         </div>
-
       </div>
     )
   }

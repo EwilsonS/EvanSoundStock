@@ -313,7 +313,7 @@ export class ArtistSignUp extends Component {
           </Row>
         </Container>
 
-        <div className=" rounded-0 modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div className=" rounded-0 modal fade" id="exampleModalLong" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div className=" rounded-0 modal-dialog" role="document">
             <div className=" rounded-0 modal-content">
               <div className=" rounded-0 modal-header">

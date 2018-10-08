@@ -89,7 +89,7 @@ class MiniCard extends Component {
                   src={artist.imageLink}
                 />
                 <button
-                  className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight  float-right rounded-0"
+                  className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight float-right rounded-0"
                   value={artist._id}
                   onClick={() => this.addToPortfolio(artist._id, artist.imageLink)}
                 ><small>Add to portfolio</small></button>

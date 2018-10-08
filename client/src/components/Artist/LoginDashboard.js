@@ -87,15 +87,24 @@ export class LoginDashboard extends Component {
   }
 
   buildPortfolio = () => {
+    let elementArr = []
     this.state.artists.forEach(element => {
       API.getUser(element)
         .then((res) => {
-          let artistInfoHold=[];
+          console.log(`element: ${element}`)
+          console.log(`artists: ${this.state.artists}`)
+          console.log(res.data)
+          elementArr.push(res.data)
+
+          this.setState({
+            artistsInfo: elementArr
+          })
+          // let artistInfoHold=[];
           // console.log(`buildPortfolio(): ${JSON.stringify(res.data)}`)
           // this.setState({ artistsInfo:JSON.stringify(res.data) })
-         artistInfoHold.push(JSON.stringify(res.data)) 
+        //  artistInfoHold.push(JSON.stringify(res.data)) 
 
-         console.log(`artistInfoHold: ${artistInfoHold}`)
+        //  console.log(`artistInfoHold: ${artistInfoHold}`)
          // Object method to convert {} to []
         //  let ref = Object.keys(artistInfoHold).map((key)=>{
         //    return [Number(key), artistInfoHold[key]];
@@ -106,6 +115,8 @@ export class LoginDashboard extends Component {
 
         })
         .then(() => {
+          // console.log(`element2: ${element}`)
+
           // console.log(`artistsInfo: ${this.state.artistsInfo}`)
           // // Object method to convert {} to []
           // let ref = Object.keys(this.state.artistsInfo).map((key)=>{
@@ -236,8 +247,9 @@ export class LoginDashboard extends Component {
               >view</button> */}
               </h6>
               <br />
-              {this.state.reform.map(art => art.imageLink ? (
-                <div>
+              {this.state.artistsInfo.map(art => art.imageLink ? (
+                <div className="rounded-0 portfolio-card">
+                <p>
                   <img
                     className="rounded-circle m-2 image2"
                     src={art.imageLink}
@@ -245,7 +257,9 @@ export class LoginDashboard extends Component {
                     alt=""
                     key={this.state.key}
                   />
-                <p>{art.name}</p>
+                <span className="artist-name text-light">{art.name}</span>
+                </p>
+
                 </div>
               ) : (null)
               )}
