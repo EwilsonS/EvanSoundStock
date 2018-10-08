@@ -90,12 +90,29 @@ export class LoginDashboard extends Component {
     this.state.artists.forEach(element => {
       API.getUser(element)
         .then((res) => {
+          let artistInfoHold=[];
           // console.log(`buildPortfolio(): ${JSON.stringify(res.data)}`)
           // this.setState({ artistsInfo:JSON.stringify(res.data) })
-          this.state.artistsInfo.push(JSON.stringify(res.data))
+         artistInfoHold.push(JSON.stringify(res.data)) 
+
+         console.log(`artistInfoHold: ${artistInfoHold}`)
+         // Object method to convert {} to []
+        //  let ref = Object.keys(artistInfoHold).map((key)=>{
+        //    return [Number(key), artistInfoHold[key]];
+           
+        //  })
+        //  console.log(`ref: ${ref}`)
+        //  this.setState({reform:ref})
+
         })
         .then(() => {
-          console.log(`artistsInfo: ${this.state.artistsInfo}`)
+          // console.log(`artistsInfo: ${this.state.artistsInfo}`)
+          // // Object method to convert {} to []
+          // let ref = Object.keys(this.state.artistsInfo).map((key)=>{
+          //   return [Number(key), this.state.artistsInfo[key]];
+          // })
+          // console.log(`ref: ${ref}`)
+          // this.setState({reform:ref})
         })
     })
   }
@@ -219,7 +236,7 @@ export class LoginDashboard extends Component {
               >view</button> */}
               </h6>
               <br />
-              {this.state.artistsInfo.map(art => art.imageLink ? (
+              {this.state.reform.map(art => art.imageLink ? (
                 <div>
                   <img
                     className="rounded-circle m-2 image2"
@@ -228,7 +245,7 @@ export class LoginDashboard extends Component {
                     alt=""
                     key={this.state.key}
                   />
-
+                <p>{art.name}</p>
                 </div>
               ) : (null)
               )}
