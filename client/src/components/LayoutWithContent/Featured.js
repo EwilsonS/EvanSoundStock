@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-// import CardDiv from "../Artist/CardDiv";
 import API from "../../utils/API";
-// import Progress from "../Artist/Progress";
-import InvestBtn from "../Artist/Invest";
 import { withRouter } from "react-router-dom";
 
 const styles = {
@@ -100,7 +97,6 @@ class FeaturedArtists extends Component {
 
                       </div>
                       <div className="">
-                        {/* <InvestBtn /> */}
                         <button
                           className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight float-right rounded-0"
                           value={artist._id}
@@ -110,7 +106,6 @@ class FeaturedArtists extends Component {
                     </div>
                   </div>
                 </div>
-                {/* <Progress /> */}
               </div>) : (null)
             )}
           </div>

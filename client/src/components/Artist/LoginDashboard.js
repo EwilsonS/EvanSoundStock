@@ -41,7 +41,6 @@ export class LoginDashboard extends Component {
         key: localStorage.getItem("artistId")
       })
       this.viewPortfolio()
-      // this.buildPortfolio()
     } else {
       this.setState({
         online: false,
@@ -79,10 +78,6 @@ export class LoginDashboard extends Component {
       })
       .then(() => {
         this.buildPortfolio()
-        // this.state.artists.forEach(element => {
-        // console.log(`element: ${element}`)
-        // API.getUser(element)
-        // });
       })
   }
 
@@ -99,31 +94,6 @@ export class LoginDashboard extends Component {
           this.setState({
             artistsInfo: elementArr
           })
-          // let artistInfoHold=[];
-          // console.log(`buildPortfolio(): ${JSON.stringify(res.data)}`)
-          // this.setState({ artistsInfo:JSON.stringify(res.data) })
-        //  artistInfoHold.push(JSON.stringify(res.data)) 
-
-        //  console.log(`artistInfoHold: ${artistInfoHold}`)
-         // Object method to convert {} to []
-        //  let ref = Object.keys(artistInfoHold).map((key)=>{
-        //    return [Number(key), artistInfoHold[key]];
-           
-        //  })
-        //  console.log(`ref: ${ref}`)
-        //  this.setState({reform:ref})
-
-        })
-        .then(() => {
-          // console.log(`element2: ${element}`)
-
-          // console.log(`artistsInfo: ${this.state.artistsInfo}`)
-          // // Object method to convert {} to []
-          // let ref = Object.keys(this.state.artistsInfo).map((key)=>{
-          //   return [Number(key), this.state.artistsInfo[key]];
-          // })
-          // console.log(`ref: ${ref}`)
-          // this.setState({reform:ref})
         })
     })
   }
@@ -223,11 +193,6 @@ export class LoginDashboard extends Component {
                   className="fas fa-sign-out-alt btn text-light float-right"
                   onClick={this.logout}></i>
               </span>
-              {/* <button
-              className="btn btn-sm btn-info float-right rounded-0"
-              onClick={this.logout}
-            >Logout
-            </button> */}
             </div>
             <div
               className="card-body dashboard"
@@ -235,30 +200,24 @@ export class LoginDashboard extends Component {
               <h6
                 className="text-light"
                 onChange={this.viewPortfolio}
-
               >My Portfolio
             <i
                   className="fas fa-sync-alt btn float-right"
                   onClick={this.viewPortfolio}></i>
-                {/* <button
-                className="btn btn-sm btn-info rounded-0 float-right"
-                onClick={this.viewPortfolio}
-
-              >view</button> */}
               </h6>
               <br />
               {this.state.artistsInfo.map(art => art.imageLink ? (
                 <div className="rounded-0 portfolio-card">
-                <p>
-                  <img
-                    className="rounded-circle m-2 image2"
-                    src={art.imageLink}
-                    height="50px"
-                    alt=""
-                    key={this.state.key}
-                  />
-                <span className="artist-name text-light">{art.name}</span>
-                </p>
+                  <p>
+                    <img
+                      className="rounded-circle m-2 image2"
+                      src={art.imageLink}
+                      height="50px"
+                      alt=""
+                      key={this.state.key}
+                    />
+                    <span className="artist-name text-light">{art.name}</span>
+                  </p>
 
                 </div>
               ) : (null)

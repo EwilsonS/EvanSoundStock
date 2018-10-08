@@ -47,23 +47,13 @@ class MiniCard extends Component {
           console.log(res.data)
           console.log(`added to loc storage: "${image}"`)
           console.log(`added to loc storage: "${artistId}"`)
-          // if not exists set local storage.
-          // for( let i = 0; i < res.data.artists.length; i++){
-          //   console.log(res.data.artists[i])
-          //   if(res.data.artists[i] === image){
-          //     return console.log("Already in db")
-          // } else {
+         
           localStorage.setItem("artistImage", image)
           localStorage.setItem("artistId", artistId)
-          // }
-          // }
+         
           API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
         })
-        .then((res) => {
-          // console.log(res.data.artists)
-          // console.log(localStorage.getItem("artistImage"))
-        })
-      // window.location.reload()
+      window.location.reload()
     }
     else {
       alert("You must be logged in to access this feature")
