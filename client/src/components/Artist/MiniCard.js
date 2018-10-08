@@ -41,11 +41,12 @@ class MiniCard extends Component {
   addToPortfolio = (artistId, image) => {
     // if logged in
     if (localStorage.getItem("id") !== null) {
-      // get the user's artists array from db
+      // get the user's model from db
       API.getUser(localStorage.getItem("id"))
         .then(res => {
           console.log(res.data)
-          console.log(`"${image}"`)
+          console.log(`added to loc storage: "${image}"`)
+          console.log(`added to loc storage: "${artistId}"`)
           // if not exists set local storage.
           // for( let i = 0; i < res.data.artists.length; i++){
           //   console.log(res.data.artists[i])
@@ -62,11 +63,9 @@ class MiniCard extends Component {
           // console.log(res.data.artists)
           // console.log(localStorage.getItem("artistImage"))
         })
-
       // window.location.reload()
     }
     else {
-
       alert("You must be logged in to access this feature")
     }
   }

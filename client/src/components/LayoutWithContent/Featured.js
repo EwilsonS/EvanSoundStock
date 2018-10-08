@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 // import CardDiv from "../Artist/CardDiv";
 import API from "../../utils/API";
-import Progress from "../Artist/Progress";
+// import Progress from "../Artist/Progress";
 import InvestBtn from "../Artist/Invest";
 import { withRouter } from "react-router-dom";
-
 
 const styles = {
   padding: {
@@ -71,7 +70,7 @@ class FeaturedArtists extends Component {
                     <div className="">
                       <img className="rounded-circle float-left" alt="null" style={styles.img} src={artist.imageLink} />
                       <div className="float-left">
-                        <p className="text-dark">{artist.bio}</p>
+                        <p className="text-dark float-left">{artist.bio}</p>
                         <hr/>
                         <p className="text-info">{artist.goal}</p>
                       </div>
@@ -81,7 +80,7 @@ class FeaturedArtists extends Component {
                     </div>
                   </div>
                 </div>
-                <Progress />
+                {/* <Progress /> */}
               </div>) : (null)
             )}
 

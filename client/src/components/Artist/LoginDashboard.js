@@ -75,6 +75,7 @@ export class LoginDashboard extends Component {
     API.getUser(localStorage.getItem("id"))
       .then(res => {
         this.setState({ artists: res.data.artists })
+        console.log(this.state.artists)
       })
       .then(() => {
         this.buildPortfolio()
@@ -89,11 +90,12 @@ export class LoginDashboard extends Component {
     this.state.artists.forEach(element => {
       API.getUser(element)
         .then((res) => {
-          console.log(`buildPortfolio(): ${JSON.stringify(res.data)}`)
-          this.setState({ artistsInfo: res.data })
+          // console.log(`buildPortfolio(): ${JSON.stringify(res.data)}`)
+          // this.setState({ artistsInfo:JSON.stringify(res.data) })
+          this.state.artistsInfo.push(JSON.stringify(res.data))
         })
         .then(() => {
-          console.log(` ${this.state.artistsInfo}`)
+          console.log(`artistsInfo: ${this.state.artistsInfo}`)
         })
     })
   }
@@ -146,34 +148,34 @@ export class LoginDashboard extends Component {
           <div
             className="card mt-3 rounded-0 login"
           >
-              <span className="text-light h6 p-2">Login</span>
+            <span className="text-light h6 p-2">Login</span>
             <div className="form-group mx-3">
-                <label className="text-light mb-0"> <small>Email</small>
-            </label><br />
-                <input
-                  className=" form-control h-25 mb-2 bg-secondary text-light rounded-0"
-                  placeholder="Email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
-                />
-                <label className="text-light mb-0"> <small>Password</small>
-            </label><br />
-                <input
-                  className="form-control h-25 mb-2 bg-secondary text-light rounded-0"
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.handleInputChange}
-                />
-                    <button className="rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
-                      onClick={this.login}
-                      type="submit"
-                      value="Log In"
-                    >Sign In</button>
-                    <SignUp />
-              </div>
+              <label className="text-light mb-0"> <small>Email</small>
+              </label><br />
+              <input
+                className=" form-control h-25 mb-2 bg-secondary text-light rounded-0"
+                placeholder="Email"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+              />
+              <label className="text-light mb-0"> <small>Password</small>
+              </label><br />
+              <input
+                className="form-control h-25 mb-2 bg-secondary text-light rounded-0"
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInputChange}
+              />
+              <button className="rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
+                onClick={this.login}
+                type="submit"
+                value="Log In"
+              >Sign In</button>
+              <SignUp />
+            </div>
           </div>
           <ContactTheDev />
         </div>
@@ -217,14 +219,17 @@ export class LoginDashboard extends Component {
               >view</button> */}
               </h6>
               <br />
-              {this.state.reform.map(art => art ? (
-                <img
-                  className="rounded-circle m-2 image2"
-                  src={art.imageLink}
-                  height="50px"
-                  alt=""
-                  key={this.state.key}
-                />
+              {this.state.artistsInfo.map(art => art.imageLink ? (
+                <div>
+                  <img
+                    className="rounded-circle m-2 image2"
+                    src={art.imageLink}
+                    height="50px"
+                    alt=""
+                    key={this.state.key}
+                  />
+
+                </div>
               ) : (null)
               )}
             </div>
