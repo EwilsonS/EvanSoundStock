@@ -30,6 +30,9 @@ export default {
   },
   saveMessage: function(message){
     return axios.post("/api/messages", message)
+  },
+  getMessages: function(){
+    return axios.get("/api/messages")
   }
   // logout:
   // // Gets all artists

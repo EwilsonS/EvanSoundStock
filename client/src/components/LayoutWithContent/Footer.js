@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <div>
@@ -28,6 +29,9 @@ const Footer = () => (
       <div className="col-md-1 ">
         <a target="_blank" rel="noopener noreferrer" href="https://ewilsons.github.io/#" className="text-info">About</a><br />
         <a target="_blank" rel="noopener noreferrer" href="https://ewilsons.github.io/#contact" className="text-info">Contact</a><br />
+       <Link to="/admin">
+        <a className="text-info">Admin</a><br />
+       </Link>
       </div>
       <div className="col-md-4"></div>
 
