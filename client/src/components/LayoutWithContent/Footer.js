@@ -30,7 +30,7 @@ const Footer = () => (
         <a target="_blank" rel="noopener noreferrer" href="https://ewilsons.github.io/#" className="text-info">About</a><br />
         <a target="_blank" rel="noopener noreferrer" href="https://ewilsons.github.io/#contact" className="text-info">Contact</a><br />
        <Link to="/admin">
-        <a className="text-info">Admin</a><br />
+        <span className="text-info">Admin</span><br />
        </Link>
       </div>
       <div className="col-md-4"></div>
