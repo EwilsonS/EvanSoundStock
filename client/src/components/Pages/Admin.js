@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "../Grid";
 import Nav from "../Navbar/Nav";
 import API from "../../utils/API";
-
+import "./admin.css"
 
 export class Admin extends Component {
 
