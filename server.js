@@ -37,6 +37,14 @@ app.get('/api/user/:id', function(req, res, next) {
   console.log(`Session on server: ${req.session}`)
 });
 
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, './client/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
