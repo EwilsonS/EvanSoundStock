@@ -16,6 +16,8 @@
     border: none
   }
 .image{
+    height: 125px;
+    width: 125px;
     border: 7px solid white;
     transition: .4s;
   }
@@ -31,7 +33,6 @@
   .card-columns{
     column-count: 2
   }
-
 }
 
 @media (max-width: 1238px){
@@ -46,5 +47,19 @@
   padding: 5px;
   margin: 0;
 }
+
+}
+
+@media (max-width: 400px){
+  .image{
+    height: 100px;
+    width: 100px;
+  }
+  .investment,
+  .percent,
+  .links,
+  .links2{
+    display: none;
+  }  
 
 }

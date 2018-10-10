@@ -74,8 +74,6 @@ class MiniCard extends Component {
                 <img
                   className="text-center rounded-circle m-2 image"
                   alt="null"
-                  height="125px"
-                  width="125px"
                   src={artist.imageLink}
                 />
                 <button
@@ -90,18 +88,21 @@ class MiniCard extends Component {
               </h5>
             </div>
             <div className="card-body"><small>
-              <p><span className="blueText"
+              <p className="mb-0"><span className="blueText"
               >About me:</span> {artist.bio}</p>
-              <p><span className="blueText"
+              <p className="investment"><span className="blueText"
               >Investment Opprtunity:</span> {artist.goal} <br /><br/>
+              <span className="percent">
                 {artist.name} is offering a total of <strong>{artist.availablePercentage} %</strong> for <strong>${artist.totalPrice}.</strong>
-
+              </span>
               </p>
-              <span className="blueText"
+              <span className="blueText links"
               >Media Links: </span><br />
+              <div className="links2">
               <a href={artist.mediaLink1} target="_blank">{artist.mediaLink1}</a><br />
               <a href={artist.mediaLink2} target="_blank">{artist.mediaLink2}</a><br />
               <a href={artist.mediaLink3} target="_blank">{artist.mediaLink3}</a><br />
+              </div>
             </small>
             </div>
             <div className="cardFooter"
