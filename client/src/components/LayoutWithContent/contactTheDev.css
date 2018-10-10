@@ -7,7 +7,8 @@
   transition: .2s
 }
 #contact:hover{
-  cursor: pointer;
+  /* cursor: pointer; */
   background-color: rgb(35,124,154);
+  text-decoration: none;
 }
 
