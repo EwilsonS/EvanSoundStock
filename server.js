@@ -5,6 +5,7 @@ const session = require("express-session")
 const morgan = require('morgan');
 const routes = require("./routes");
 const app = express();
+const path = require("path")
 const cookieParser = require("cookie-parser")
 var passport = require("./config/passport");
 const PORT = process.env.PORT ? process.env.PORT : 3001;
