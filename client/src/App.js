@@ -9,9 +9,6 @@ import InvestorSignUp from "./components/Pages/InvestorSignUp"
 import UserProfile from "./components/Pages/UserProfile"
 import { AllArtists } from "./components/Pages/AllArtists";
 import { Admin } from "./components/Pages/Admin";
-// import { LoginDashboard } from "./components/Artist/LoginDashboard";
-
-
 
 class App extends Component {
   render() {
