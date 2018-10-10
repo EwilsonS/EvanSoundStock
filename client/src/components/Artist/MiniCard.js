@@ -70,7 +70,7 @@ class MiniCard extends Component {
             <div className="cardHeader"
             >
               {/* on hover do alert-info */}
-              <h5 className="alert alert-dark rounded-0">
+              <h5 className="alert alert-dark rounded-0 mb-0">
                 <img
                   className="text-center rounded-circle m-2 image"
                   alt="null"
@@ -93,8 +93,8 @@ class MiniCard extends Component {
               <p><span className="blueText"
               >About me:</span> {artist.bio}</p>
               <p><span className="blueText"
-              >Investment Opprtunity:</span> {artist.goal} <br />
-                I am offering a total of <strong>{artist.availablePercentage} %</strong> for <strong>${artist.totalPrice}.</strong>
+              >Investment Opprtunity:</span> {artist.goal} <br /><br/>
+                {artist.name} is offering a total of <strong>{artist.availablePercentage} %</strong> for <strong>${artist.totalPrice}.</strong>
 
               </p>
               <span className="blueText"

@@ -44,6 +44,9 @@ class App extends Component {
           exact path="/admin" 
           component={Admin}
           />
+           <Route 
+          component={HomeContainer}
+          />
 
         </Switch>
       </div>

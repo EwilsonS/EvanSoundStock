@@ -41,8 +41,8 @@ export class Admin extends Component {
                 <h4>Visitor Messages</h4>
                 {this.state.message.map(mess => mess ? (
                   <div key={mess._id}>
-                    <h4>{mess.name}</h4>
-                    <h5>{mess.email}</h5>
+                    <h6>From: {mess.name}</h6>
+                    <h6>Email: {mess.email}</h6>
                     <p>
                       {mess.message}
                     </p>
