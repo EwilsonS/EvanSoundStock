@@ -9,18 +9,18 @@ export const Nav = () => (
     <div className="col-md-3 left-space"></div>
     <div className="col-md-6">
       <div className="row tr">
-        <div className="col-md-3">
-          <Link to="/">
+        <Link to="/">
+          <div className="col-md-3">
             <span className="navbar-brand text-info nav-title">
               <span className="text-info h4"><strong> <span className="flash">S</span>ound<span className="flash2">S</span>tock</strong></span>
             </span>
-          </Link>
-        </div>
-        <div className="col-md-4">
-          <Link to="/AllArtists" className="m-1">
+          </div>
+        </Link>
+        <Link to="/AllArtists" className="m-1">
+          <div className="col-md-4">
             <button className="btn btn-danger text-light btn-sm m-1 rounded-0 ">View All Artists</button>
-          </Link>
-        </div>
+          </div>
+        </Link>
         <div className="col-md-5">
           <form className="form-inline mr-sm-2 float-right" id="search" type="search" placeholder="Search">
             <span className="float-right">

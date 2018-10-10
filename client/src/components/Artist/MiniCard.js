@@ -53,7 +53,7 @@ class MiniCard extends Component {
          
           API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
         })
-      window.location.reload()
+      // window.location.reload()
     }
     else {
       alert("You must be logged in to access this feature")

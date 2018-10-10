@@ -207,16 +207,20 @@ export class LoginDashboard extends Component {
               </h6>
               <br />
               {this.state.artistsInfo.map(art => art.imageLink ? (
-                <div className="rounded-0 portfolio-card">
+                <div 
+                className="rounded-0 portfolio-card"
+                key={art._id}
+                >
                   <p>
                     <img
                       className="rounded-circle m-2 image2"
                       src={art.imageLink}
                       height="50px"
                       alt=""
-                      key={this.state.key}
                     />
-                    <span className="artist-name text-light">{art.name}</span>
+                    <span
+                     className="artist-name text-light"
+                     >{art.name}</span>
                   </p>
 
                 </div>
