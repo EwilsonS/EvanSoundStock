@@ -1,6 +1,7 @@
 .image2{
   border: 3px solid rgba(255, 255, 255, 0.514);
-  transition: .25s
+  transition: .25s;
+  height: 2rem;
 }
 .image2:hover{
 border: 3px solid rgba(3, 33, 43, 0.411);
@@ -18,19 +19,23 @@ border: 3px solid rgba(3, 33, 43, 0.411);
   font-size: 15px
 }
 .dashboard{
-  background: #237c9a
+  /* background: #237c9a */
+  background-image: url("../Pages/abstract-design.jpg")
 }
 .portfolio-card{
-  background-color: rgb(84, 142, 161)
+  background-color:  #02183a93;
 }
 .portfolio-card:hover{
   background-color: rgb(98, 165, 187);
   transition: .3s
 }
 .artist-name{
-  font-weight: bold
+  font-weight: bold;
 }
-@media (max-width:991px){
+.linkage:hover{
+  text-decoration: none;
+}
+@media (max-width:991px ){
   .buttons1,
   .buttons2{
     display: table-row;

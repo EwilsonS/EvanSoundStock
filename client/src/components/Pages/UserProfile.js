@@ -50,6 +50,14 @@ class UserProfile extends Component {
                 <div className="card-body">
                   <p className="bodyText">
                     {this.state.user.bio}
+                    <br />
+                    <br />
+                    Reason: {this.state.user.goal}
+                    <br />
+                    <br />
+                    Seeking: <strong>${this.state.user.totalPrice}</strong>
+                    <br />
+                    For: <strong>{this.state.user.availablePercentage}% </strong>
                   </p>
                 </div>
               </div>

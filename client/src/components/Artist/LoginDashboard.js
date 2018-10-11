@@ -219,19 +219,18 @@ export class LoginDashboard extends Component {
                   className="rounded-0 portfolio-card"
                   key={art._id}
                 >
-                  <p>
-                    <Link to={`/api/users/${art._id}`}>
+                  <Link className="linkage" to={`/api/users/${art._id}`}>
+                    <p>
                       <img
                         className="rounded-circle m-2 image2"
                         src={art.imageLink}
-                        height="50px"
                         alt=""
                       />
-                    </Link>
-                    <span
-                      className="artist-name text-light"
-                    >{art.name}</span>
-                  </p>
+                      <span
+                        className="artist-name text-light"
+                      >{art.name}</span>
+                    </p>
+                  </Link>
 
                 </div>
               ) : (null)
