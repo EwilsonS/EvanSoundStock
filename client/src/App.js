@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom"; //use hash to allow server to hit index on refresh
+// import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 // import logo from "./logo.svg";
 import "./App.css";
 import HomeContainer from "./components/HomeContainer"

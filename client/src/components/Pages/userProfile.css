@@ -1,4 +1,27 @@
 .topPic{
   background-image: url("./abstract-design.jpg");
+  background-size: 100%;
   height: 10rem;
+}
+.pic{
+  height: 200px;
+  width: 200px;
+  border: 7px solid white;
+  transition: .4s;
+  position: relative;
+  top: 3rem;
+}
+.nameText{
+  position: relative;
+  bottom: -2.75rem;
+  font-size: 3rem;
+   text-shadow:
+  -1px -1px 0 rgb(255, 255, 255),  
+   1px -1px 0 rgb(255, 255, 255),
+   -1px 1px 0 rgb(255, 255, 255),
+    1px 1px 0 rgb(255, 255, 255);
+}
+.bodyText{
+  padding-top: 5rem;
+  font-size:1rem;
 }

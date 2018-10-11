@@ -191,7 +191,7 @@ export class LoginDashboard extends Component {
             <div
               className="card-header rounded-0 login"
             >
-              <span className=" h5 text-light">Hi {this.state.name}!
+              <span className="h5 text-light">Hi {this.state.name}!
               </span>
               <div>
                 <Link to={`/api/users/${this.state.id}`}>

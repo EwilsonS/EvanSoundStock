@@ -41,8 +41,16 @@ class UserProfile extends Component {
             <Col size="md-6">
               <div className="card mt-3">
                 <div className="card-header topPic">
+                  <img
+                    className="rounded-circle pic"
+                    src={this.state.user.imageLink}
+                    alt="" />
+                  <span className="nameText">{this.state.user.name}</span>
                 </div>
                 <div className="card-body">
+                  <p className="bodyText">
+                    {this.state.user.bio}
+                  </p>
                 </div>
               </div>
             </Col>
