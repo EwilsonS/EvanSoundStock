@@ -3,7 +3,8 @@ import API from "../../utils/API";
 import SignUp from "../Navbar/SignUp";
 import { withRouter } from "react-router-dom";
 import "./loginDashboard.css";
-import ContactTheDev from "../LayoutWithContent/ContactTheDev"
+import ContactTheDev from "../LayoutWithContent/ContactTheDev";
+import { Link } from "react-router-dom";
 
 export class LoginDashboard extends Component {
   state = {
@@ -173,7 +174,7 @@ export class LoginDashboard extends Component {
                   type="submit"
                   value="Log In"
                 >Sign In</button>
-                <SignUp className="buttons2"/>
+                <SignUp className="buttons2" />
               </div>
             </div>
           </div>
@@ -191,10 +192,15 @@ export class LoginDashboard extends Component {
               className="card-header rounded-0 login"
             >
               <span className=" h5 text-light">Hi {this.state.name}!
-            <i
-                  className="fas fa-sign-out-alt btn text-light float-right"
-                  onClick={this.logout}></i>
               </span>
+              <div>
+                <Link to={`/api/users/${this.state.id}`}>
+                  <i className="fas fa-user text-light float-left"> Profile</i>
+                  <i
+                    className="fas fa-sign-out-alt text-light float-right"
+                    onClick={this.logout}> Logout</i>
+                </Link>
+              </div>
             </div>
             <div
               className="card-body dashboard"
@@ -214,12 +220,14 @@ export class LoginDashboard extends Component {
                   key={art._id}
                 >
                   <p>
-                    <img
-                      className="rounded-circle m-2 image2"
-                      src={art.imageLink}
-                      height="50px"
-                      alt=""
-                    />
+                    <Link to={`/api/users/${art._id}`}>
+                      <img
+                        className="rounded-circle m-2 image2"
+                        src={art.imageLink}
+                        height="50px"
+                        alt=""
+                      />
+                    </Link>
                     <span
                       className="artist-name text-light"
                     >{art.name}</span>

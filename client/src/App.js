@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom"; //use hash to allow server to hit index on refresh
 // import logo from "./logo.svg";
 import "./App.css";
 import HomeContainer from "./components/HomeContainer"
@@ -28,9 +28,8 @@ class App extends Component {
           exact path="/investorSignUp" 
           component={InvestorSignUp} 
           />
-          {/* we may need to create separate sign in btns */}
           <Route 
-          exact path="/api/user/:id"
+          exact path="/api/users/:id"
           component={UserProfile} 
           />
           <Route 

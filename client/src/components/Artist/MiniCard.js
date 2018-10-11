@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { Link } from "react-router-dom";
 import "./miniCard.css"
 
 
@@ -47,10 +48,10 @@ class MiniCard extends Component {
           console.log(res.data)
           console.log(`added to loc storage: "${image}"`)
           console.log(`added to loc storage: "${artistId}"`)
-         
+
           localStorage.setItem("artistImage", image)
           localStorage.setItem("artistId", artistId)
-         
+
           API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
         })
       // window.location.reload()
@@ -71,11 +72,13 @@ class MiniCard extends Component {
             >
               {/* on hover do alert-info */}
               <h5 className="alert alert-dark rounded-0 mb-0">
-                <img
+                <Link to={`/api/users/${artist._id}`}>
+                  <img
                   className="text-center rounded-circle m-2 image"
                   alt="null"
                   src={artist.imageLink}
                 />
+                </Link>
                 <button
                   className="btn btn-sm btn-danger right p-1 m-2 d-inline bd-highlight float-right rounded-0"
                   value={artist._id}
@@ -91,17 +94,17 @@ class MiniCard extends Component {
               <p className="mb-0"><span className="blueText"
               >About me:</span> {artist.bio}</p>
               <p className="investment"><span className="blueText"
-              >Investment Opprtunity:</span> {artist.goal} <br /><br/>
-              <span className="percent">
-                {artist.name} is offering a total of <strong>{artist.availablePercentage} %</strong> for <strong>${artist.totalPrice}.</strong>
-              </span>
+              >Investment Opprtunity:</span> {artist.goal} <br /><br />
+                <span className="percent">
+                  {artist.name} is offering a total of <strong>{artist.availablePercentage} %</strong> for <strong>${artist.totalPrice}.</strong>
+                </span>
               </p>
               <span className="blueText links"
               >Media Links: </span><br />
               <div className="links2">
-              <a href={artist.mediaLink1} target="_blank">{artist.mediaLink1}</a><br />
-              <a href={artist.mediaLink2} target="_blank">{artist.mediaLink2}</a><br />
-              <a href={artist.mediaLink3} target="_blank">{artist.mediaLink3}</a><br />
+                <a href={artist.mediaLink1} target="_blank">{artist.mediaLink1}</a><br />
+                <a href={artist.mediaLink2} target="_blank">{artist.mediaLink2}</a><br />
+                <a href={artist.mediaLink3} target="_blank">{artist.mediaLink3}</a><br />
               </div>
             </small>
             </div>
