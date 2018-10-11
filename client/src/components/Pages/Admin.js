@@ -20,6 +20,10 @@ export class Admin extends Component {
     }
   }
 
+visits = () => {
+  //counting function will need new model/routes etc.
+}
+
   loadMessages = () => {
     API.getMessages()
       .then(res => {

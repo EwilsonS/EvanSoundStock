@@ -21,15 +21,6 @@ const WelcomeDiv = props => (
         <span className="text-info font-weight-bold">Sound Stock</span> is the meeting place for creatives and investors to connect. We merge <span className="font-weight-bold" style={styles.infoDark}>crowdfunding</span> with <span className="font-weight-bold" style={styles.infoDark}>stock acquisition</span>, in the form of shared royalties. <span className="text-info font-weight-bold">Sound Stock</span> Publishing will monitor, collect and distribute royalties from digital sales to artists and investors based on their contract.
       </p>
       <br />
-     
-      {/* <h2 className="text-center" style={styles.infoDark}>Here's How It Works...</h2> */}
-      <br/>
-      {/* use below as own component to open on same page  */}
-      {/* <Link to={`/howitworks`} role="button">
-        <a className="text-danger">Click here to learn more!</a>
-      </Link>
-      <Route path={`/howitworks`} component={HowItWorks} /> */}
-
     </div>
   </div>
 );

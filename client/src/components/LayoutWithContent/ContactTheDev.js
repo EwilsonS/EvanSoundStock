@@ -39,11 +39,11 @@ export class ContactTheDev extends Component {
     return (
 
       <div className="card mt-3 mb-1 rounded-0 dev">
-      <a id="contact" data-toggle="collapse" data-target="#cbody" href="#cbody" aria-expanded="false" aria-controls="collapseExample">
-        <div className="card-header m-0 p-0">
-          <span className="h6 text-light p-2">Contact the developer!</span>
-        </div>
-      </a>
+        <a id="contact" data-toggle="collapse" data-target="#cbody" href="#cbody" aria-expanded="false" aria-controls="collapseExample">
+          <div className="card-header m-0 p-0">
+            <span className="h6 text-light p-2">Contact the developer! <i className="fas fa-chevron-down float-right pr-3 pt-1"></i></span>
+          </div>
+        </a>
         <div className="card-body collapse m-0 p-0" id="cbody">
           <div className="form-group mx-3">
             <label className="mb-0 mt-1 text-light"><small>Name</small></label>

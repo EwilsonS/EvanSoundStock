@@ -30,3 +30,10 @@ border: 3px solid rgba(3, 33, 43, 0.411);
 .artist-name{
   font-weight: bold
 }
+@media (max-width:991px){
+  .buttons1,
+  .buttons2{
+    display: table-row;
+    float: right;
+  }
+}

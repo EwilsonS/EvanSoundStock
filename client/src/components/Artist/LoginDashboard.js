@@ -167,12 +167,14 @@ export class LoginDashboard extends Component {
                 value={this.state.password}
                 onChange={this.handleInputChange}
               />
-              <button className="rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
-                onClick={this.login}
-                type="submit"
-                value="Log In"
-              >Sign In</button>
-              <SignUp />
+              <div className="buttons">
+                <button className="buttons1 rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
+                  onClick={this.login}
+                  type="submit"
+                  value="Log In"
+                >Sign In</button>
+                <SignUp className="buttons2"/>
+              </div>
             </div>
           </div>
           <ContactTheDev />
@@ -207,9 +209,9 @@ export class LoginDashboard extends Component {
               </h6>
               <br />
               {this.state.artistsInfo.map(art => art.imageLink ? (
-                <div 
-                className="rounded-0 portfolio-card"
-                key={art._id}
+                <div
+                  className="rounded-0 portfolio-card"
+                  key={art._id}
                 >
                   <p>
                     <img
@@ -219,8 +221,8 @@ export class LoginDashboard extends Component {
                       alt=""
                     />
                     <span
-                     className="artist-name text-light"
-                     >{art.name}</span>
+                      className="artist-name text-light"
+                    >{art.name}</span>
                   </p>
 
                 </div>
