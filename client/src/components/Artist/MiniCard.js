@@ -38,6 +38,10 @@ class MiniCard extends Component {
       })
       .catch(err => console.log(err));
   };
+  
+  reload = () =>{
+    window.location.reload("/")
+   }
 
   addToPortfolio = (artistId, image) => {
     // if logged in
@@ -54,7 +58,7 @@ class MiniCard extends Component {
 
           API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
         })
-      // window.location.reload()
+      window.location.reload("/")
     }
     else {
       alert("You must be logged in to access this feature")

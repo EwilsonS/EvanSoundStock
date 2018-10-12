@@ -43,7 +43,7 @@ class UserProfile extends Component {
                 <div className="card-header topPic">
                   <img
                     className="rounded-circle pic"
-                    src={this.state.user.imageLink}
+                    src={this.state.user.imageLink ? this.state.user.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                     alt="" />
                   <span className="nameText">{this.state.user.name}</span>
                 </div>

@@ -51,6 +51,10 @@ export class LoginDashboard extends Component {
     }
   }
 
+ reload = () =>{
+  window.location.reload("/")
+ }
+
   componentDidUpdate = () => {
   }
 
@@ -191,10 +195,12 @@ export class LoginDashboard extends Component {
             <div
               className="card-header rounded-0 login"
             >
-              <span className="h5 text-light">Hi {this.state.name}!
+              <span className="h6 text-light">Hi {this.state.name}!
               </span>
               <div>
-                <Link to={`/api/users/${this.state.id}`}>
+                <Link 
+                onClick={this.reload}
+                to={`/api/users/${this.state.id}`}>
                   <i className="fas fa-user text-light float-left"> Profile</i>
                   <i
                     className="fas fa-sign-out-alt text-light float-right"
@@ -205,21 +211,24 @@ export class LoginDashboard extends Component {
             <div
               className="card-body dashboard"
             >
-              <h6
-                className="text-light"
+              <span
+                className="text-dark viewPortfolio"
                 onChange={this.viewPortfolio}
               >My Portfolio
             <i
                   className="fas fa-sync-alt btn float-right"
                   onClick={this.viewPortfolio}></i>
-              </h6>
+              </span>
               <br />
               {this.state.artistsInfo.map(art => art.imageLink ? (
                 <div
                   className="rounded-0 portfolio-card"
                   key={art._id}
                 >
-                  <Link className="linkage" to={`/api/users/${art._id}`}>
+                  <Link 
+                  onClick={this.reload}
+                  className="linkage"
+                  to={`/api/users/${art._id}`}>
                     <p>
                       <img
                         className="rounded-circle m-2 image2"

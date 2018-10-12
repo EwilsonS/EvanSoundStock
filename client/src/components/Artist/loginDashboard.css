@@ -28,7 +28,7 @@ border: 3px solid rgba(3, 33, 43, 0.411);
   background-color:  #02183a93;
 }
 .portfolio-card:hover{
-  background-color: rgb(98, 165, 187);
+  background-color:  #02183a;
   transition: .3s
 }
 .artist-name{
@@ -36,6 +36,14 @@ border: 3px solid rgba(3, 33, 43, 0.411);
 }
 .linkage:hover{
   text-decoration: none;
+}
+.viewPortfolio{
+  font-size: 1.25rem;
+  text-shadow:
+  -1px -1px 0 rgb(255, 255, 255),  
+   1px -1px 0 rgb(255, 255, 255),
+   -1px 1px 0 rgb(255, 255, 255),
+    1px 1px 0 rgb(255, 255, 255);
 }
 @media (max-width:991px ){
   .buttons1,
