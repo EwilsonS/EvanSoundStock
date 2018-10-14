@@ -25,10 +25,18 @@ border: 3px solid rgba(3, 33, 43, 0.411);
 }
 .portfolio-card{
   background-color:  #02183a93;
+  transition: .25s;
+  margin-bottom: -.5rem
 }
 .portfolio-card:hover{
   background-color:  #02183a;
-  transition: .3s
+  transition: .3s;
+  z-index: 10;
+  -webkit-transform: scale(1.125);
+  -ms-transform: scale(1.125);
+  transform: scale(1.125);
+  background-color:  #02183a;
+  box-shadow: 1px 0px 26px 0px rgba(50, 50, 50, 0.5);
 }
 .artist-name{
   font-weight: bold;
@@ -39,10 +47,10 @@ border: 3px solid rgba(3, 33, 43, 0.411);
 .viewPortfolio{
   font-size: 1.25rem;
   text-shadow:
-  -1px -1px 0 rgb(255, 255, 255),  
-   1px -1px 0 rgb(255, 255, 255),
-   -1px 1px 0 rgb(255, 255, 255),
-    1px 1px 0 rgb(255, 255, 255);
+  -.25px -.25px 0 rgb(0, 0, 0),  
+   .25px -.25px 0 rgb(0, 0, 0),
+   -.25px .25px 0 rgb(0, 0, 0),
+    .25px .25px 0 rgb(0, 0, 0);
 }
 @media (max-width:991px ){
   .buttons1,
