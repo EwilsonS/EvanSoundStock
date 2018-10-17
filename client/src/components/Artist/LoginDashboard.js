@@ -118,7 +118,7 @@ export class LoginDashboard extends Component {
         (this.state.verify.password !== this.state.password) ||
         (!this.state.email) ||
         (!this.state.password)) {
-        alert(`Oops...Something went wrong`)
+        alert(`Oops....Something went wrong`)
         this.setState({ valid: false })
         window.location.reload("/")
       } else {
@@ -240,7 +240,6 @@ export class LoginDashboard extends Component {
                       >{art.name}</span>
                     </p>
                   </Link>
-
                 </div>
               ) : (null)
               )}
