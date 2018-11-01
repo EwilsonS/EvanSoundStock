@@ -39,8 +39,8 @@ class UserProfile extends Component {
               <Calculator />
             </Col>
             <Col size="md-6">
-              <div className="card mt-3">
-                <div className="card-header topPic">
+              <div className="card mt-3 rounded-0">
+                <div className="card-header topPic rounded-0">
                   <img
                     className="rounded-circle pic"
                     src={this.state.user.imageLink ? this.state.user.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}

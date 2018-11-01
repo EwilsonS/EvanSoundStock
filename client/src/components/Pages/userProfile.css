@@ -1,6 +1,7 @@
 .topPic{
-  background-image: url("./abstract-design.jpg");
-  background-size: 100%;
+  background: #a99196;
+  background-image: url("../../images/arabesque.png");
+  /* background-size: 100%; */
   height: 10rem;
 }
 .pic{

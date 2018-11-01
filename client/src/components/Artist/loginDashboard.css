@@ -19,9 +19,9 @@ border: 3px solid rgba(3, 33, 43, 0.411);
   font-size: 15px
 }
 .dashboard{
-  /* background: #237c9a */
-  background-image: url("../Pages/abstract-design.jpg");
-  background-size: 100% 100%;
+  background: #a99196;
+  background-image: url("../../images/arabesque.png");
+  /* background-size: 100% 100%; */
 }
 .portfolio-card{
   background-color:  #02183a93;
