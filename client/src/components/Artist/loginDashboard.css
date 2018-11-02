@@ -12,15 +12,15 @@ border: 3px solid rgba(3, 33, 43, 0.411);
   padding: 20%
 }
 .login{
-  background-color: #02183a;
+  background-color: #031127;
 }
 .card{
   box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
   font-size: 15px
 }
 .dashboard{
-  background: #a99196;
-  background-image: url("../../images/arabesque.png");
+  background: rgb(128, 160, 202);
+  background-image: url("../../images/abstract-design.jpg");
   /* background-size: 100% 100%; */
 }
 .portfolio-card{
@@ -39,7 +39,8 @@ border: 3px solid rgba(3, 33, 43, 0.411);
   box-shadow: 1px 0px 26px 0px rgba(50, 50, 50, 0.5);
 }
 .artist-name{
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-size: .75rem;
 }
 .linkage:hover{
   text-decoration: none;
@@ -52,6 +53,11 @@ border: 3px solid rgba(3, 33, 43, 0.411);
    -.25px .25px 0 rgb(0, 0, 0),
     .25px .25px 0 rgb(0, 0, 0);
 }
+@media (max-width:1325px ){
+  .refresh-icon{
+    display: none;
+  }
+}
 @media (max-width:991px ){
   .buttons1,
   .buttons2{
@@ -59,3 +65,4 @@ border: 3px solid rgba(3, 33, 43, 0.411);
     float: right;
   }
 }
+

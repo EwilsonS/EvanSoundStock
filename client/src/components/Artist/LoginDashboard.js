@@ -51,9 +51,9 @@ export class LoginDashboard extends Component {
     }
   }
 
- reload = () =>{
-  window.location.reload("/")
- }
+  reload = () => {
+    window.location.reload("/")
+  }
 
   componentDidUpdate = () => {
   }
@@ -143,6 +143,18 @@ export class LoginDashboard extends Component {
     }).catch(err => console.log(err))
   };
 
+  delete = (e) => {
+    // remove selected item from state array
+
+    // var array = [...this.state.artists]; // make a separate copy of the array
+    // var index = array.indexOf(e.target.value)
+    // console.log(array)
+    // array.pop(index, e.target.value);
+    // this.setState({artists: array});
+  
+    // insert function to update the original users artists array
+  }
+
   render() {
     if (this.state.online === false) {
       return (
@@ -198,9 +210,9 @@ export class LoginDashboard extends Component {
               <span className="h6 text-light">Hi {this.state.name}!
               </span>
               <div>
-                <Link 
-                onClick={this.reload}
-                to={`/api/users/${this.state.id}`}>
+                <Link
+                  onClick={this.reload}
+                  to={`/api/users/${this.state.id}`}>
                   <i className="fas fa-user text-light float-left"> Profile</i>
                   <i
                     className="fas fa-sign-out-alt text-light float-right"
@@ -216,7 +228,7 @@ export class LoginDashboard extends Component {
                 onChange={this.viewPortfolio}
               >My Portfolio
             <i
-                  className="fas fa-sync-alt btn float-right"
+                  className="fas fa-sync-alt btn float-right refresh-icon"
                   onClick={this.viewPortfolio}></i>
               </span>
               <br />
@@ -225,10 +237,10 @@ export class LoginDashboard extends Component {
                   className="rounded-0 portfolio-card"
                   key={art._id}
                 >
-                  <Link 
-                  onClick={this.reload}
-                  className="linkage"
-                  to={`/api/users/${art._id}`}>
+                  <Link
+                    onClick={this.reload}
+                    className="linkage"
+                    to={`/api/users/${art._id}`}>
                     <p>
                       <img
                         className="rounded-circle m-2 image2"
@@ -240,6 +252,10 @@ export class LoginDashboard extends Component {
                       >{art.name}</span>
                     </p>
                   </Link>
+                  {/* <button
+                    className="delete-btn"
+                    onClick={this.delete}
+                  >x</button> */}
                 </div>
               ) : (null)
               )}

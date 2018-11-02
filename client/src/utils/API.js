@@ -33,6 +33,10 @@ export default {
   },
   getMessages: function(){
     return axios.get("/api/messages")
+  },
+  // Deletes the Artist with the given id
+  deleteArtist: function(id) {
+    return axios.delete("/api/artists/" + id);
   }
   // logout:
   // // Gets all artists
@@ -42,10 +46,6 @@ export default {
   // // Gets the artist with the given id
   // getArtist: function(id) {
   //   return axios.get("/api/artists/" + id);
-  // },
-  // // Deletes the Artist with the given id
-  // deleteArtist: function(id) {
-  //   return axios.delete("/api/artists/" + id);
   // },
   // // Saves an Artist to the database
   // saveArtist: function(artistData) {
