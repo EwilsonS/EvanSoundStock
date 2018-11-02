@@ -224,7 +224,7 @@ export class LoginDashboard extends Component {
               className="card-body dashboard"
             >
               <span
-                className="text-dark viewPortfolio"
+                className="text-light viewPortfolio"
                 onChange={this.viewPortfolio}
               >My Portfolio
             <i

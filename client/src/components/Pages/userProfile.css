@@ -1,7 +1,7 @@
 .topPic{
-  /* background: #a02424; */
-  background-image: url("../../images/abstract-design.jpg");
-  background-size: 100%;
+  background: #0a2926;
+  background-image: url("../../images/my-little-plaid.png");
+  /* background-size: 100%; */
   height: 10rem;
 }
 .pic{

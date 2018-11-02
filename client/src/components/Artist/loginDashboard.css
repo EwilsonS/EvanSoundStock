@@ -19,8 +19,8 @@ border: 3px solid rgba(3, 33, 43, 0.411);
   font-size: 15px
 }
 .dashboard{
-  background: rgb(128, 160, 202);
-  background-image: url("../../images/abstract-design.jpg");
+  background: #3d5351;
+  /* background-image: url("../../images/my-little-plaid.png"); */
   /* background-size: 100% 100%; */
 }
 .portfolio-card{
