@@ -71,6 +71,7 @@ export class LoginDashboard extends Component {
         })
       }).then(() => {
         localStorage.clear()
+        this.reload()
       })
   }
 
