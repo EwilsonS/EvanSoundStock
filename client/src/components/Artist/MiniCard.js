@@ -69,13 +69,13 @@ class MiniCard extends Component {
     return (
       <div className="card-columns">
         {this.state.artists.map(artist => artist.imageLink ? (
-          <div className="card mt-2 rounded-0"
+          <div className="card card-mini mt-2 rounded-0"
             key={artist._id}
           >
             <div className="cardHeader"
             >
               {/* on hover do alert-info */}
-              <h5 className="alert alert-dark rounded-0 mb-0">
+              <h5 className="rounded-0 mb-0">
                 <Link to={`/api/users/${artist._id}`}>
                   <img
                   className="text-center rounded-circle m-2 image"

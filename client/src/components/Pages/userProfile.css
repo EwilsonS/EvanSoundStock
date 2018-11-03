@@ -1,5 +1,6 @@
 .topPic{
-  background: #0a2926;
+  /* background: #0a2926; */
+  background: #353535;
   background-image: url("../../images/my-little-plaid.png");
   /* background-size: 100%; */
   height: 10rem;

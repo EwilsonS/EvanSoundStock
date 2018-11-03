@@ -14,12 +14,16 @@ border: 3px solid rgba(3, 33, 43, 0.411);
 .login{
   background-color: #031127;
 }
-.card{
-  box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
-  font-size: 15px
+.card-dash{
+  /* box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
+  font-size: 15px; */
+  background-color: #00000000;
+  border: none;
+
 }
 .dashboard{
-  background: #3d5351;
+  /* background: #3d5351; */
+  background: #6e6e6e00;
   /* background-image: url("../../images/my-little-plaid.png"); */
   /* background-size: 100% 100%; */
 }
@@ -33,10 +37,12 @@ border: 3px solid rgba(3, 33, 43, 0.411);
   transition: .3s;
   z-index: 10;
   -webkit-transform: scale(1.125);
-  -ms-transform: scale(1.125);
-  transform: scale(1.125);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
   background-color:  #02183a;
   box-shadow: 1px 0px 26px 0px rgba(50, 50, 50, 0.5);
+  /* border: 1px solid white; */
+
 }
 .artist-name{
   /* font-weight: bold; */

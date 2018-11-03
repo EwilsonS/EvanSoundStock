@@ -202,7 +202,7 @@ export class LoginDashboard extends Component {
       return (
         <div className="sticky-top">
           <div
-            className="card mt-3 rounded-0"
+            className="card card-dash mt-3 rounded-0"
           >
             <div
               className="card-header rounded-0 login"
@@ -224,7 +224,7 @@ export class LoginDashboard extends Component {
               className="card-body dashboard"
             >
               <span
-                className="text-light viewPortfolio"
+                className="text-dark viewPortfolio"
                 onChange={this.viewPortfolio}
               >My Portfolio
             <i

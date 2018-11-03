@@ -1,5 +1,7 @@
 .cardHeader{
-    background-color: white;
+    /* background-color: white; */
+    /* background: #8d8d8d; */
+    /* background-image: url("../../images/my-little-plaid.png"); */
     color: #02183a;
   }
 .cardFooter{
@@ -11,7 +13,7 @@
     box-shadow: 0 0  3px rgba(35,124,154, .25);
     color: white
   }
-.card{
+.card-mini{
     box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
     border: none
   }
