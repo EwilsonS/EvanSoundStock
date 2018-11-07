@@ -30,7 +30,7 @@ export class LoginDashboard extends Component {
     });
   };
 
-  // using local storage to set state
+  // using local storage to set state.
   componentDidMount = () => {
     // console.log(localStorage.getItem("id"))
     if (localStorage.getItem("id") !== null) {
@@ -52,7 +52,8 @@ export class LoginDashboard extends Component {
   }
 
   reload = () => {
-    window.location.reload("/")
+    // refresh
+    window.location.reload("/");
   }
 
   componentDidUpdate = () => {

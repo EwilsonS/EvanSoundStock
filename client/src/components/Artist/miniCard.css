@@ -1,7 +1,7 @@
 .cardHeader{
     /* background-color: white; */
-    /* background: #8d8d8d; */
-    /* background-image: url("../../images/my-little-plaid.png"); */
+    background: #237c9a;
+    background-image: url("../../images/black-orchid.png");
     color: #02183a;
   }
 .cardFooter{
@@ -15,7 +15,11 @@
   }
 .card-mini{
     box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
-    border: none
+    border: 1px solid #b4b4b4d5;
+    /* border: none; */
+  }
+.card-mini:hover{
+    border: 1px solid #237c9a;
   }
 .image{
     height: 125px;
