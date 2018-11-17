@@ -1,9 +1,52 @@
 
 .nav{
-    background-color: #02183a;
-    box-shadow: 0px 1px 1px grey;
-    border-top: 3px solid #13a2b8;
-    color: #237c9a
+    /* background-color: #02183a; */
+    background:  
+    linear-gradient(
+      #02183a91, 
+      #02183a91
+      ),
+     url('../../images/record.jpeg');
+    /* box-shadow: 0px 1px 1px grey; */
+    border-bottom: 8px solid #13a2b8;
+    color: #237c9a;
+    height: 15rem;
+    width: 100%;
+    background-position-y: 31rem;
+  }
+.button-nav{
+  position: relative;
+  display: inline;
+  }
+.signup-nav{
+  padding: 3rem;
+
+}
+.register{
+  background-color: #13a2b846;
+  margin-right: 10rem;
+  height: 10rem;
+  width: 10rem;
+}
+.login-input{
+    background-color: #02183a00;
+    border: 1px white solid;
+    color: white;
+  }
+ .input-icons{
+    position: relative;
+    top: 10rem;
+    float: right;
+    /* left: 25rem; */
+  }
+
+ .login-input::placeholder{
+    color: white;
+  }
+ .login-input:focus{
+    outline: none !important;
+    border:1px solid #13a2b8;
+    box-shadow: 0 0 10px #719ECE;
   }
 .input{
     border-color: #237c9a;

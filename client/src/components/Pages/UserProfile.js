@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { LoginDashboard } from "../Artist/LoginDashboard";
 import { Container, Row, Col } from "../Grid";
-import Nav from "../Navbar/Nav";
+import Nav from "../Navbar/NavSmall";
 import Calculator from "../Artist/Calculator"
 import "./userProfile.css"
 class UserProfile extends Component {

@@ -1,0 +1,74 @@
+
+.navsmall{
+  background-color: #02183a;
+  box-shadow: 0px 1px 1px grey;
+  border-top: 3px solid #13a2b8;
+  color: #237c9a;
+  /* background-image: url('../../images/space_sky_stars_79233_2560x1080.jpg'); */
+  /* width: 100%; */
+
+}
+.button-nav{
+position: relative;
+display: inline;
+}
+.input{
+  border-color: #237c9a;
+  box-shadow: 0 0 0 3px rgba(35,124,154, .25);
+  color: white
+}
+.input2{
+  border-color: #237c9a;
+  box-shadow: 0 0 0 3px rgba(35,124,154, .25);
+}
+.infoDark{
+  color: #027384
+}
+.flash{
+animation-name: flash;
+ animation-duration: 1.2s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+ animation-play-state: running;
+}
+.flash2{
+animation-name: flash;
+ animation-duration: 1.0s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+ animation-play-state: running;
+}
+.nav-title{
+float: right
+};
+
+@keyframes flash {
+ from {color: #027384;}
+ to {color:#5bc0de;}
+}
+
+@keyframes flash2 {
+from {color:#5bc0de;}
+to {color: #027384;}
+}
+
+@media (max-width: 1600px){
+#search{
+  display: none;
+}
+.nav-title{
+  float: left;
+}
+}
+@media (max-width: 1150px){
+.tr{
+display: table-row;
+}
+@media(max-width: 770px){
+.left-space{
+display: none;
+}
+}
+}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../Grid";
-import Nav from "../Navbar/Nav";
+import Nav from "../Navbar/NavSmall";
 import Calculator from "../Artist/Calculator"
 import MiniCard from "../Artist/MiniCard"
 import { LoginDashboard } from "../Artist/LoginDashboard";

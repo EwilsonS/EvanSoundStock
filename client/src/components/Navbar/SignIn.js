@@ -5,12 +5,13 @@ import { withRouter } from "react-router-dom";
 // import setInStorage from "../../utils/storage"
 
 const styles = {
-	dropdown: {
-		backgroundColor: "#02183a",
-		zIndex: 20000000,
-		padding: "20%"
+	dropdownSignIn: {
+		backgroundColor: "rgba(2,24,58, .75)",
+		zIndex: 1,
+		// padding: "20%"
 	},
 }
+
 
 class SignIn extends Component {
 
@@ -56,9 +57,9 @@ class SignIn extends Component {
 
 	render() {
 		return (
-			<div className="nav-item dropdown rounded-0">
-				<button className="btn btn-sm btn-outline-info nav-link dropdown-toggle m-1 p-1 rounded-0" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign In</button>
-				<div className="dropdown-menu" style={styles.dropdown}>
+			<div className="nav-item dropdown p-0 mt-2" style={styles.dropdownSignIn}>
+				<button className="btn btn-sm btn-outline-info nav-link dropdown-toggle m-1 p-1" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Sign In</button>
+				<div className="dropdown-menu" style={styles.dropdownSignIn}>
 					<label className="text-light">Email
            <input
 							className="form-control my-2 my-sm-1 bg-secondary text-light"
@@ -79,7 +80,7 @@ class SignIn extends Component {
 						/>
 					</label>
 					{/* <Link to="/"> */}
-					<button className="btn btn-sm btn-info m-1 p-1 rounded-0"
+					<button className="btn btn-sm btn-info m-1 p-1"
 						onClick={this.handleFormSubmit}
 						type="submit"
 						value="Log In"
