@@ -89,7 +89,7 @@ class FeaturedArtists extends Component {
                       <img className="rounded-circle float-left" alt="null" style={styles.img} src={artist.imageLink} />
                       <div className="float-left">
                         <p className="text-dark float-left">{artist.bio}</p>
-                        <hr />
+                       
                         <p className="text-info">{artist.goal}
                           <br /> Seeking: <strong>${artist.totalPrice}</strong>
                           <br /> For: <strong>{artist.availablePercentage}% </strong> of total album sales
