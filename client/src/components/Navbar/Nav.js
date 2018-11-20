@@ -54,13 +54,13 @@ export const Nav = () => (
           <div className="form-group input-icons float-right">
             <form>
               <span className="">
-                <i class="fas fa-user" />
+                <i className="fas fa-user" />
                 <input
                   type="text"
                   className="form-control-sm login-input m-1"
                   placeholder="Email"
                 />
-                <i class="fas fa-lock ml-3" />
+                <i className="fas fa-lock ml-3" />
                 <input
                   type="password"
                   className="form-control-sm login-input m-1"

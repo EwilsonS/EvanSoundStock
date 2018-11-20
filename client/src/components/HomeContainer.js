@@ -30,7 +30,10 @@ class HomeContainer extends Component {
 
   loadArtist = () => {
     API.getUsers()
-      .then(res => this.setState({ artists: res.data }))
+      .then(res => {
+        console.log(res.data)
+        this.setState({ artists: res.data })
+      })
       .catch(err => console.log(err));
   };
 
@@ -67,16 +70,8 @@ class HomeContainer extends Component {
             </Col>
             <Col size="md-6">
               <WelcomeDiv />
-              <FeaturedArtists 
-                name={this.state.artists.name}
-                id={this.state.artists.id}
-                bio={this.state.artists.bio}
-                totalPrice={this.state.artists.totalPrice}
-                goal={this.state.artists.goal}
-                availablePercentage={this.state.artists.availablePercentage}
-                imageLink={this.state.artists.imageLink}
-
-
+              <FeaturedArtists
+                artists={this.state.artists}
               />
             </ Col>
             <Col size="md-3">
