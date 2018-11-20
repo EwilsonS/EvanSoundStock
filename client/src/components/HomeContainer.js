@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "./Grid";
-import { Nav } from "./Navbar";
+import Nav from "./Navbar/Nav";
 // import { CardDiv } from "./Artist";
 import API from "../utils/API";
 import WelcomeDiv from "./LayoutWithContent/WelcomeDiv"
@@ -9,19 +9,10 @@ import FeaturedArtists from "./LayoutWithContent/Featured";
 import Footer from "./LayoutWithContent/Footer"
 import { LoginDashboard } from "./Artist/LoginDashboard";
 // import { ContactTheDev } from "./LayoutWithContent/ContactTheDev";
-// Import db controllers page and render Carddiv for each person in db collection with artists
-// in the form of a function that will be called in the onclick for the submit button
-// summary div in card has props children to use to give it the mapped out data
 
 class HomeContainer extends Component {
   state = {
     artists: [],
-    name: "",
-    imageLink: "",
-    songLink: "",
-    bio: "",
-    goal: "",
-    key: ""
   };
 
   componentDidMount() {
@@ -31,7 +22,6 @@ class HomeContainer extends Component {
   loadArtist = () => {
     API.getUsers()
       .then(res => {
-        console.log(res.data)
         this.setState({ artists: res.data })
       })
       .catch(err => console.log(err));
@@ -43,13 +33,8 @@ class HomeContainer extends Component {
       // get the user's model from db
       API.getUser(localStorage.getItem("id"))
         .then(res => {
-          console.log(res.data)
-          console.log(`added to loc storage: "${image}"`)
-          console.log(`added to loc storage: "${artistId}"`)
-
           localStorage.setItem("artistImage", image)
           localStorage.setItem("artistId", artistId)
-
           API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
         })
     }
@@ -62,7 +47,6 @@ class HomeContainer extends Component {
     return (
       <div>
         <Nav />
-
         <Container  >
           <Row>
             <Col size="md-3">
