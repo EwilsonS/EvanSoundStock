@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import { withRouter } from "react-router-dom";
 
 const styles = {
@@ -32,41 +32,44 @@ class FeaturedArtists extends Component {
     key: ""
   };
 
-  addToPortfolio = (artistId, image) => {
-    // if logged in
-    if (localStorage.getItem("id") !== null) {
-      // get the user's model from db
-      API.getUser(localStorage.getItem("id"))
-        .then(res => {
-          console.log(res.data)
-          console.log(`added to loc storage: "${image}"`)
-          console.log(`added to loc storage: "${artistId}"`)
+  // addToPortfolio = (artistId, image) => {
+  //   // if logged in
+  //   if (localStorage.getItem("id") !== null) {
+  //     // get the user's model from db
+  //     API.getUser(localStorage.getItem("id"))
+  //       .then(res => {
+  //         console.log(res.data)
+  //         console.log(`added to loc storage: "${image}"`)
+  //         console.log(`added to loc storage: "${artistId}"`)
 
-          localStorage.setItem("artistImage", image)
-          localStorage.setItem("artistId", artistId)
+  //         localStorage.setItem("artistImage", image)
+  //         localStorage.setItem("artistId", artistId)
 
-          API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
-        })
-    }
-    else {
-      alert("You must be logged in to access this feature")
-    }
-  }
+  //         API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
+  //       })
+  //   }
+  //   else {
+  //     alert("You must be logged in to access this feature")
+  //   }
+  // }
 
   componentDidMount() {
-    this.loadArtist();
+    // this.loadArtist();
+    this.fillState();
   }
 
-  loadArtist = () => {
-    API.getUsers()
-      .then(res => {
-        // console.log(res)
-        this.setState({ artists: res.data })
-      })
+  // loadArtist = () => {
+  //   API.getUsers()
+  //     .then(res => this.setState({ artists: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
-      .catch(err => console.log(err));
-
-  };
+    fillState = props =>{
+      console.log(this.props.name)
+      // this.setState({
+      //   artists: props.artists
+      // })
+    }
 
   render() {
     return (

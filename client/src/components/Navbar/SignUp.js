@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 
 
-const styles = {
-    dropdownSignUp: {
-        // backgroundColor: "rgb(2,24,58)",
-        // zIndex: 80000000,
-        // boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)"
+// const styles = {
+//     dropdownSignUp: {
+//         // backgroundColor: "rgb(2,24,58)",
+//         // zIndex: 80000000,
+//         // boxShadow: "3px 4px 8px 0px rgba(50, 50, 50, 0.20)"
 
-    }
-}
+//     }
+// }
 
 const SignUp = () =>
     <div className="nav-item dropdown p-0 mt-2 signup-nav">
