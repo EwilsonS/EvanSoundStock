@@ -37,17 +37,15 @@ export class ContactTheDev extends Component {
 
   render() {
     return (
-      <div>
-        <div className="btn-group dropleft">
+        <div className="btn-group dropleft float-right mx-0 px-0 mt-5">
           <button
-            type="button"
-            className="btn btn-secondary dropdown-toggle"
+            type=""
+            className="btn contact rounded"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
           >
-            
-            +
+            <i class="fas fa-comment-alt"></i>
           </button>
           <div className="dropdown-menu dev">
             {/* <!-- Dropdown menu links --> */}
@@ -64,21 +62,19 @@ export class ContactTheDev extends Component {
                   </label>
                   <input
                     type="text"
-                    className="form-control h-25 rounded-0 bg-secondary text-light"
-                    placeholder="name"
+                    className="form-control-sm ctd-inputs"
                     name="name"
                     value={this.state.name}
                     onChange={this.handleInputChange}
                   />
 
-                  <label className="mb-0 mt-1 text-light">
+                  <label className="mb-0 mt-1 text-light ">
                     <small>Email</small>
                   </label>
 
                   <input
                     type="text"
-                    className="form-control h-25 rounded-0 bg-secondary text-light"
-                    placeholder="email"
+                    className="form-control-sm ctd-inputs"
                     name="email"
                     value={this.state.email}
                     onChange={this.handleInputChange}
@@ -91,11 +87,10 @@ export class ContactTheDev extends Component {
                   <textarea
                     value={this.state.message}
                     onChange={this.handleInputChange}
-                    className="form-control rounded-0 bg-secondary text-light"
+                    className="form-control ctd-inputs text-light"
                     name="message"
                     cols="50"
                     rows="5"
-                    placeholder="Type message here"
                   />
                   <button
                     className="btn btn-sm btn-info rounded-0 mt-2"
@@ -110,76 +105,6 @@ export class ContactTheDev extends Component {
             </div>
           </div>
         </div>
-        {/* -------------------------------------------- */}
-        <div className="card mt-3 mb-1 rounded-0 dev dropleft">
-          <a
-            id="contact"
-            className="dropdown-toggle"
-            data-toggle="dropdown"
-            data-target="#cbody"
-            href="#cbody"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <div className="card-header m-0 p-0">
-              <span className="h6 text-light p-2">
-                Contact the developer!{" "}
-                <i className="fas fa-chevron-down float-right pr-3 pt-1" />
-              </span>
-            </div>
-          </a>
-          <div className="card-body dropdown-menu m-0 p-0" id="cbody">
-            <div className="form-group mx-3">
-              <label className="mb-0 mt-1 text-light">
-                <small>Name</small>
-              </label>
-              <input
-                type="text"
-                className="form-control h-25 rounded-0 bg-secondary text-light"
-                placeholder="name"
-                name="name"
-                value={this.state.name}
-                onChange={this.handleInputChange}
-              />
-
-              <label className="mb-0 mt-1 text-light">
-                <small>Email</small>
-              </label>
-
-              <input
-                type="text"
-                className="form-control h-25 rounded-0 bg-secondary text-light"
-                placeholder="email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleInputChange}
-              />
-
-              <label className="mb-0 mt-1 text-light">
-                <small>Message</small>
-              </label>
-
-              <textarea
-                value={this.state.message}
-                onChange={this.handleInputChange}
-                className="form-control rounded-0 bg-secondary text-light"
-                name="message"
-                cols="50"
-                rows="5"
-                placeholder="Type message here"
-              />
-              <button
-                className="btn btn-sm btn-info rounded-0 mt-2"
-                onClick={this.send}
-                type="submit"
-                value="Send"
-              >
-                Send
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     );
   }
 }

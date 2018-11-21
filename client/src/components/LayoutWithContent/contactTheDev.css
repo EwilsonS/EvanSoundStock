@@ -1,14 +1,29 @@
 .dev{
-  background-color: rgb(2,24,58);
+  background-color: rgb(2, 24, 58);
   z-index: inherit;
   transition: .25s
 }
-#contact{
-  transition: .2s
+.contact{
+  transition: .2s;
+  color: rgb(35,124,154);
+  background-color: rgb(2, 24, 58);
 }
-#contact:hover{
+.contact:hover{
   /* cursor: pointer; */
   background-color: rgb(35,124,154);
-  text-decoration: none;
+  color: rgb(2, 24, 58);
+  transform: scale(1.25);
+}
+.ctd-inputs{
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+}
+.ctd-inputs:focus{
+  outline: none !important;
+  border:1px solid #13a2b8;
+  box-shadow: 0 0 10px #719ECE;
+  background-color: rgba(255, 255, 255, 0.15);
+
 }
 

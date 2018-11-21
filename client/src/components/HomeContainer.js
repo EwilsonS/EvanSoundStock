@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "./Grid";
 import Nav from "./Navbar/Nav";
-// import { CardDiv } from "./Artist";
 import API from "../utils/API";
 import WelcomeDiv from "./LayoutWithContent/WelcomeDiv"
 import HowItWorks from "./Pages/HowItWorks";
 import FeaturedArtists from "./LayoutWithContent/Featured";
 import Footer from "./LayoutWithContent/Footer"
-import { LoginDashboard } from "./Artist/LoginDashboard";
-// import { ContactTheDev } from "./LayoutWithContent/ContactTheDev";
+// import { LoginDashboard } from "./Artist/LoginDashboard";
+import { ContactTheDev } from "./LayoutWithContent/ContactTheDev";
 
 class HomeContainer extends Component {
   state = {
@@ -47,7 +46,7 @@ class HomeContainer extends Component {
     return (
       <div>
         <Nav />
-        <Container  >
+        <Container fluid >
           <Row>
             <Col size="md-3">
               <HowItWorks />
@@ -60,8 +59,8 @@ class HomeContainer extends Component {
             </ Col>
             <Col size="md-3">
               <div className="sticky-top">
-                <LoginDashboard />
-                {/* <ContactTheDev /> */}
+                {/* <LoginDashboard /> */}
+                <ContactTheDev />
               </div>
             </Col>
           </Row>

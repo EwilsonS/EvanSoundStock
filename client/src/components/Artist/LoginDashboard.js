@@ -3,7 +3,6 @@ import API from "../../utils/API";
 import SignUp from "../Navbar/SignUp";
 import { withRouter } from "react-router-dom";
 import "./loginDashboard.css";
-import ContactTheDev from "../LayoutWithContent/ContactTheDev";
 import { Link } from "react-router-dom";
 
 export class LoginDashboard extends Component {
@@ -196,7 +195,6 @@ export class LoginDashboard extends Component {
               </div>
             </div>
           </div>
-          <ContactTheDev />
         </div>
 
       )
@@ -263,7 +261,6 @@ export class LoginDashboard extends Component {
               )}
             </div>
           </div>
-          <ContactTheDev />
         </div>
 
       )
