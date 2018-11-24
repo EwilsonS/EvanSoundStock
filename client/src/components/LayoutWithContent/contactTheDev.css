@@ -1,6 +1,6 @@
 .dev{
-  background-color: rgb(2, 24, 58);
-  z-index: inherit;
+  background-color: rgba(2, 24, 58, 0.897);
+  z-index: 1;
   transition: .25s
 }
 .contact{
@@ -24,6 +24,5 @@
   border:1px solid #13a2b8;
   box-shadow: 0 0 10px #719ECE;
   background-color: rgba(255, 255, 255, 0.15);
-
 }
 

@@ -13,7 +13,7 @@ export class LoginDashboard extends Component {
     password: "",
     online: false,
     id: "",
-    valid: true, //Changes in db also
+    valid: true,
     artists: [],
     key: "",
     artistsInfo: [],

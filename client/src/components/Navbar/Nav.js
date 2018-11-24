@@ -98,7 +98,8 @@ export class Nav extends Component {
 
   logout = e => {
     e.preventDefault()
-    API.updateUserOffline(localStorage.getItem("id"))
+
+    API.updateUserOffline(localStorage.getItem("id")) //check this endpoint
       .then(() => {
         this.setState({
           online: false,
@@ -128,8 +129,7 @@ export class Nav extends Component {
                 <span className="text-info h4">
                   <strong>
                     {" "}
-                    <span className="flash">S</span>ound
-                    <span className="flash2">S</span>tock
+                    <span className="flash">S</span>ound<span className="flash2">S</span>tock
                   </strong>
                 </span>
               </span>
@@ -238,9 +238,11 @@ export class Nav extends Component {
               <div className="col-md-12">
                 <br />
                 <div className="form-group input-icons float-right">
+                <Link to="">
                 <i
-                    className="fas fa-sign-out-alt text-light float-right"
+                   className="fas fa-sign-out-alt text-light float-right"
                     onClick={this.logout}> Logout</i>
+                    </Link>
                 </div>
               </div>
             </div>

@@ -6,14 +6,19 @@
       #02183a91, 
       #02183a91
       ),
-     url('../../images/boom.jpeg');
+     url('../../images/apm.jpeg');
     /* box-shadow: 0px 1px 1px grey; */
-    border-bottom: 8px solid #13a2b8;
+    /* border-bottom: 8px solid #13a2b8; */
     color: #237c9a;
-    height: 20rem;
+    height: 45rem;
     width: 100%;
     background-position-y: 25rem;
     background-size: 115%;
+    min-height: 15rem; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
   }
 .button-nav{

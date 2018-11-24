@@ -1,0 +1,21 @@
+.parallax1{
+  background:  
+    linear-gradient(
+      #02183a91, 
+      #02183a91
+      ),
+     url('../../images/pexels-photo-1128440.jpeg');
+  min-height: 35rem; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.feature-img{
+  height: 5rem;
+  width: 5rem;
+}
+.feature-card{
+  border: none;
+  background-color: #8a8a8ad2
+}

@@ -44,18 +44,11 @@ class MiniCard extends Component {
    }
 
   addToPortfolio = (artistId, image) => {
-    // if logged in
     if (localStorage.getItem("id") !== null) {
-      // get the user's model from db
       API.getUser(localStorage.getItem("id"))
         .then(res => {
-          console.log(res.data)
-          console.log(`added to loc storage: "${image}"`)
-          console.log(`added to loc storage: "${artistId}"`)
-
           localStorage.setItem("artistImage", image)
           localStorage.setItem("artistId", artistId)
-
           API.updateUserArtist(localStorage.getItem("id"), localStorage.getItem("artistId"))
         })
       window.location.reload("/")
@@ -68,13 +61,11 @@ class MiniCard extends Component {
   render() {
     return (
       <div className="card-columns">
-        {this.state.artists.map(artist => artist.imageLink ? (
+        {this.state.artists.map(artist => (artist.account === "artist") ? (
           <div className="card card-mini mt-2 rounded-0"
             key={artist._id}
           >
-            <div className="cardHeader"
-            >
-              {/* on hover do alert-info */}
+            <div className="cardHeader">
               <h5 className="rounded-0 mb-0">
                 <Link to={`/api/users/${artist._id}`}>
                   <img
@@ -112,8 +103,7 @@ class MiniCard extends Component {
               </div>
             </small>
             </div>
-            <div className="cardFooter"
-            >
+            <div className="cardFooter">
             </div>
           </div>
         ) : (null))}

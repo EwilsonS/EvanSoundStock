@@ -12,7 +12,7 @@ const HowItWorks = () => (
 
   <div className="row my-0 alert bg-alert-dark">
     <div className="col-md-12 p-0">
-      <div className="mb-5 my-1">
+      <div className="mb-5 my-1 card-group">
         <div className="my-2 px-0 mx-0 rounded-0 card text-white bg-info" style={styles.card}>
           <div className="card-header"><strong>Step 1</strong></div>
           <div className="card-body p-2">
