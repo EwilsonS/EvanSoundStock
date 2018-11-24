@@ -17,5 +17,8 @@
 }
 .feature-card{
   border: none;
-  background-color: #8a8a8ad2
+  background-color: #ffffff23;
+}
+.feature-title{
+  margin-top: 4rem;
 }

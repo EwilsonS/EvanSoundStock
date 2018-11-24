@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../../utils/API";
-import "../LayoutWithContent/parallax1.css"
+import "../LayoutWithContent/featured.css"
 
 
 function addToPortfolio(artistId, image){
@@ -29,20 +29,22 @@ function FeaturedArtists(props) {
     <div className="col-md-3"></div>
       <div className="col-md-6">
         <br /><br />
-        <p className="h4 text-light text-center">Featured Artists</p>
+        <br /><br />
+
+        <p className="h4 text-light text-center feature-title">Featured Artists</p>
         {/* <br /> */}
         <div>
-          {props.artists.map(artist => (artist.name === "tree") ? (
+          {props.artists.map(artist => (artist.name === "tree" || artist.name === "Wilson Wright") ? (
             <div className="card my-3 feature-card" key={artist._id}>
               <div className="">
-              <h5 className="text-info">{artist.name}
+              <h5 className="text-light">{artist.name}
               </h5>
                 <div className="">
                   <div className="">
                     <img className="rounded-circle float-left feature-img" alt="null" src={artist.imageLink} />
                     <div className="float-left">
-                      <p className="text-dark float-left">{artist.bio}</p>
-                      <p className="text-info">{artist.goal}
+                      <p className="text-light float-left">{artist.bio}</p>
+                      <p className="text-light ml-3">{artist.goal}
                         <br /> Seeking: <strong>${artist.totalPrice}</strong>
                         <br /> For: <strong>{artist.availablePercentage}% </strong> of total album sales
                         </p>

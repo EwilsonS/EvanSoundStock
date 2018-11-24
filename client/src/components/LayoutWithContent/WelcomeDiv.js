@@ -12,7 +12,7 @@ const styles = {
 
 const WelcomeDiv = props => (
 
-  <div className="row my-5" >
+  <div className="row my-2" >
     <div className="col-md-2"></div>
       <div className="col-md-8 text-center text-dark">
         <br />
