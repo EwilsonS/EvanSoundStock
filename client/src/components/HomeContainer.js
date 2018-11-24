@@ -8,6 +8,7 @@ import FeaturedArtists from "./LayoutWithContent/Featured";
 import Footer from "./LayoutWithContent/Footer";
 // import { LoginDashboard } from "./Artist/LoginDashboard";
 import { ContactTheDev } from "./LayoutWithContent/ContactTheDev";
+import Filler from "./LayoutWithContent/Filler"
 
 class HomeContainer extends Component {
   state = {
@@ -63,11 +64,14 @@ class HomeContainer extends Component {
             </Col>
           </Row>
           <Row>
-            <Col size="md-2" />
-            <Col size="md-8">
+            <Col size="md-12">
+              <Filler />
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-12">
               <HowItWorks />
             </Col>
-            <Col size="md-2" />
           </Row>
         </Container>
         <Footer />
