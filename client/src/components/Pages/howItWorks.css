@@ -1,13 +1,15 @@
 .main-content{
   box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
   font-size: 12px;
-  background-color: rgba(255, 255, 255, 0.226);
+  background-color: rgba(255, 255, 255, 0.767);
+  color: #02183a;
+  font-size: 1rem;
 }
 .row-bg{
   background:  
     linear-gradient(
-      #02183a91, 
-      #02183a91
+      #2b2b2b, 
+      #02183abe
       ),
      url('../../images/record-pattern.jpeg');
   min-height: 35rem; 

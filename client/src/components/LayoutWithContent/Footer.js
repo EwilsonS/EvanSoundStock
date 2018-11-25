@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../LayoutWithContent/footer.css"
 
 const Footer = () => (
-  <div>
-    <div className="row bg-dark text-light m-0 pt-3">
+  <div className="bg-row">
+    <div className="row text-light m-0 pt-3">
       <div className="col-md-4"></div>
       <div className="col-md-1 ">
         {/* <a href="" className="text-info">Facebook</a><br /> */}
@@ -37,7 +38,7 @@ const Footer = () => (
 
     </div>
 
-    <div className="row bg-dark text-light m-0 pt-3">
+    <div className="row text-light m-0 pt-3">
 
       <div className="col-md-3"></div>
       <div className="col-md-6 ">

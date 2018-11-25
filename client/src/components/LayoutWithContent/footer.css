@@ -1,0 +1,14 @@
+.bg-row{
+  background:  
+    linear-gradient(
+      #000000d0,
+      #000000f8
+      ),
+     url('../../images/audience-band-concert-1105666.jpg');
+  min-height: 35rem; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 8rem;
+}

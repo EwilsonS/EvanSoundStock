@@ -128,7 +128,7 @@ export class Nav extends Component {
               <span className="navbar-brand text-info nav-title">
                 <span className="text-info h4">
                   <strong>
-                    {" "}
+                    {""}
                     <span className="flash">S</span>ound<span className="flash2">S</span>tock
                   </strong>
                 </span>
