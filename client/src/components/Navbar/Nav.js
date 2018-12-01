@@ -119,7 +119,7 @@ export class Nav extends Component {
   }
 
   render() {
-    if (this.state.online == false) {
+    if (this.state.online === false) {
       return(
         <div className="nav">
           {/* <div className=""> */}

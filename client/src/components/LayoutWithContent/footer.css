@@ -1,14 +1,17 @@
 .bg-row{
-  background:  
-    linear-gradient(
-      #00000086,
-      #000000f8
-      ),
-     url('../../images/audience-band-concert-1105666.jpg');
+  /* background:  
+  linear-gradient(to bottom right,
+  #0a163abe, 
+  #2f1d20
+  ),
+     url('../../images/pexels-photo-1128440.jpeg');
   min-height: 30rem; 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 8rem;
+  padding-top: 8rem; */
+  /* background:linear-gradient(to bottom right,
+  #0b1122, 
+  #2f1d20); */
 }

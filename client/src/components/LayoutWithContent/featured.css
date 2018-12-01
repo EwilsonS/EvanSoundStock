@@ -1,8 +1,8 @@
-.parallax1{
+/* .parallax1{
   background:  
-    linear-gradient(
-      #2b2b2b, 
-      #02183ad3
+    linear-gradient(to bottom right,
+      #0a163abe, 
+      #2f1d20
       ),
      url('../../images/pexels-photo-1128440.jpeg');
   min-height: 35rem; 
@@ -10,14 +10,17 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 .feature-img{
   height: 5rem;
   width: 5rem;
 }
 .feature-card{
   border: none;
-  background-color: #ffffff23;
+  /* background-color: #3d3d3dec; */
+  background:linear-gradient(to bottom right,
+  #090d1a, 
+  #2f1d20);
 }
 .feature-title{
   margin-top: 4rem;

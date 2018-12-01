@@ -7,10 +7,10 @@
 }
 .row-bg{
   background:  
-    linear-gradient(
-      #2b2b2b, 
-      #02183abe
-      ),
+  linear-gradient(to bottom right,
+  #0a163abe, 
+  #2f1d20
+  ),
      url('../../images/record-pattern.jpeg');
   min-height: 35rem; 
   background-attachment: fixed;

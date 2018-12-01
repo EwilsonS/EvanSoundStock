@@ -2,9 +2,9 @@
 .nav{
     /* background-color: #02183a; */
     background:  
-    linear-gradient(
-      #02183a91, 
-      #02183a91
+    linear-gradient(to bottom right,
+      #0a163a73, 
+      #2f1d20
       ),
      url('../../images/apm.jpeg');
     /* box-shadow: 0px 1px 1px grey; */
