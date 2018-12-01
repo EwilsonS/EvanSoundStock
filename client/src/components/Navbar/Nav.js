@@ -273,10 +273,25 @@ export class Nav extends Component {
               <div className="col-md-12">
                 <br />
                 <div className="form-group input-icons logged-in-panel float-right">
-                <p className="text-light">Welcome {this.state.name}!</p>
+                <p className="text-light"><span>Welcome {this.state.name}! 
+                <span className="float-right">
+                <Link
+                  onClick={this.reload}
+                  to={`/api/users/${this.state.id}`}>
+                  <i className="fas fa-user text-light mr-3"> Profile</i>
+                </Link>
+                <Link to="">
+                <i
+                   className="fas fa-sign-out-alt text-light m-1"
+                    onClick={this.logout}> Logout</i>
+                    </Link>
+                    </span>
+                </span>
+                </p>
+                
                 {this.state.artistsInfo.map(art => art.imageLink ? (
                 <div
-                  className="rounded-0 portfolio-card"
+                  className="rounded-0 portfolio-card-nav"
                   key={art._id}
                 >
                   <Link
@@ -285,7 +300,7 @@ export class Nav extends Component {
                     to={`/api/users/${art._id}`}>
                     <p>
                       <img
-                        className="rounded-circle m-2 image2"
+                        className="rounded-circle m-2 image2-nav"
                         src={art.imageLink}
                         alt=""
                       />
@@ -301,11 +316,7 @@ export class Nav extends Component {
                 </div>
               ) : (null)
               )}
-                <Link to="">
-                <i
-                   className="fas fa-sign-out-alt text-light float-right"
-                    onClick={this.logout}> Logout</i>
-                    </Link>
+                
                 </div>
               </div>
             </div>

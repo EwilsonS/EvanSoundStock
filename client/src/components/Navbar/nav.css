@@ -73,6 +73,12 @@
   position: relative;
   top: 15rem;
 }
+.logged-in-panel{
+  position: relative;
+  top: 0rem;
+  right: 1rem;
+  width: 20rem;
+}
 .login-input{
     background-color: rgba(255, 255, 255, 0.15);
     border: none;
@@ -132,66 +138,29 @@
   to {color: #027384;}
 }
  /* ======================== Build portfolio ============================================= */
-.image2{
+.image2-nav{
   border: 3px solid rgba(255, 255, 255, 0.514);
   transition: .25s;
   height: 2rem;
+  width: 2rem;
 }
-.image2:hover{
-border: 3px solid rgba(3, 33, 43, 0.411);
-}
-.dropdown {
-  background-color: #02183a;
-  z-index: 20000000;
-  padding: 20%
-}
-.login{
-  background-color: #031127;
-}
-.card-dash{
-  /* box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
-  font-size: 15px; */
-  background-color: #00000000;
-  border: none;
 
-}
-.dashboard{
-  /* background: #3d5351; */
-  background: #6e6e6e00;
-  /* background-image: url("../../images/my-little-plaid.png"); */
-  /* background-size: 100% 100%; */
-}
-.portfolio-card{
-  background-color:  #02183a93;
+.portfolio-card-nav{
+  background-color:  #f8f8f821;
   transition: .25s;
   margin-bottom: -.5rem
 }
-.portfolio-card:hover{
-  background-color:  #02183a;
+.portfolio-card-nav:hover{
+  background-color:  #f8f8f848;
   transition: .3s;
   z-index: 10;
-  -webkit-transform: scale(1.125);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
-  background-color:  #02183a;
-  box-shadow: 1px 0px 26px 0px rgba(50, 50, 50, 0.5);
-  /* border: 1px solid white; */
-
 }
 .artist-name{
-  /* font-weight: bold; */
   font-size: .75rem;
 }
 .linkage:hover{
   text-decoration: none;
-}
-.viewPortfolio{
-  font-size: 1.25rem;
-  text-shadow:
-  -.25px -.25px 0 rgb(0, 0, 0),  
-   .25px -.25px 0 rgb(0, 0, 0),
-   -.25px .25px 0 rgb(0, 0, 0),
-    .25px .25px 0 rgb(0, 0, 0);
 }
 
 @media (max-width: 1600px){
