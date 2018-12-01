@@ -50,11 +50,11 @@ class HomeContainer extends Component {
         <Nav />
         <Container fluid>
           <Row>
-            <Col size="md-2" />
-            <Col size="md-8">
+            <Col size="md-1" />
+            <Col size="md-10">
               <WelcomeDiv />
             </Col>
-            <Col size="md-2">
+            <Col size="md-1">
               <ContactTheDev  />
             </Col>
           </Row>

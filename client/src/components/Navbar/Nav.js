@@ -16,7 +16,7 @@ export class Nav extends Component {
     password: "",
     online: false,
     id: "",
-    valid: true, //Changes in db also
+    valid: true,
     artists: [],
     key: "",
     artistsInfo: [],
@@ -31,9 +31,15 @@ export class Nav extends Component {
         id: localStorage.getItem("id"),
         email: localStorage.getItem("email"),
         name: localStorage.getItem("name"),
-        key: localStorage.getItem("artistId")
+        key: localStorage.getItem("artistId"),
+        artists: (JSON.parse(localStorage.getItem("artists")))
       })
-      // this.viewPortfolio()
+      console.log('======cdm artists from ls=======')
+      console.log(JSON.parse(localStorage.getItem("artists")))
+      console.log(this.state)
+
+      this.viewPortfolio();
+      // this.buildPortfolio();
     } else {
       this.setState({
         online: false,
@@ -60,6 +66,7 @@ export class Nav extends Component {
     })
       .then(res => {
         this.setState({ verify: res.data });
+        
       })
       .then(() => {
         // check email and password to get user info
@@ -70,10 +77,11 @@ export class Nav extends Component {
           !this.state.password
         ) {
           alert(`Oops....Something went wrong`);
-          // this.setState({ valid: false })
+          this.setState({ valid: false })
           window.location.reload("/");
         } else {
-          API.updateUserOnline(this.state.verify._id);
+          // API.updateUserOnline(this.state.verify._id);
+          console.log('Successful login');
         }
       })
       .then(() => {
@@ -83,19 +91,47 @@ export class Nav extends Component {
           localStorage.setItem("email", this.state.verify.email);
           localStorage.setItem("online", this.state.online);
           localStorage.setItem("name", this.state.verify.name);
+          localStorage.setItem("artists", JSON.stringify(this.state.verify.artists));
 
           this.setState({ online: true });
         }
         return console.log("invalid login");
       })
       .then(() => {
-        this.viewPortfolio();
+        // this.viewPortfolio();
         console.log("online? " + this.state.verify.online);
         console.log(window.location.href);
       })
       .catch(err => console.log(err));
   };
+  viewPortfolio = () => {
+    // e.preventDefault()
+    API.getUser(localStorage.getItem("id"))
+      .then(res => {
+        this.setState({ artists: res.data.artists })
+        console.log(this.state.artists)
+      })
+      .then(() => {
+        this.buildPortfolio()
+      })
+  }
 
+  buildPortfolio = () => {
+    let elementArr = []
+    this.state.artists.forEach(element => {
+      API.getUser(element)
+        .then((res) => {
+          console.log(`element: ${element}`)
+          console.log(`artists: ${this.state.artists}`)
+          console.log(res.data)
+          elementArr.push(res.data)
+
+          this.setState({
+            artistsInfo: elementArr
+          })
+        })
+    })
+  }
   logout = e => {
     e.preventDefault()
 
@@ -190,7 +226,6 @@ export class Nav extends Component {
                         className="btn btn-sm login-input m-2"
                         placeholder="Go"
                         onClick={this.login}
-                        type="submit"
                         value="Log In"
                       >
                         Go
@@ -237,7 +272,35 @@ export class Nav extends Component {
             <div className="row">
               <div className="col-md-12">
                 <br />
-                <div className="form-group input-icons float-right">
+                <div className="form-group input-icons logged-in-panel float-right">
+                <p className="text-light">Welcome {this.state.name}!</p>
+                {this.state.artistsInfo.map(art => art.imageLink ? (
+                <div
+                  className="rounded-0 portfolio-card"
+                  key={art._id}
+                >
+                  <Link
+                    onClick={this.reload}
+                    className="linkage"
+                    to={`/api/users/${art._id}`}>
+                    <p>
+                      <img
+                        className="rounded-circle m-2 image2"
+                        src={art.imageLink}
+                        alt=""
+                      />
+                      <span
+                        className="artist-name text-light"
+                      >{art.name}</span>
+                    </p>
+                  </Link>
+                  {/* <button
+                    className="delete-btn"
+                    onClick={this.delete}
+                  >x</button> */}
+                </div>
+              ) : (null)
+              )}
                 <Link to="">
                 <i
                    className="fas fa-sign-out-alt text-light float-right"

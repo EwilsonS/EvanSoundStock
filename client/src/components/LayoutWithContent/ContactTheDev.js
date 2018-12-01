@@ -45,7 +45,7 @@ export class ContactTheDev extends Component {
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <i class="fas fa-comment-alt"></i>
+            <i className="fas fa-comment-alt"></i>
           </button>
           <div className="dropdown-menu dev">
             {/* <!-- Dropdown menu links --> */}

@@ -1,16 +1,15 @@
-
 .nav{
     /* background-color: #02183a; */
     background:  
     linear-gradient(to bottom right,
-      #0a163a73, 
+      #0a163a44, 
       #2f1d20
       ),
      url('../../images/apm.jpeg');
     /* box-shadow: 0px 1px 1px grey; */
     /* border-bottom: 8px solid #13a2b8; */
     color: #237c9a;
-    height: 45rem;
+    height: 35rem;
     width: 100%;
     background-position-y: 25rem;
     background-size: 115%;
@@ -21,6 +20,8 @@
     background-size: cover;
     
   }
+
+  /* ============== Register ============================================================ */
 .button-nav{
   position: relative;
   display: inline;
@@ -67,16 +68,15 @@
   position: relative;
   top: 1.5rem;
 }
+/* ============ Login ================================================================== */
+.input-icons{
+  position: relative;
+  top: 15rem;
+}
 .login-input{
     background-color: rgba(255, 255, 255, 0.15);
     border: none;
     color: white;
-  }
- .input-icons{
-    /* position: relative; */
-    /* top: 10rem; */
-    /* float: right; */
-    /* left: 25rem; */
   }
 
  .login-input::placeholder{
@@ -99,6 +99,9 @@
 .infoDark{
     color: #027384
   }
+
+/*=========== Animation ================================================================== */
+
 .flash{
   animation-name: flash;
    animation-duration: 1.2s;
@@ -127,6 +130,68 @@
 @keyframes flash2 {
   from {color:#5bc0de;}
   to {color: #027384;}
+}
+ /* ======================== Build portfolio ============================================= */
+.image2{
+  border: 3px solid rgba(255, 255, 255, 0.514);
+  transition: .25s;
+  height: 2rem;
+}
+.image2:hover{
+border: 3px solid rgba(3, 33, 43, 0.411);
+}
+.dropdown {
+  background-color: #02183a;
+  z-index: 20000000;
+  padding: 20%
+}
+.login{
+  background-color: #031127;
+}
+.card-dash{
+  /* box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
+  font-size: 15px; */
+  background-color: #00000000;
+  border: none;
+
+}
+.dashboard{
+  /* background: #3d5351; */
+  background: #6e6e6e00;
+  /* background-image: url("../../images/my-little-plaid.png"); */
+  /* background-size: 100% 100%; */
+}
+.portfolio-card{
+  background-color:  #02183a93;
+  transition: .25s;
+  margin-bottom: -.5rem
+}
+.portfolio-card:hover{
+  background-color:  #02183a;
+  transition: .3s;
+  z-index: 10;
+  -webkit-transform: scale(1.125);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  background-color:  #02183a;
+  box-shadow: 1px 0px 26px 0px rgba(50, 50, 50, 0.5);
+  /* border: 1px solid white; */
+
+}
+.artist-name{
+  /* font-weight: bold; */
+  font-size: .75rem;
+}
+.linkage:hover{
+  text-decoration: none;
+}
+.viewPortfolio{
+  font-size: 1.25rem;
+  text-shadow:
+  -.25px -.25px 0 rgb(0, 0, 0),  
+   .25px -.25px 0 rgb(0, 0, 0),
+   -.25px .25px 0 rgb(0, 0, 0),
+    .25px .25px 0 rgb(0, 0, 0);
 }
 
 @media (max-width: 1600px){
