@@ -4,7 +4,7 @@ import "../LayoutWithContent/filler.css"
 function Filler() {
   return (
     <div className="row filler">
-      <p>Lorem </p>
+      <p> </p>
     </div>
   );
 }

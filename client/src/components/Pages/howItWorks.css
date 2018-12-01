@@ -18,4 +18,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+@media (max-width: 1250px){
+  .card-group{
+    display: table-row;
+  }
 }
