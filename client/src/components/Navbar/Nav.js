@@ -158,24 +158,22 @@ export class Nav extends Component {
     if (this.state.online === false) {
       return(
         <div className="nav">
-          {/* <div className=""> */}
-          <div className="col-md-3 left-space">
-            <Link to="/">
-              <span className="navbar-brand text-info nav-title">
-                <span className="text-info h4">
-                  <strong>
-                    {""}
-                    <span className="flash">S</span>ound<span className="flash2">S</span>tock
-                  </strong>
-                </span>
+          <div className="col-md-5">
+          <Link to="/">
+            <span className="navbar-brand text-info nav-title p-0">
+              <span className="h4 text-light welcome-to"> Welcome to </span>
+                <br/>
+                <strong>
+                  <span className="flash">S</span>ound
+                  <span className="flash2">S</span>tock.io
+                  <br/>
+                </strong>
+                <Link to="/AllArtists" className="btn btn-danger btn-sm all-artists-btn">
+                  <div className="">
+                    View All Available Artists
+                  </div>
+                </Link>
               </span>
-            </Link>
-          </div>
-          <div className="col-md-2">
-            <Link to="/AllArtists" className="">
-              <button className="btn btn-danger text-light btn-sm m-1 button-nav">
-                View All Artists
-              </button>
             </Link>
           </div>
           <div className="col-md-7">
@@ -236,31 +234,27 @@ export class Nav extends Component {
               </div>
             </div>
           </div>
-          {/* </div> */}
         </div>
       )
     } else {
       return (
         <div className="nav">
-          {/* <div className=""> */}
-          <div className="col-md-3 left-space">
-            <Link to="/">
-              <span className="navbar-brand text-info nav-title">
-                <span className="text-info h4">
-                  <strong>
-                    {" "}
-                    <span className="flash">S</span>ound
-                    <span className="flash2">S</span>tock
-                  </strong>
-                </span>
+          <div className="col-md-5">
+          <Link to="/">
+            <span className="navbar-brand text-info nav-title p-0">
+              <span className="h4 text-light welcome-to"> Welcome to </span>
+                <br/>
+                <strong>
+                  <span className="flash">S</span>ound
+                  <span className="flash2">S</span>tock.io
+                  <br/>
+                </strong>
+                <Link to="/AllArtists" className="btn btn-danger btn-sm all-artists-btn">
+                  <div className="">
+                    View All Available Artists
+                  </div>
+                </Link>
               </span>
-            </Link>
-          </div>
-          <div className="col-md-2">
-            <Link to="/AllArtists" className="">
-              <button className="btn btn-danger text-light btn-sm m-1 button-nav">
-                View All Artists
-              </button>
             </Link>
           </div>
           <div className="col-md-7">
@@ -288,7 +282,7 @@ export class Nav extends Component {
                     </span>
                 </span>
                 </p>
-                
+                <p className="mb-0 text-light">Your Portfolio</p>
                 {this.state.artistsInfo.map(art => art.imageLink ? (
                 <div
                   className="rounded-0 portfolio-card-nav"
@@ -316,12 +310,15 @@ export class Nav extends Component {
                 </div>
               ) : (null)
               )}
-                
+                 <Link to="/AllArtists" className="btn btn-danger btn-sm btn-block m-1">
+              <div className="">
+                View All Available Artists
+              </div>
+            </Link>
                 </div>
               </div>
             </div>
           </div>
-          {/* </div> */}
         </div>
       );
     }
