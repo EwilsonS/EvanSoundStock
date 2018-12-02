@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { LoginDashboard } from "../Artist/LoginDashboard";
 import { Container, Row, Col } from "../Grid";
-import Nav from "../Navbar/NavSmall";
+import NavSmall from "../Navbar/NavSmall";
 import Calculator from "../Artist/Calculator"
 import "./userProfile.css"
 class UserProfile extends Component {
@@ -31,7 +31,7 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <NavSmall />
         <Container fluid>
           <Row>
             <Col size="md-1" />

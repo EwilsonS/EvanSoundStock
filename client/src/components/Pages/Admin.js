@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../Grid";
-import Nav from "../Navbar/Nav";
+import NavSmall from "../Navbar/NavSmall";
 import API from "../../utils/API";
 import "./admin.css"
 
@@ -38,7 +38,7 @@ visits = () => {
     if (this.state.admin === true) {
       return (
         <div>
-          <Nav />
+          <NavSmall />
           <Container fluid>
             <Row>
               <Col size="md-4">
@@ -66,7 +66,7 @@ visits = () => {
     } else {
       return(
       <div>
-        <Nav />
+        <NavSmall />
         <Container fluid>
           <Row>
             <Col size="md-4"></Col>

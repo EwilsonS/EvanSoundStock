@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../Grid";
-import Nav from "../Navbar/NavSmall";
+import NavSmall from "../Navbar/NavSmall";
 import API from "../../utils/API";
 
 const styles = {
@@ -95,7 +95,7 @@ export class ArtistSignUp extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <NavSmall />
         <Container fluid>
           <Row>
             <Col size="md-3" />

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../Grid";
-import Nav from "../Navbar/NavSmall";
+import NavSmall from "../Navbar/NavSmall";
 import Calculator from "../Artist/Calculator"
 import MiniCard from "../Artist/MiniCard"
 import { LoginDashboard } from "../Artist/LoginDashboard";
@@ -11,7 +11,7 @@ export class AllArtists extends Component {
 	render() {
 		return (
 			<div>
-				<Nav />
+				<NavSmall />
 				<Container fluid>
 					<Row>
 						<Col size="md-1"/>

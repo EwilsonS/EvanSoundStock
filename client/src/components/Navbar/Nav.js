@@ -160,7 +160,7 @@ export class Nav extends Component {
         <div className="nav">
           <div className="col-md-5">
           <Link to="/">
-            <span className="navbar-brand text-info nav-title p-0">
+            <span className="navbar-brand text-info nav-title1 p-0">
               <span className="h4 text-light welcome-to"> Welcome to </span>
                 <br/>
                 <strong>
@@ -241,7 +241,7 @@ export class Nav extends Component {
         <div className="nav">
           <div className="col-md-5">
           <Link to="/">
-            <span className="navbar-brand text-info nav-title p-0">
+            <span className="navbar-brand text-info nav-title1 p-0">
               <span className="h4 text-light welcome-to"> Welcome to </span>
                 <br/>
                 <strong>
