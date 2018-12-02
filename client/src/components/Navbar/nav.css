@@ -41,6 +41,7 @@
   color: white;
   position: relative;
   top: 8rem;
+  z-index: 10000;
 }
 .invest{
   background-color: #237c9a;

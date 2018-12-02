@@ -159,22 +159,24 @@ export class Nav extends Component {
       return(
         <div className="nav">
           <div className="col-md-5">
-          <Link to="/">
-            <span className="navbar-brand text-info nav-title1 p-0">
-              <span className="h4 text-light welcome-to"> Welcome to </span>
-                <br/>
-                <strong>
-                  <span className="flash">S</span>ound
-                  <span className="flash2">S</span>tock.io
+           <div>
+            <Link to="/">
+              <span className="navbar-brand text-info nav-title1 p-0">
+                <span className="h4 text-light welcome-to"> Welcome to </span>
                   <br/>
-                </strong>
-                <Link to="/AllArtists" className="btn btn-danger btn-sm all-artists-btn">
-                  <div className="">
-                    View All Available Artists
-                  </div>
-                </Link>
-              </span>
-            </Link>
+                  <strong>
+                    <span className="flash">S</span>ound
+                    <span className="flash2">S</span>tock.io
+                    <br/>
+                  </strong>
+                </span>
+              </Link>
+              <Link to="/AllArtists" className="btn btn-danger btn-sm all-artists-btn">
+                <div className="">
+                  View All Available Artists
+                </div>
+              </Link>
+            </div>
           </div>
           <div className="col-md-7">
             <div className="row">
