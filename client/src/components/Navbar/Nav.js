@@ -249,11 +249,6 @@ export class Nav extends Component {
                   <span className="flash2">S</span>tock.io
                   <br/>
                 </strong>
-                <Link to="/AllArtists" className="btn btn-danger btn-sm all-artists-btn">
-                  <div className="">
-                    View All Available Artists
-                  </div>
-                </Link>
               </span>
             </Link>
           </div>
