@@ -1,10 +1,10 @@
 {
-  "name": "soundstock",
+  "name": "mern",
   "version": "1.0.0",
   "engines": {
     "node": "8.10.0"
   },
-  "description": "Independent venture",
+  "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -18,8 +18,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.6.1",
-    "nodemon": "^1.11.0"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -27,13 +27,14 @@
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "css-loader": "1.0.0",
     "express": "^4.16.4",
     "express-messages": "*",
     "express-session": "^1.15.6",
     "express-validator": "^5.3.0",
     "if-env": "^1.0.4",
     "mongodb": "*",
-    "mongoose": "^5.2.7",
+    "mongoose": "^5.3.15",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-http": "*",

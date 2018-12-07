@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
-const saltRounds = 10;
-const passportLocalMongoose = require('passport-local-mongoose')
+// const saltRounds = 10;
+// const passportLocalMongoose = require('passport-local-mongoose')
 const UserSchema = new mongoose.Schema({
 
   // firstName: {
@@ -86,7 +86,7 @@ const UserSchema = new mongoose.Schema({
 
   }
 });
-UserSchema.plugin(passportLocalMongoose)
+// UserSchema.plugin(passportLocalMongoose)
 
 UserSchema.methods.generateHash = function (password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);

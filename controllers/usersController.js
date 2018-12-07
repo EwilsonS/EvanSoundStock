@@ -1,5 +1,5 @@
 const db = require("../models");
-const bcrypt = require("bcrypt")
+// const bcrypt = require("bcrypt")
 // Defining methods for the UsersController
 module.exports = {
   findAll: function (req, res) {

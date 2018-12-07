@@ -5,9 +5,9 @@ const session = require("express-session")
 const morgan = require('morgan');
 const routes = require("./routes");
 const app = express();
-const path = require("path")
+// const path = require("path")
 const cookieParser = require("cookie-parser")
-var passport = require("./config/passport");
+// var passport = require("./config/passport");
 const PORT = process.env.PORT ? process.env.PORT : 3001;
 
 mongoose.Promise = global.Promise;
@@ -19,8 +19,8 @@ app.use(morgan('dev'))
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.use(cookieParser())
 
 app.use(session({

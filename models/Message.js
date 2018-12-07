@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose')
-var bcrypt = require('bcrypt');
+// const passportLocalMongoose = require('passport-local-mongoose')
+// var bcrypt = require('bcrypt');
 
 
 const MessageSchema = new mongoose.Schema({

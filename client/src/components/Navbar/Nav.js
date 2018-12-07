@@ -66,7 +66,7 @@ export class Nav extends Component {
     })
       .then(res => {
         this.setState({ verify: res.data });
-        
+
       })
       .then(() => {
         // check email and password to get user info
@@ -156,84 +156,82 @@ export class Nav extends Component {
 
   render() {
     if (this.state.online === false) {
-      return(
+      return (
         <div className="nav">
-          <div className="col-md-5">
-           <div>
-            <Link to="/">
-              <span className="navbar-brand text-info nav-title1 p-0">
-                <span className="h4 text-light welcome-to"> Welcome to </span>
-                  <br/>
+          <div className="col-md-5 nav-left-col">
+            <div>
+              <Link to="/">
+                <span className="navbar-brand text-info nav-title1 p-0">
+                  <span className="h4 text-light welcome-to"> Welcome to </span>
+                  <br />
                   <strong>
                     <span className="flash">S</span>ound
                     <span className="flash2">S</span>tock.io
-                    <br/>
+                    <br />
                   </strong>
+                  <Link to="/AllArtists" className="btn btn-danger btn-sm all-artists-btn">
+                    View All Available Artists
+                    </Link>
                 </span>
-              </Link>
-              <Link to="/AllArtists" className="btn btn-danger btn-sm all-artists-btn">
-                <div className="">
-                  View All Available Artists
-                </div>
               </Link>
             </div>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-7 nav-right-col">
             <div className="row">
-              <div className="col-md-12">
-                <div className="register rounded float-right">
-                  <p>Register</p>
-                  <Link to="../InvestorSignUp">
-                    <div className="invest">
-                      <span className="reg-btn-txt">Investor</span>
+              <div className="col-md-3"></div>
+                <div className="col-md-6">
+                  <div className="register rounded">
+                      <p>Register</p>
+                      <Link to="../InvestorSignUp">
+                        <span className="invest">
+                          <span className="reg-btn-txt">Investor</span>
+                        </span>
+                      </Link>
+                      <Link to="../ArtistSignUp">
+                        <span className="artist">
+                          <span className="reg-btn-txt">Artist</span>
+                        </span>
+                      </Link>
                     </div>
-                  </Link>
-                  <Link to="../ArtistSignUp">
-                    <div className="artist">
-                      <span className="reg-btn-txt">Artist</span>
-                    </div>
-                  </Link>
-                </div>
+                  </div>
+                <div className="col-md-3"></div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <br />
-                <br />
-                <div className="form-group input-icons float-right">
-                  <form>
-                    <span className="">
-                      <i className="fas fa-user" />
-                      <input
-                        type="text"
-                        className="form-control-sm login-input m-1"
-                        placeholder="Email"
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.handleInputChange}
-                      />
-                      <i className="fas fa-lock ml-3" />
-                      <input
-                        type="password"
-                        className="form-control-sm login-input m-1"
-                        placeholder="Password"
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handleInputChange}
-                      />
-                      <button
-                        type="submit"
-                        className="btn btn-sm login-input m-2"
-                        placeholder="Go"
-                        onClick={this.login}
-                        value="Log In"
-                      >
-                        Go
+              <br />
+              <br />
+              <br />
+
+            <div className="form-group input-icons">
+              <form>
+                <span className="">
+                  <i className="fas fa-user" />
+                  <input
+                    type="text"
+                    className="form-control-sm login-input m-1"
+                    placeholder="Email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                  />
+                  <i className="fas fa-lock ml-3" />
+                  <input
+                    type="password"
+                    className="form-control-sm login-input m-1"
+                    placeholder="Password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.handleInputChange}
+                  />
+                  <button
+                    type="submit"
+                    className="btn btn-sm login-input m-2"
+                    placeholder="Go"
+                    onClick={this.login}
+                    value="Log In"
+                  >
+                    Go
                       </button>
-                    </span>
-                  </form>
-                </div>
-              </div>
+                </span>
+              </form>
             </div>
           </div>
         </div>
@@ -241,79 +239,85 @@ export class Nav extends Component {
     } else {
       return (
         <div className="nav">
-          <div className="col-md-5">
-          <Link to="/">
-            <span className="navbar-brand text-info nav-title1 p-0">
-              <span className="h4 text-light welcome-to"> Welcome to </span>
-                <br/>
-                <strong>
-                  <span className="flash">S</span>ound
-                  <span className="flash2">S</span>tock.io
-                  <br/>
-                </strong>
-              </span>
-            </Link>
+           <div className="col-md-5 nav-left-col">
+            <div>
+              <Link to="/">
+                <span className="navbar-brand text-info nav-title1 p-0">
+                  <span className="h4 text-light welcome-to"> Welcome to </span>
+                  <br />
+                  <strong>
+                    <span className="flash">S</span>ound
+                    <span className="flash2">S</span>tock.io
+                    <br />
+                  </strong>
+                </span>
+              </Link>
+            </div>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-7 nav-col-right">
             <div className="row">
               <div className="col-md-12">
-               
+
               </div>
             </div>
             <div className="row">
-              <div className="col-md-12">
+            <div className="col-md-3"></div>
+
+              <div className="col-md-6">
                 <br />
-                <div className="form-group input-icons logged-in-panel float-right">
-                <p className="text-light"><span>Welcome {this.state.name}! 
+                <div className="form-group input-icons logged-in-panel">
+                  <p className="text-light"><span>Hi {this.state.name}!
                 <span className="float-right">
-                <Link
-                  onClick={this.reload}
-                  to={`/api/users/${this.state.id}`}>
-                  <i className="fas fa-user text-light mr-3"> Profile</i>
-                </Link>
-                <Link to="">
-                <i
-                   className="fas fa-sign-out-alt text-light m-1"
-                    onClick={this.logout}> Logout</i>
-                    </Link>
+                      <Link
+                        onClick={this.reload}
+                        to={`/api/users/${this.state.id}`}>
+                        <i className="fas fa-user text-light mr-3"> Profile</i>
+                      </Link>
+                      <Link to="">
+                        <i
+                          className="fas fa-sign-out-alt text-light m-1"
+                          onClick={this.logout}> Logout</i>
+                      </Link>
                     </span>
-                </span>
-                </p>
-                <p className="mb-0 text-light">Your Portfolio</p>
-                {this.state.artistsInfo.map(art => art.imageLink ? (
-                <div
-                  className="rounded-0 portfolio-card-nav"
-                  key={art._id}
-                >
-                  <Link
-                    onClick={this.reload}
-                    className="linkage"
-                    to={`/api/users/${art._id}`}>
-                    <p>
-                      <img
-                        className="rounded-circle m-2 image2-nav"
-                        src={art.imageLink}
-                        alt=""
-                      />
-                      <span
-                        className="artist-name text-light"
-                      >{art.name}</span>
-                    </p>
-                  </Link>
-                  {/* <button
+                  </span>
+                  </p>
+                  <p className="mb-0 text-light">Your Portfolio</p>
+                  {this.state.artistsInfo.map(art => art.imageLink ? (
+                    <div
+                      className="rounded-0 portfolio-card-nav"
+                      key={art._id}
+                    >
+                      <Link
+                        onClick={this.reload}
+                        className="linkage"
+                        to={`/api/users/${art._id}`}>
+                        <p>
+                          <img
+                            className="rounded-circle m-2 image2-nav"
+                            src={art.imageLink}
+                            alt=""
+                          />
+                          <span
+                            className="artist-name text-light"
+                          >{art.name}</span>
+                        </p>
+                      </Link>
+                      {/* <button
                     className="delete-btn"
                     onClick={this.delete}
                   >x</button> */}
-                </div>
-              ) : (null)
-              )}
-                 <Link to="/AllArtists" className="btn btn-danger btn-sm btn-block m-1">
-              <div className="">
-                View All Available Artists
+                    </div>
+                  ) : (null)
+                  )}
+                  <Link to="/AllArtists" className="btn btn-danger btn-sm btn-block m-1">
+                    <div className="">
+                      Browse All Artists
               </div>
-            </Link>
+                  </Link>
                 </div>
               </div>
+            <div className="col-md-3"></div>
+
             </div>
           </div>
         </div>

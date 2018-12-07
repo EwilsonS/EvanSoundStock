@@ -18,6 +18,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 5rem;
   }
 
   /* ============== Register ============================================================ */
@@ -30,25 +31,20 @@
   }
 
 .register{
-  /* border: 1px solid white; */
   background-color: rgba(255, 255, 255, 0.15);
-  margin-right: 3rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   height: 10rem;
-  width: 20rem;
+  /* width: 10rem; */
   text-align: center;
   font-size: 2rem;
   color: white;
-  position: relative;
-  top: 8rem;
-  z-index: 10000;
 }
 .invest{
   background-color: #237c9a;
   color: white;
   float: left;
-  width: 50%;
-  height: 59.75%;
+  width:50%;
+  height: 6rem;
   border-bottom-left-radius: .25rem;
 }
 .invest:hover{
@@ -61,7 +57,7 @@
   color: #237c9a;
   float: right;
   width: 50%;
-  height: 59.75%;
+  height: 6rem;
   border-bottom-right-radius: .25rem;
 }
 .artist:hover{
@@ -76,13 +72,13 @@
 /* ============ Login ================================================================== */
 .input-icons{
   position: relative;
-  top: 15rem;
+  bottom: 0rem;
 }
 .logged-in-panel{
   position: relative;
-  top: 0rem;
-  right: 1rem;
-  width: 20rem;
+  /* top: 0rem; */
+  /* right: 1rem; */
+  /* width: 20rem; */
 }
 .login-input{
     background-color: rgba(255, 255, 255, 0.15);
@@ -131,30 +127,37 @@
 }
 .nav-title1{
   position: relative;
-  left: 11rem;
   font-size: 3rem;
-  margin-top: 7rem;
+  /* margin-top: 7rem; */
   text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 }
-
+.nav-left-col{
+  text-align: center;
+}
+.nav-right-col{
+  text-align: center;
+  width: 100%;
+}
 .welcome-to{
   position: relative;
   top: 1.5rem;
-  left: -2rem;
+  left: -6.35rem;
 }
 .all-artists-btn{
   position: relative;
-  top: 1rem;
-  left: 5rem;
+  bottom: 1rem;
+  left: 0rem;
+  z-index: 999999999;
   text-shadow:
 		0px 0px 0 #000,
 		0px 0px 0 #000,
 		0px 0px 0 #000,
-		0px 0px 0 #000;
+    0px 0px 0 #000;
+   
 }
 
 @keyframes flash {
@@ -201,12 +204,14 @@
   }
 }
 @media (max-width: 1150px){
-.tr{
-  display: table-row;
-}
-@media(max-width: 770px){
- .left-space{
-display: none;
+  .tr{
+    display: table-row;
   }
 }
+@media (max-width: 951px){
+  .nav{
+    /* display: table-row */
+   
+  }
+
 }
