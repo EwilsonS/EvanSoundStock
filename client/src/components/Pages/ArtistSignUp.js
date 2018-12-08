@@ -272,8 +272,10 @@ export class ArtistSignUp extends Component {
                 <button
                   type="button"
                   className="btn btn-info rounded-0"
-                  data-toggle="modal"
-                  data-target="#exampleModalLong">
+                  onClick={this.handleFormSubmit}
+                  // data-toggle="modal"
+                  // data-target="#exampleModalLong"
+                  >
                   Submit
                 </button>
               </form>

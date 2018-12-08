@@ -185,13 +185,16 @@ export class LoginDashboard extends Component {
                 value={this.state.password}
                 onChange={this.handleInputChange}
               />
-              <div className="buttons">
-                <button className="buttons1 rounded-0 btn btn-sm btn-outline-info mt-2 p-1"
+              <div className="buttons mb-3">
+                <button className="buttons1 rounded-0 btn btn-sm btn-outline-info "
                   onClick={this.login}
                   type="submit"
                   value="Log In"
                 >Sign In</button>
-                <SignUp className="buttons2" />
+                  <Link to="/" >
+                    <button className="buttons2 btn btn-info btn-sm float-right rounded-0">Register</button>
+                  </Link>
+                {/* <SignUp className="buttons2" /> */}
               </div>
             </div>
           </div>

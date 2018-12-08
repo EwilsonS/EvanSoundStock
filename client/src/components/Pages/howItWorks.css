@@ -1,17 +1,18 @@
 .main-content{
   box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
   font-size: 12px;
-  background-color: rgba(255, 255, 255, 0.767);
+  background-color: rgba(255, 255, 255, 0.931);
   color: #02183a;
   font-size: 1rem;
 }
 .row-bg{
-  background:  
+  background-image: url('../../images/record-patternSm.jpeg');
+  /* background:  
   linear-gradient(to bottom right,
   #0a163abe, 
   #2f1d20
   ),
-     url('../../images/record-patternSm.jpeg');
+     url('../../images/record-patternSm.jpeg'); */
   min-height: 35rem; 
   background-attachment: fixed;
   background-position: center;
