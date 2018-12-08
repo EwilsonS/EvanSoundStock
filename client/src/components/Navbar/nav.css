@@ -6,7 +6,7 @@
       #2f1d20
       ),
      /* url('../../images/apm.jpeg'); */
-     url('../../images/apmSM.jpeg');
+     url('../../images/apmxSM.jpeg');
 
     /* box-shadow: 0px 1px 1px grey; */
     /* border-bottom: 8px solid #13a2b8; */
@@ -167,7 +167,7 @@
   position: relative;
   bottom: 1rem;
   left: 0rem;
-  z-index: 999999999;
+  z-index: 10000;
   text-shadow:
 		0px 0px 0 #000,
 		0px 0px 0 #000,

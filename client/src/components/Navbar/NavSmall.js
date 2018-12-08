@@ -34,33 +34,24 @@ export class NavSmall extends Component {
       )
     } else {
       return (
-        <nav className="navsmall">
-          <div className="col-md-3 left-space"></div>
+        <nav className="navsmall navbar">
             <div className="col-md-6">
               <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-6">
                   <Link to="/">
                     <span className="navbar-brand text-info nav-title">
                       <span className="text-info h4"><strong> <span className="flash">S</span>ound<span className="flash2">S</span>tock</strong></span>
                     </span>
                   </Link>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-6">
                   <Link to="/AllArtists" className="m-1">
                     <button className="btn btn-danger text-light btn-sm m-1 button-nav">View All Artists</button>
                   </Link>
                 </div>
-                
-                <div className="col-md-3">
-                  {/* <SignUp className="button-nav" id="signup-nav" /> */}
-                </div>
-                <div className="col-md-3">
-                  {/* <SignIn className="button-nav" id="signin-nav" /> */}
-                  {/* <button className="button-nav" id="signin-nav">Sign In</button> */}
-                </div>
               </div>
             </div>
-          <div className="col-md-3"></div>
+          <div className="col-md-1"></div>
 
         </nav>
 

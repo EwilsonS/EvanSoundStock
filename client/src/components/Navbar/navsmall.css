@@ -9,7 +9,7 @@
 }
 .button-nav{
 position: relative;
-margin-left: 5rem;
+/* margin-left: 5rem; */
 }
 .input{
   border-color: #237c9a;
@@ -64,7 +64,7 @@ to {color: #027384;}
 @media (max-width: 1150px){
 }
 @media(max-width: 770px){
-.left-space{
-display: none;
-}
+  .button-nav{
+    visibility: hidden;
+  }
 }

@@ -1,11 +1,11 @@
 .dev{
   background-color: rgba(2, 24, 58, 0.897);
-  z-index: 1;
+  z-index: 999;
   transition: .25s
 }
 .contact{
   transition: .2s;
-  color: rgba(255, 255, 255, 0.726);
+  color: rgba(255, 255, 255, 0.931);
   background-color: rgba(2, 24, 58, 0.534);
 }
 .contact:hover{

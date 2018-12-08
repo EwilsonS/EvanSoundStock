@@ -132,11 +132,27 @@ export class Nav extends Component {
         })
     })
   }
+  // logout = e => {
+  //   e.preventDefault()
+
+  //   API.updateUserOffline(localStorage.getItem("id")) //check this endpoint
+  //     .then(() => {
+  //       this.setState({
+  //         online: false,
+  //         id: "",
+  //         email: "",
+  //         verify: [],
+  //         artists: []
+  //       })
+  //     }).then(() => {
+  //       localStorage.clear()
+  //       this.reload()
+  //     })
+  // }
   logout = e => {
     e.preventDefault()
+    localStorage.clear()
 
-    API.updateUserOffline(localStorage.getItem("id")) //check this endpoint
-      .then(() => {
         this.setState({
           online: false,
           id: "",
@@ -144,10 +160,8 @@ export class Nav extends Component {
           verify: [],
           artists: []
         })
-      }).then(() => {
-        localStorage.clear()
+
         this.reload()
-      })
   }
   reload = () => {
     // refresh

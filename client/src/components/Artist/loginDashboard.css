@@ -59,6 +59,9 @@ border: 3px solid rgba(3, 33, 43, 0.411);
    -.25px .25px 0 rgb(0, 0, 0),
     .25px .25px 0 rgb(0, 0, 0);
 }
+.buttons1{
+  z-index: 9999999999999;
+}
 @media (max-width:1325px ){
   .refresh-icon{
     display: none;
@@ -67,7 +70,7 @@ border: 3px solid rgba(3, 33, 43, 0.411);
 @media (max-width:991px ){
   .buttons1,
   .buttons2{
-    display: table-row;
+    /* display: table-row; */
     float: right;
   }
 }
