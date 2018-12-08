@@ -162,7 +162,7 @@ export class Nav extends Component {
             <div>
               <Link to="/">
                 <span className="navbar-brand text-info nav-title1 p-0">
-                  <span className="h4 text-light welcome-to"> Welcome to </span>
+                  <span className="text-light welcome-to"> Welcome to </span>
                   <br />
                   <strong>
                     <span className="flash">S</span>ound
@@ -177,7 +177,7 @@ export class Nav extends Component {
             </div>
           </div>
           <div className="col-md-7 nav-right-col">
-            <div className="row">
+            <div className="row mb-2">
               <div className="col-md-3"></div>
                 <div className="col-md-6">
                   <div className="register rounded">
@@ -196,8 +196,6 @@ export class Nav extends Component {
                   </div>
                 <div className="col-md-3"></div>
               </div>
-              <br />
-              <br />
               <br />
 
             <div className="form-group input-icons">
@@ -223,7 +221,7 @@ export class Nav extends Component {
                   />
                   <button
                     type="submit"
-                    className="btn btn-sm login-input m-2"
+                    className="btn btn-sm go m-2"
                     placeholder="Go"
                     onClick={this.login}
                     value="Log In"

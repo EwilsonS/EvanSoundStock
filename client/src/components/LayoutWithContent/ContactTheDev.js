@@ -37,7 +37,7 @@ export class ContactTheDev extends Component {
 
   render() {
     return (
-        <div className="btn-group dropleft float-right mx-0 px-0 mt-5">
+        <div className="btn-group popupleft float-right mx-0 px-0 mt-5 btn-pos">
           <button
             type=""
             className="btn contact rounded"

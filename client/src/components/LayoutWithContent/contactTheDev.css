@@ -5,8 +5,19 @@
 }
 .contact{
   transition: .2s;
-  color: rgb(35,124,154);
-  background-color: rgb(2, 24, 58);
+  color: rgba(255, 255, 255, 0.726);
+  background-color: rgba(2, 24, 58, 0.534);
+}
+.contact:hover{
+  transition: .2s;
+  color: rgba(35, 124, 154);
+  background-color: rgba(2, 24, 58);
+}
+.btn-pos{
+  position: fixed;
+  top: 0rem;
+  right: 1.5rem;
+  z-index: 99999;
 }
 .contact:hover{
   /* cursor: pointer; */
