@@ -46,9 +46,7 @@ class UserProfile extends Component {
   };
 
   loadUser = () => {
-    // console.log(this.props.match.params.id)
     API.getUser(this.props.match.params.id)
-
       .then(res => {
         console.log(res.data)
         this.setState({ 
@@ -60,7 +58,6 @@ class UserProfile extends Component {
   }
 
   viewPortfolio = () => {
-    // e.preventDefault()
     API.getUser(localStorage.getItem("id"))
       .then(res => {
         this.setState({ artists: res.data.artists })
@@ -83,10 +80,19 @@ class UserProfile extends Component {
         })
     })
   }
+
   deleteArtist = (deleted) =>{
     API.pullUserArtist(localStorage.getItem("id"), deleted)
     .then(() =>{
       this.reload()
+    })
+  }
+
+  deleteAccount = (del) =>{
+    API.deleteAccount(del)
+    .then(()=>{
+      localStorage.clear()
+      window.location.replace("/")
     })
   }
 
@@ -95,7 +101,7 @@ class UserProfile extends Component {
    }
 
   render() {
-    if( this.state.user.account === 'artist'){
+    if(localStorage.getItem("id") !== this.props.match.params.id){
       return (
         <div>
           <NavSmall />
@@ -156,6 +162,8 @@ class UserProfile extends Component {
                       src={this.state.user.imageLink ? this.state.user.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                       alt="" />
                     <span className="nameText">{this.state.user.name}</span>
+                    <button className="btn btn-sm float-right p-0" onClick={() => this.deleteAccount(this.state.id)}>Delete Account</button>
+
                   </div>
                   <div className="card-body">
                   <br />

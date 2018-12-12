@@ -38,8 +38,8 @@ export default {
     return axios.get("/api/messages")
   },
   // Deletes the Artist with the given id
-  deleteArtist: function(id) {
-    return axios.delete("/api/artists/" + id);
+  deleteAccount: function(id) {
+    return axios.delete("/api/users/" + id);
   }
   // logout:
   // // Gets all artists
