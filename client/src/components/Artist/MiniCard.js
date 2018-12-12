@@ -71,7 +71,7 @@ class MiniCard extends Component {
                   <img
                   className="text-center rounded-circle m-2 image"
                   alt="null"
-                  src={artist.imageLink}
+                  src={artist.imageLink ? artist.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                 />
                 </Link>
                 <button

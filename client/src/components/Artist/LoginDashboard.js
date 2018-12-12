@@ -234,7 +234,7 @@ export class LoginDashboard extends Component {
                     <p>
                       <img
                         className="rounded-circle m-2 image2"
-                        src={art.imageLink}
+                        src={art.imageLink ? art.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                         alt={art.name}
                       />
                       <span

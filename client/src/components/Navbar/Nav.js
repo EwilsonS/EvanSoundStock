@@ -186,7 +186,7 @@ export class Nav extends Component {
             <div className="form-group input-icons">
               <form onSubmit={this.login}>
                 <span className="">
-                  <i className="fas fa-user" />
+                  <i className="fas fa-user user-icon-login" />
                   <input
                     type="text"
                     className="form-control-sm login-input m-1"
@@ -251,7 +251,7 @@ export class Nav extends Component {
                   <p className="text-light"><span>Hi {this.state.name}!
                 <span className="float-right">
                       <Link
-                        onClick={this.reload}
+                        // onClick={this.reload}
                         to={`/api/users/${this.state.id}`}>
                         <i className="fas fa-user text-light mr-3"> Profile</i>
                       </Link>

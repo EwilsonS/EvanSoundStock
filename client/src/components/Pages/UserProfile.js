@@ -141,7 +141,6 @@ class UserProfile extends Component {
               <Col size="md-1" />
             </Row>
           </Container>
-
         </div>
       )
     }else{
