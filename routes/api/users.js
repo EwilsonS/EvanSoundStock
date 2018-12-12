@@ -18,6 +18,10 @@ router
   .route("/addArtist/:id")
   .put(usersController.updateArray)
 
+  router
+  .route("/removeArtist/:id")
+  .put(usersController.pullArray)
+
 
   router
   .route("/logout/:id")

@@ -84,6 +84,15 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+  pullArray: function (req, res) {
+    db.User
+      .findOneAndUpdate(
+        { _id: req.params.id },{ $pull: { artists: Object.keys(req.body).toString() }})
+      .then(dbModel => {
+        res.json(dbModel)
+      })
+      .catch(err => res.status(422).json(err));
+  },
 
 
   remove: function (req, res) {

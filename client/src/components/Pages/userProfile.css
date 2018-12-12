@@ -28,6 +28,18 @@
   padding-top: 5rem;
   font-size:1rem;
 }
+.portfolio-card-profile{
+  background-color:  #1e4e5fb9;
+  transition: .25s;
+  margin-bottom: -.5rem;
+  border-radius: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.pic-profile-map{
+  height: 3rem ;
+  width: 3rem;
+}
 @media (max-width:1250px ){
   .pic{
     height: 100px;

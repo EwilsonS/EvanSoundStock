@@ -25,6 +25,9 @@ export default {
   updateUserArtist: function (id, data) {
     return axios.put("/api/users/addArtist/" + id, data)
   },
+  pullUserArtist: function (id, data) {
+    return axios.put("/api/users/removeArtist/" + id, data)
+  },
   updateUserOffline: function (id) {
     return axios.put("/api/users/logout/" + id)
   },

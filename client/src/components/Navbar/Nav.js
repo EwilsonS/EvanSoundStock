@@ -264,7 +264,7 @@ export class Nav extends Component {
                   </span>
                   </p>
                   <p className="mb-0 text-light">Your Portfolio</p>
-                  {this.state.artistsInfo.map(art => art.imageLink ? (
+                  {this.state.artistsInfo.map(art => art.account === "artist" ? (
                     <div
                       className="rounded-0 portfolio-card-nav"
                       key={art._id}
@@ -284,10 +284,6 @@ export class Nav extends Component {
                           >{art.name}</span>
                         </p>
                       </Link>
-                      {/* <button
-                    className="delete-btn"
-                    onClick={this.delete}
-                  >x</button> */}
                     </div>
                   ) : (null)
                   )}

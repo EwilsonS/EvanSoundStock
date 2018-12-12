@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import SignUp from "../Navbar/SignUp";
 import { withRouter } from "react-router-dom";
 import "./loginDashboard.css";
 import { Link } from "react-router-dom";
@@ -31,7 +30,7 @@ export class LoginDashboard extends Component {
 
   // using local storage to set state.
   componentDidMount = () => {
-    // console.log(localStorage.getItem("id"))
+    // If logged in
     if (localStorage.getItem("id") !== null) {
       this.setState({
         online: localStorage.getItem("online"),
@@ -51,7 +50,6 @@ export class LoginDashboard extends Component {
   }
 
   reload = () => {
-    // refresh
     window.location.reload("/");
   }
 
@@ -76,11 +74,10 @@ export class LoginDashboard extends Component {
   }
 
   viewPortfolio = () => {
-    // e.preventDefault()
     API.getUser(localStorage.getItem("id"))
       .then(res => {
         this.setState({ artists: res.data.artists })
-        console.log(this.state.artists)
+        // console.log(this.state.artists)
       })
       .then(() => {
         this.buildPortfolio()
@@ -92,9 +89,9 @@ export class LoginDashboard extends Component {
     this.state.artists.forEach(element => {
       API.getUser(element)
         .then((res) => {
-          console.log(`element: ${element}`)
-          console.log(`artists: ${this.state.artists}`)
-          console.log(res.data)
+          // console.log(`element: ${element}`)
+          // console.log(`artists: ${this.state.artists}`)
+          // console.log(res.data)
           elementArr.push(res.data)
 
           this.setState({
@@ -139,22 +136,10 @@ export class LoginDashboard extends Component {
       return console.log("invalid login")
     }).then(() => {
       this.viewPortfolio()
-      console.log("online? " + this.state.verify.online)
-      console.log(window.location.href)
+      // console.log("online? " + this.state.verify.online)
+      // console.log(window.location.href)
     }).catch(err => console.log(err))
   };
-
-  delete = (e) => {
-    // remove selected item from state array
-
-    // var array = [...this.state.artists]; // make a separate copy of the array
-    // var index = array.indexOf(e.target.value)
-    // console.log(array)
-    // array.pop(index, e.target.value);
-    // this.setState({artists: array});
-  
-    // insert function to update the original users artists array
-  }
 
   render() {
     if (this.state.online === false) {
@@ -165,37 +150,39 @@ export class LoginDashboard extends Component {
             className="card mt-3 rounded-0 login"
           >
             <span className="text-light h6 p-2">Login</span>
-            <div className="form-group mx-3">
-              <label className="text-light mb-0"> <small>Email</small>
-              </label><br />
-              <input
-                className=" form-control h-25 mb-2 bg-secondary text-light rounded-0"
-                placeholder="Email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleInputChange}
-              />
-              <label className="text-light mb-0"> <small>Password</small>
-              </label><br />
-              <input
-                className="form-control h-25 mb-2 bg-secondary text-light rounded-0"
-                placeholder="Password"
-                name="password"
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
-              />
-              <div className="buttons mb-3">
-                <button className="buttons1 rounded-0 btn btn-sm btn-outline-info "
-                  onClick={this.login}
-                  type="submit"
-                  value="Log In"
-                >Sign In</button>
-                  <Link to="/" >
-                    <button className="buttons2 btn btn-info btn-sm float-right rounded-0">Register</button>
-                  </Link>
-                {/* <SignUp className="buttons2" /> */}
-              </div>
+              <div className="form-group mx-3">
+               <form onSubmit={this.login}>
+                <label className="text-light mb-0"> <small>Email</small>
+                 </label><br />
+                  <input
+                    className=" form-control h-25 mb-2 bg-secondary text-light rounded-0"
+                    placeholder="Email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                  />
+                  <label className="text-light mb-0"> <small>Password</small>
+                  </label><br />
+                  <input
+                    className="form-control h-25 mb-2 bg-secondary text-light rounded-0"
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleInputChange}
+                  />
+                  <div className="buttons mb-3">
+                    <button className="buttons1 rounded-0 btn btn-sm btn-outline-info "
+                      onClick={this.login}
+                      type="submit"
+                      value="Log In"
+                    >Sign In</button>
+                      <Link to="/" >
+                        <button className="buttons2 btn btn-info btn-sm float-right rounded-0">Register</button>
+                      </Link>
+                    {/* <SignUp className="buttons2" /> */}
+                  </div>
+              </form>
             </div>
           </div>
         </div>
@@ -235,7 +222,7 @@ export class LoginDashboard extends Component {
                   onClick={this.viewPortfolio}></i>
               </span>
               <br />
-              {this.state.artistsInfo.map(art => art.imageLink ? (
+              {this.state.artistsInfo.map(art => art.account === 'artist' ? (
                 <div
                   className="rounded-0 portfolio-card"
                   key={art._id}
@@ -248,17 +235,13 @@ export class LoginDashboard extends Component {
                       <img
                         className="rounded-circle m-2 image2"
                         src={art.imageLink}
-                        alt=""
+                        alt={art.name}
                       />
                       <span
                         className="artist-name text-light"
                       >{art.name}</span>
                     </p>
                   </Link>
-                  {/* <button
-                    className="delete-btn"
-                    onClick={this.delete}
-                  >x</button> */}
                 </div>
               ) : (null)
               )}

@@ -1,11 +1,10 @@
 .image2{
   border: 3px solid rgba(255, 255, 255, 0.514);
   transition: .25s;
-  height: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
-.image2:hover{
-border: 3px solid rgba(3, 33, 43, 0.411);
-}
+
 .dropdown {
   background-color: #02183a;
   z-index: 20000000;
