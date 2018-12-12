@@ -24,7 +24,6 @@ export class Nav extends Component {
   };
 
   componentDidMount = () => {
-    // console.log(localStorage.getItem("id"))
     if (localStorage.getItem("id") !== null) {
       this.setState({
         online: localStorage.getItem("online"),
@@ -34,12 +33,7 @@ export class Nav extends Component {
         key: localStorage.getItem("artistId"),
         artists: (JSON.parse(localStorage.getItem("artists")))
       })
-      console.log('======cdm artists from ls=======')
-      console.log(JSON.parse(localStorage.getItem("artists")))
-      console.log(this.state)
-
       this.viewPortfolio();
-      // this.buildPortfolio();
     } else {
       this.setState({
         online: false,
@@ -48,6 +42,7 @@ export class Nav extends Component {
       })
     }
   }
+
   // handle any changes to the input fields
   handleInputChange = e => {
     // Pull the name and value properties off of the e.target (the element which triggered the event)
@@ -59,22 +54,16 @@ export class Nav extends Component {
 
   login = event => {
     event.preventDefault();
-
     API.getUsersLogin({
       email: this.state.email,
       password: this.state.password
-    })
-      .then(res => {
+    }).then(res => {
         this.setState({ verify: res.data });
-
-      })
-      .then(() => {
+      }).then(() => {
         // check email and password to get user info
         if (
-          this.state.verify.email !== this.state.email ||
-          this.state.verify.password !== this.state.password ||
-          !this.state.email ||
-          !this.state.password
+          this.state.verify  === [] ||
+          this.state.verify.password !== this.state.password
         ) {
           alert(`Oops....Something went wrong`);
           this.setState({ valid: false })
@@ -99,8 +88,9 @@ export class Nav extends Component {
       })
       .then(() => {
         // this.viewPortfolio();
-        console.log("online? " + this.state.verify.online);
-        console.log(window.location.href);
+        // console.log("online? " + this.state.verify.online);
+        // console.log(window.location.href);
+        this.reload();
       })
       .catch(err => console.log(err));
   };
@@ -121,34 +111,14 @@ export class Nav extends Component {
     this.state.artists.forEach(element => {
       API.getUser(element)
         .then((res) => {
-          console.log(`element: ${element}`)
-          console.log(`artists: ${this.state.artists}`)
-          console.log(res.data)
           elementArr.push(res.data)
-
           this.setState({
             artistsInfo: elementArr
           })
         })
     })
   }
-  // logout = e => {
-  //   e.preventDefault()
 
-  //   API.updateUserOffline(localStorage.getItem("id")) //check this endpoint
-  //     .then(() => {
-  //       this.setState({
-  //         online: false,
-  //         id: "",
-  //         email: "",
-  //         verify: [],
-  //         artists: []
-  //       })
-  //     }).then(() => {
-  //       localStorage.clear()
-  //       this.reload()
-  //     })
-  // }
   logout = e => {
     e.preventDefault()
     localStorage.clear()
@@ -163,6 +133,7 @@ export class Nav extends Component {
 
         this.reload()
   }
+
   reload = () => {
     // refresh
     window.location.reload("/");
@@ -213,7 +184,7 @@ export class Nav extends Component {
               <br />
 
             <div className="form-group input-icons">
-              <form>
+              <form onSubmit={this.login}>
                 <span className="">
                   <i className="fas fa-user" />
                   <input
@@ -237,7 +208,6 @@ export class Nav extends Component {
                     type="submit"
                     className="btn btn-sm go m-2"
                     placeholder="Go"
-                    onClick={this.login}
                     value="Log In"
                   >
                     Go

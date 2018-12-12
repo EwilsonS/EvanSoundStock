@@ -7,12 +7,12 @@
 }
 .row-bg{
   background-image: url('../../images/record-patternSm.jpeg');
-  /* background:  
+  background:  
   linear-gradient(to bottom right,
-  #0a163abe, 
+  #0a163a8d, 
   #2f1d20
   ),
-     url('../../images/record-patternSm.jpeg'); */
+     url('../../images/record-patternSm.jpeg');
   min-height: 35rem; 
   background-attachment: fixed;
   background-position: center;

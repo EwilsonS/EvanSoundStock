@@ -38,7 +38,7 @@ class MiniCard extends Component {
       })
       .catch(err => console.log(err));
   };
-  
+
   reload = () =>{
     window.location.reload("/")
    }
