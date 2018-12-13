@@ -49,8 +49,8 @@ export class LoginDashboard extends Component {
     }
   }
 
-  reload = () => {
-    window.location.reload("/");
+  reload = (id) => {
+    window.location.reload("/"+id);
   }
 
   componentDidUpdate = () => {
@@ -201,7 +201,7 @@ export class LoginDashboard extends Component {
               </span>
               <div>
                 <Link
-                  onClick={this.reload}
+                  onClick={() => this.reload(this.state.id)}
                   to={`/api/users/${this.state.id}`}>
                   <i className="fas fa-user text-light float-left"> Profile</i>
                   <i
@@ -228,7 +228,7 @@ export class LoginDashboard extends Component {
                   key={art._id}
                 >
                   <Link
-                    onClick={this.reload}
+                    onClick={() => this.reload(art._id)}
                     className="linkage"
                     to={`/api/users/${art._id}`}>
                     <p>

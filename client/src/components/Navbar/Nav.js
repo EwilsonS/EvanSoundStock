@@ -107,16 +107,18 @@ export class Nav extends Component {
   }
 
   buildPortfolio = () => {
-    let elementArr = []
-    this.state.artists.forEach(element => {
-      API.getUser(element)
+    let elementArrShort = []
+    let elementArr = this.state.artists
+      for(let i = 0; i < 4; i++){
+
+        API.getUser(elementArr[i])
         .then((res) => {
-          elementArr.push(res.data)
+          elementArrShort.push(res.data)
           this.setState({
-            artistsInfo: elementArr
+            artistsInfo: elementArrShort
           })
         })
-    })
+      }
   }
 
   logout = e => {
@@ -276,7 +278,7 @@ export class Nav extends Component {
                         <p>
                           <img
                             className="rounded-circle m-2 image2-nav"
-                            src={art.imageLink}
+                            src={art.imageLink ? art.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                             alt=""
                           />
                           <span

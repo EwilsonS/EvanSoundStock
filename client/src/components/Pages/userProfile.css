@@ -31,14 +31,23 @@
 .portfolio-card-profile{
   background-color:  #1e4e5fb9;
   transition: .25s;
-  margin-bottom: -.5rem;
+  margin-bottom: .5rem;
   border-radius: 5rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  font-size: .75rem;
+  /* padding-left: 1rem; */
+  /* padding-right: 1rem; */
+  /* padding-bottom: 1rem; */
 }
 .pic-profile-map{
   height: 3rem ;
   width: 3rem;
+}
+.rmv{
+  background-color: rgb(109, 12, 12);
+  border-radius: 3rem;
+  position: relative;
+  top: 1rem;
+  right: 1.5rem;
 }
 @media (max-width:1250px ){
   .pic{
@@ -58,5 +67,9 @@
   .nameText{
   font-size: 1.4rem;
   bottom: -5.76rem;
+  }
+  .rmv{
+    font-size: .5rem;
+    padding: .25rem;
   }
 }

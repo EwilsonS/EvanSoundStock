@@ -96,8 +96,8 @@ class UserProfile extends Component {
     })
   }
 
-  reload = () =>{
-    window.location.reload("/")
+  reload = (id) =>{
+    window.location.reload("/"+id)
    }
 
   render() {
@@ -177,25 +177,25 @@ class UserProfile extends Component {
                       className="portfolio-card-profile"
                       key={art._id}
                     >
-                    <h2>{art.name}</h2>
                       <span 
-                         className="btn btn-danger btn-sm float-right"
+                         className="btn btn-danger btn-sm float-right rmv"
                          onClick={() => this.deleteArtist(art._id)}
                          >
                          Remove
                          </span>
                       <Link
-                        onClick={this.reload}
+                        onClick={() => this.reload(art._id)}
                         className=""
                         to={`/api/users/${art._id}`}>
-                        <p>
+                            <span>
+
                           <img
                             className="rounded-circle m-2 pic-profile-map"
-                            src={art.imageLink}
-                            alt=""
-                          />
-                          <span className="text-light">{art.bio}</span>
-                        </p>
+                            src={art.imageLink ? art.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
+                            alt="artist"
+                            />
+                          <span className="text-light"><span className="h5">{art.name} | </span>${art.totalPrice} for {art.availablePercentage}%</span>
+                        </span>
                       </Link>
                     </div>
                   ) : (null)
