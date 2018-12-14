@@ -42,9 +42,9 @@ visits = () => {
           <Container fluid>
             <Row>
               <Col size="md-4">
-                <h4>Visitor Messages</h4>
+                <h4 className="text-secondary">Visitor Messages</h4>
                 {this.state.message.map(mess => mess ? (
-                  <div key={mess._id}>
+                  <div className="text-secondary" key={mess._id}>
                     <h6>From: {mess.name}</h6>
                     <h6>Email: {mess.email}</h6>
                     <p>
@@ -71,7 +71,7 @@ visits = () => {
           <Row>
             <Col size="md-4"></Col>
             <Col size="md-4">
-              <h2>
+              <h2 className="text-secondary">
                 You are not authorized to access this page. Please login as an administrator.
               </h2>
             </Col>
