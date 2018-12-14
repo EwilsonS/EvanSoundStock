@@ -85,7 +85,7 @@ class MiniCard extends Component {
 
               </h5>
             </div>
-            <div className="card-body"><small>
+            <div className="card-body cardBody"><small>
               <p className="mb-0"><span className="blueText"
               >About me:</span> {artist.bio}</p>
               <p className="investment"><span className="blueText"

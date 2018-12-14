@@ -13,7 +13,7 @@ const styles = {
 const WelcomeDiv = props => (
 
   <div className="row my-2" >
-      <div className="col-md-12 text-center text-dark">
+      <div className="col-md-12 text-center text-light">
         <br />
         <h5>Welcome to <span className="text-info h4"><strong> <span style={styles.infoDark}>S</span>ound<span style={styles.infoDark}>S</span>tock</strong></span></h5>
         <br />

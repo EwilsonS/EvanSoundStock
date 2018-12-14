@@ -31,7 +31,7 @@ function FeaturedArtists(props) {
         <br /><br />
         <br /><br />
 
-        <p className="h4 text-dark text-center feature-title">Featured Artists</p>
+        <p className="h4 text-light text-center feature-title">Featured Artists</p>
         {/* <br /> */}
         <div>
           {props.artists.map(artist => (artist.name === "tree" || artist.name === "Wilson Wright") ? (

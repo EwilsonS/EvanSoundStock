@@ -1,12 +1,8 @@
 .cardHeader{
-    background-color: white;
-    /* background: #237c9a;
-    background-image: url("../../images/black-orchid.png");
-    color: #02183a; */
+    background-color: rgb(187, 187, 187);
   }
-.cardFooter{
-    background-color: white;
-    color: #237c9a
+.cardBody{
+    background-color: rgb(187, 187, 187);
   }
 .input{
     border-color: #237c9a;
@@ -20,7 +16,7 @@
     /* border: none; */
   }
 .card-mini:hover{
-    border: 1px solid #237c9a;
+    border: 1px solid #990000;
   }
 .image{
     height: 125px;

@@ -6,12 +6,12 @@
 }
 
 .dropdown {
-  background-color: #02183a;
+  background-color: #2f3a4b;
   z-index: 20000000;
   padding: 20%
 }
 .login{
-  background-color: #031127;
+  background-color: #2f3a4b;
 }
 .card-dash{
   /* box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
@@ -27,18 +27,17 @@
   /* background-size: 100% 100%; */
 }
 .portfolio-card{
-  background-color:  #02183a93;
+  background-color:  #2f3a4b;
   transition: .25s;
   margin-bottom: -.5rem
 }
 .portfolio-card:hover{
-  background-color:  #02183a;
+  background-color:  #a7a7a7;
   transition: .3s;
   z-index: 10;
   -webkit-transform: scale(1.125);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  background-color:  #02183a;
   box-shadow: 1px 0px 26px 0px rgba(50, 50, 50, 0.5);
   /* border: 1px solid white; */
 

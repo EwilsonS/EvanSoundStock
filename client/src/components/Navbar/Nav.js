@@ -187,6 +187,7 @@ export class Nav extends Component {
 
             <div className="form-group input-icons">
               <form onSubmit={this.login}>
+                <label className="text-left text-secondary"><small><strong>guest email:</strong> guest@gmail.com  <br /><strong>pass:</strong> 123456</small></label><br />
                 <span className="">
                   <i className="fas fa-user user-icon-login" />
                   <input

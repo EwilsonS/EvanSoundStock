@@ -24,7 +24,7 @@ const HowItWorks = () => (
         <div className="my-2 px-0 mx-0 rounded-0 card main-content">
           <div className="card-header"><strong>Step 3</strong></div>
           <div className="card-body p-2">
-            <p className="card-text">Behind the scenes <strong>Sound Stock</strong> will publish the artists' song through <strong><u><a href="http://ascap.com" className="text-dark">ASCAP</a></u></strong> and distribute uploaded works to all major digital platforms.</p>
+            <p className="card-text">Behind the scenes <strong>Sound Stock</strong> will publish the artists' song through <strong><u><a href="http://ascap.com" className="text-secondary">ASCAP</a></u></strong> and distribute uploaded works to all major digital platforms.</p>
           </div>
         </div>
         <div className="my-2 px-0 mx-0 rounded-0 card main-content">
