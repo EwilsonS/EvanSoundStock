@@ -112,7 +112,7 @@ class UserProfile extends Component {
                 <Calculator />
               </Col>
               <Col size="md-6">
-                <div className="card mt-3 rounded-0">
+                <div className="card mt-3 rounded-0" id="profileCard">
                   <div className="card-header topPic rounded-0">
                     <img
                       className="rounded-circle pic"

@@ -1,10 +1,13 @@
 .topPic{
-  /* background: #0a2926; */
-  background: #4b332f;
-  background-image: url("../../images/black-orchid.png");
-  color: #02183a;
-  /* background-size: 100%; */
+  background-color: #4b4b4b;
+  background: linear-gradient(to bottom right,
+  rgb(207, 120, 6),
+  rgb(194, 161, 15)
+  );
   height: 10rem;
+}
+.card{
+  border: none;
 }
 .pic{
   height: 200px;
@@ -29,7 +32,7 @@
   font-size:1rem;
 }
 .portfolio-card-profile{
-  background-color:  #2f3a4b;
+  background-color:  #4b2f35;
   transition: .25s;
   margin-bottom: .5rem;
   border-radius: 5rem;
