@@ -1,16 +1,3 @@
-/* .parallax1{
-  background:  
-    linear-gradient(to bottom right,
-      #0a163abe, 
-      #2f1d20
-      ),
-     url('../../images/pexels-photo-1128440.jpeg');
-  min-height: 35rem; 
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 .feature-img{
   height: 5rem;
   width: 5rem;
@@ -19,8 +6,8 @@
   border: none;
   background-color: #553e3eec;
   background:linear-gradient(to bottom right,
-  #162144, 
-  #3f2126);
+  #4b2f35, 
+  #382428);
   padding: 1rem;
 }
 .feature-title{

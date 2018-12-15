@@ -41,7 +41,7 @@ function FeaturedArtists(props) {
               </h5>
                 <div className="">
                   <div className="">
-                    <img className="rounded-circle float-left feature-img" alt="null" src={artist.imageLink} />
+                    <img className="rounded-circle float-left feature-img" alt="null" src={artist.imageLink ? artist.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"} />
                     <div className="float-left">
                       <p className="text-light float-left">{artist.bio}</p>
                       <p className="text-light ml-3">{artist.goal}
