@@ -5,9 +5,7 @@ const session = require("express-session")
 const morgan = require('morgan');
 const routes = require("./routes");
 const app = express();
-// const path = require("path")
 const cookieParser = require("cookie-parser")
-// var passport = require("./config/passport");
 const PORT = process.env.PORT ? process.env.PORT : 3001;
 
 mongoose.Promise = global.Promise;
@@ -19,10 +17,7 @@ app.use(morgan('dev'))
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(passport.initialize());
-// app.use(passport.session());
 app.use(cookieParser())
-
 app.use(session({
   secret: 'keyboard-cat',
   resave: true,
@@ -37,14 +32,6 @@ app.get('/api/user/:id', function(req, res, next) {
   res.send(sessData);
   console.log(`Session on server: ${req.session}`)
 });
-
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname, './client/index.html'), function(err) {
-//     if (err) {
-//       res.status(500).send(err)
-//     }
-//   })
-// })
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

@@ -16,9 +16,9 @@ export default {
 
     return axios.post("/api/users/login", data);
   },
-  saveUserSession: function (userSession) {
-    return axios.post("/api/account/login")
-  },
+  // saveUserSession: function (userSession) {
+  //   return axios.post("/api/account/login")
+  // },
   updateUserOnline: function (id) {
     return axios.put("/api/users/" + id)
   },
@@ -28,16 +28,16 @@ export default {
   pullUserArtist: function (id, data) {
     return axios.put("/api/users/removeArtist/" + id, data)
   },
-  updateUserOffline: function (id) {
-    return axios.put("/api/users/logout/" + id)
-  },
+  // updateUserOffline: function (id) {
+  //   return axios.put("/api/users/logout/" + id)
+  // },
   saveMessage: function(message){
     return axios.post("/api/messages", message)
   },
   getMessages: function(){
     return axios.get("/api/messages")
   },
-  // Deletes the Artist with the given id
+  // Deletes the user with the given id
   deleteAccount: function(id) {
     return axios.delete("/api/users/" + id);
   }

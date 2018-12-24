@@ -1,7 +1,7 @@
 const db = require("../models");
-// const bcrypt = require("bcrypt")
 // Defining methods for the UsersController
 module.exports = {
+  // Get all users
   findAll: function (req, res) {
     db.User
       .find(req.query)
@@ -9,7 +9,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-
+  // Find one user by email
   findOne: function (req, res) {
     db.User
       .findOne({
@@ -22,12 +22,11 @@ module.exports = {
       })
       .sort({ date: -1 })
       .then(dbModel => {
-
         res.json(dbModel)
       })
-
       .catch(err => res.status(422).json(err));
   },
+
   findById: function (req, res) {
     db.User
       .findById(req.params.id)
@@ -72,13 +71,12 @@ module.exports = {
   },
 
   updateArray: function (req, res) {
-    // console.log("offline: "+ req.session.user._id)
     // console.log(Object.keys(req.body))
     // console.log(req.body)
     // console.log(req.params.id)
     db.User
       .findOneAndUpdate(
-        { _id: req.params.id },{ $addToSet: { artists: (Object.keys(req.body)).toString() }})
+        { _id: req.params.id }, { $addToSet: { artists: (Object.keys(req.body)).toString() } })
       .then(dbModel => {
         res.json(dbModel)
       })
@@ -87,7 +85,7 @@ module.exports = {
   pullArray: function (req, res) {
     db.User
       .findOneAndUpdate(
-        { _id: req.params.id },{ $pull: { artists: Object.keys(req.body).toString() }})
+        { _id: req.params.id }, { $pull: { artists: Object.keys(req.body).toString() } })
       .then(dbModel => {
         res.json(dbModel)
       })
