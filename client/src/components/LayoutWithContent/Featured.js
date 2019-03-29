@@ -21,8 +21,6 @@ function addToPortfolio(artistId, image){
 };
 function FeaturedArtists(props) {
 
-
-
   return (
 
     <div className="row parallax1">
