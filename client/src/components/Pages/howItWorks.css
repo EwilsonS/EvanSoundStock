@@ -5,7 +5,7 @@
   color: #ffffff;
   font-size: 1rem;
 }
-.row-bg{
+/* .row-bg{
   background-image: url('../../images/record-patternSm.jpeg');
   background:  
   linear-gradient(to bottom right,
@@ -20,7 +20,7 @@
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
-}
+} */
 @media (max-width: 1250px){
   .card-group{
     display: table-row;
