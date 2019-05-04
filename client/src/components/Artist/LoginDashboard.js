@@ -78,7 +78,7 @@ export class LoginDashboard extends Component {
     API.getUser(localStorage.getItem("id"))
       .then(res => {
         this.setState({ artists: res.data.artists })
-        // console.log(this.state.artists)
+        // console.log(this.state.artists).
       })
       .then(() => {
         this.buildPortfolio()
