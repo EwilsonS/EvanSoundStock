@@ -58,21 +58,21 @@ export class Nav extends Component {
       email: this.state.email,
       password: this.state.password
     }).then(res => {
-        this.setState({ verify: res.data });
-      }).then(() => {
-        // check email and password to get user info
-        if (
-          this.state.verify  === [] ||
-          this.state.verify.password !== this.state.password
-        ) {
-          alert(`Oops....Something went wrong`);
-          this.setState({ valid: false })
-          window.location.reload("/");
-        } else {
-          // API.updateUserOnline(this.state.verify._id);
-          console.log('Successful login');
-        }
-      })
+      this.setState({ verify: res.data });
+    }).then(() => {
+      // check email and password to get user info
+      if (
+        this.state.verify === [] ||
+        this.state.verify.password !== this.state.password
+      ) {
+        alert(`Oops....Something went wrong`);
+        this.setState({ valid: false })
+        window.location.reload("/");
+      } else {
+        // API.updateUserOnline(this.state.verify._id);
+        console.log('Successful login');
+      }
+    })
       .then(() => {
         // set local storage
         if (this.state.valid === true) {
@@ -109,31 +109,29 @@ export class Nav extends Component {
   buildPortfolio = () => {
     let elementArrShort = []
     let elementArr = this.state.artists
-      for(let i = 0; i < 4; i++){
+    for (let i = 0; i < 4; i++) {
 
-        API.getUser(elementArr[i])
+      API.getUser(elementArr[i])
         .then((res) => {
           elementArrShort.push(res.data)
           this.setState({
             artistsInfo: elementArrShort
           })
         })
-      }
+    }
   }
 
   logout = e => {
-    e.preventDefault()
-    localStorage.clear()
+    e.preventDefault();
+    localStorage.clear();
 
-        this.setState({
-          online: false,
-          id: "",
-          email: "",
-          verify: [],
-          artists: []
-        })
-
-        this.reload()
+    this.setState({
+      online: false,
+      id: "",
+      email: "",
+      verify: [],
+      artists: []
+    });
   }
 
   reload = () => {
@@ -166,24 +164,24 @@ export class Nav extends Component {
           <div className="col-md-7 nav-right-col">
             <div className="row mb-2">
               <div className="col-md-3"></div>
-                <div className="col-md-6">
-                  <div className="register rounded">
-                      <p>Register</p>
-                      <Link to="../InvestorSignUp">
-                        <span className="invest">
-                          <span className="reg-btn-txt">Investor</span>
-                        </span>
-                      </Link>
-                      <Link to="../ArtistSignUp">
-                        <span className="artist">
-                          <span className="reg-btn-txt">Artist</span>
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                <div className="col-md-3"></div>
+              <div className="col-md-6">
+                <div className="register rounded">
+                  <p>Register</p>
+                  <Link to="../InvestorSignUp">
+                    <span className="invest">
+                      <span className="reg-btn-txt">Investor</span>
+                    </span>
+                  </Link>
+                  <Link to="../ArtistSignUp">
+                    <span className="artist">
+                      <span className="reg-btn-txt">Artist</span>
+                    </span>
+                  </Link>
+                </div>
               </div>
-              <br />
+              <div className="col-md-3"></div>
+            </div>
+            <br />
 
             <div className="form-group input-icons">
               <form onSubmit={this.login}>
@@ -224,7 +222,7 @@ export class Nav extends Component {
     } else {
       return (
         <div className="nav">
-           <div className="col-md-5 nav-left-col">
+          <div className="col-md-5 nav-left-col">
             <div>
               <Link to="/">
                 <span className="navbar-brand text-info nav-title1 p-0">
@@ -246,7 +244,7 @@ export class Nav extends Component {
               </div>
             </div>
             <div className="row">
-            <div className="col-md-3"></div>
+              <div className="col-md-3"></div>
 
               <div className="col-md-6">
                 <br />
@@ -254,15 +252,12 @@ export class Nav extends Component {
                   <p className="text-light"><span>Hi {this.state.name}!
                 <span className="float-right">
                       <Link
-                        // onClick={this.reload}
                         to={`/api/users/${this.state.id}`}>
                         <i className="fas fa-user text-light mr-3"> Profile</i>
                       </Link>
-                      <Link to="">
                         <i
-                          className="fas fa-sign-out-alt text-light m-1"
+                          className="fas fa-sign-out-alt text-light m-1 logout"
                           onClick={this.logout}> Logout</i>
-                      </Link>
                     </span>
                   </span>
                   </p>
@@ -273,13 +268,13 @@ export class Nav extends Component {
                       key={art._id}
                     >
                       <Link
-                        onClick={this.reload}
+                        // onClick={this.reload}
                         className="linkage"
                         to={`/api/users/${art._id}`}>
                         <p>
                           <img
                             className="rounded-circle m-2 image2-nav"
-                            src={art.imageLink ? art.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
+                            src={art.imageLink ? art.imageLink : "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                             alt=""
                           />
                           <span
@@ -297,7 +292,7 @@ export class Nav extends Component {
                   </Link>
                 </div>
               </div>
-            <div className="col-md-3"></div>
+              <div className="col-md-3"></div>
 
             </div>
           </div>

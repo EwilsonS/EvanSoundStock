@@ -51,7 +51,7 @@ export class LoginDashboard extends Component {
 
   // refresh page (temporary)
   reload = (id) => {
-    window.location.reload("/"+id);
+    window.location.reload("/" + id);
   }
 
   componentDidUpdate = () => {
@@ -59,19 +59,15 @@ export class LoginDashboard extends Component {
 
   logout = e => {
     e.preventDefault()
-    API.updateUserOffline(localStorage.getItem("id"))
-      .then(() => {
-        this.setState({
-          online: false,
-          id: "",
-          email: "",
-          verify: [],
-          artists: []
-        })
-      }).then(() => {
-        localStorage.clear()
-        this.reload()
-      })
+    localStorage.clear()
+
+    this.setState({
+      online: false,
+      id: "",
+      email: "",
+      verify: [],
+      artists: []
+    })
   }
 
   viewPortfolio = () => {
@@ -146,43 +142,40 @@ export class LoginDashboard extends Component {
     if (this.state.online === false) {
       return (
         <div>
-
-          <div
-            className="card mt-3 rounded-0 login"
-          >
+          <div className="card mt-3 rounded-0 login">
             <span className="text-light h6 p-2">Login</span>
-              <div className="form-group mx-3">
-               <form onSubmit={this.login}>
+            <div className="form-group mx-3">
+              <form onSubmit={this.login}>
                 <label className="text-light mb-0"> <small>Email</small>
-                 </label><br />
-                  <input
-                    className=" form-control h-25 mb-2 bg-secondary text-light rounded-0"
-                    placeholder="Email"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.handleInputChange}
-                  />
-                  <label className="text-light mb-0"> <small>Password</small>
-                  </label><br />
-                  <input
-                    className="form-control h-25 mb-2 bg-secondary text-light rounded-0"
-                    placeholder="Password"
-                    name="password"
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.handleInputChange}
-                  />
-                  <div className="buttons mb-3">
-                    <button className="buttons1 rounded-0 btn btn-sm btn-outline-info "
-                      onClick={this.login}
-                      type="submit"
-                      value="Log In"
-                    >Sign In</button>
-                      <Link to="/" >
-                        <button className="buttons2 btn btn-info btn-sm float-right rounded-0">Register</button>
-                      </Link>
-                    {/* <SignUp className="buttons2" /> */}
-                  </div>
+                </label><br />
+                <input
+                  className=" form-control h-25 mb-2 bg-secondary text-light rounded-0"
+                  placeholder="Email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                />
+                <label className="text-light mb-0"> <small>Password</small>
+                </label><br />
+                <input
+                  className="form-control h-25 mb-2 bg-secondary text-light rounded-0"
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                />
+                <div className="buttons mb-3">
+                  <button className="buttons1 rounded-0 btn btn-sm btn-outline-info "
+                    onClick={this.login}
+                    type="submit"
+                    value="Log In"
+                  >Sign In</button>
+                  <Link to="/">
+                    <button className="buttons2 btn btn-info btn-sm float-right rounded-0">Register</button>
+                  </Link>
+                  {/* <SignUp className="buttons2" /> */}
+                </div>
               </form>
             </div>
           </div>
@@ -192,35 +185,26 @@ export class LoginDashboard extends Component {
     } else {
       return (
         <div className="sticky-top">
-          <div
-            className="card card-dash mt-3 rounded-0"
-          >
-            <div
-              className="card-header rounded-0 login"
-            >
-              <span className="h6 text-light">Hi {this.state.name}!
-              </span>
+          <div className="card card-dash mt-3 rounded-0">
+            <div className="card-header rounded-0 login">
+              <span className="h6 text-light">Hi {this.state.name}! </span>
               <div>
-                <Link
-                  onClick={() => this.reload(this.state.id)}
-                  to={`/api/users/${this.state.id}`}>
+                <Link to={`/api/users/${this.state.id}`}>
                   <i className="fas fa-user text-light float-left"> Profile</i>
-                  <i
-                    className="fas fa-sign-out-alt text-light float-right"
-                    onClick={this.logout}> Logout</i>
                 </Link>
+                <i
+                  className="fas fa-sign-out-alt text-light float-right logout"
+                  onClick={this.logout}> Logout</i>
               </div>
             </div>
-            <div
-              className="card-body dashboard"
-            >
+            <div className="card-body dashboard">
               <span
                 className="text-light viewPortfolio"
                 onChange={this.viewPortfolio}
               >My Portfolio
             <i
-                  className="fas fa-sync-alt btn float-right refresh-icon"
-                  onClick={this.viewPortfolio}></i>
+              className="fas fa-sync-alt btn float-right refresh-icon"
+              onClick={this.viewPortfolio}></i>
               </span>
               <br />
               {this.state.artistsInfo.map(art => art.account === 'artist' ? (
@@ -229,18 +213,16 @@ export class LoginDashboard extends Component {
                   key={art._id}
                 >
                   <Link
-                    onClick={() => this.reload(art._id)}
+                    // onClick={() => this.reload(art._id)}
                     className="linkage"
                     to={`/api/users/${art._id}`}>
                     <p>
                       <img
                         className="rounded-circle m-2 image2"
-                        src={art.imageLink ? art.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
+                        src={art.imageLink ? art.imageLink : "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                         alt={art.name}
                       />
-                      <span
-                        className="artist-name text-light"
-                      >{art.name}</span>
+                      <span className="artist-name text-light">{art.name}</span>
                     </p>
                   </Link>
                 </div>

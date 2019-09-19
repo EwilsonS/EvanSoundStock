@@ -158,9 +158,9 @@ class UserProfile extends Component {
                   <div className="card-header topPic rounded-0">
                     <img
                       className="rounded-circle pic"
-                      src={this.state.user.imageLink ? this.state.user.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
+                      src={this.state.imageLink ? this.state.imageLink :  "https://i2.wp.com/crimsonems.org/wp-content/uploads/2017/10/profile-placeholder.gif?fit=250%2C250&ssl=1"}
                       alt="" />
-                    <span className="nameText">{this.state.user.name}</span>
+                    <span className="nameText">{this.state.name}</span>
                     <button className="btn btn-sm float-right p-0" onClick={() => this.deleteAccount(this.state.id)}>Delete Account</button>
 
                   </div>

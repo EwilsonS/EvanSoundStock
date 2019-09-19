@@ -13,6 +13,9 @@
 .login{
   background-color: #2f3a4b;
 }
+.logout:hover{
+  cursor: pointer;
+}
 .card-dash{
   /* box-shadow: 3px 4px 8px 0px rgba(50, 50, 50, 0.20);
   font-size: 15px; */
