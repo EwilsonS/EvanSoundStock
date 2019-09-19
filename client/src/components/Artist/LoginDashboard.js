@@ -50,8 +50,8 @@ export class LoginDashboard extends Component {
   }
 
   // refresh page (temporary)
-  reload = (id) => {
-    window.location.reload("/" + id);
+  reload = () => {
+    window.location.reload("/");
   }
 
   componentDidUpdate = () => {
