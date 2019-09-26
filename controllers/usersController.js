@@ -55,8 +55,6 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
 
-
-
   },
   updateOffline: function (req, res) {
     // console.log("offline: "+ req.session.user._id)

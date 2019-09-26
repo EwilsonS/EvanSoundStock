@@ -18,7 +18,10 @@ export class LoginDashboard extends Component {
     artistsInfo: [],
     reform: []
   }
-
+  
+  addItUp = (a, b) => {
+    return a + b;
+  }
   // handle any changes to the input fields
   handleInputChange = e => {
     // Pull the name and value properties off of the e.target (the element which triggered the event)
@@ -203,8 +206,8 @@ export class LoginDashboard extends Component {
                 onChange={this.viewPortfolio}
               >My Portfolio
             <i
-              className="fas fa-sync-alt btn float-right refresh-icon"
-              onClick={this.viewPortfolio}></i>
+                  className="fas fa-sync-alt btn float-right refresh-icon"
+                  onClick={this.viewPortfolio}></i>
               </span>
               <br />
               {this.state.artistsInfo.map(art => art.account === 'artist' ? (
