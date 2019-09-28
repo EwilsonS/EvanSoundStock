@@ -3,6 +3,10 @@ module.exports = {
     return a + b;
   },
   sub: function (a, b) {
+    if(isNaN(a) || isNaN(b)){
+      throw "not a number!!"
+      
+    }
     return a - b;
   }
 }

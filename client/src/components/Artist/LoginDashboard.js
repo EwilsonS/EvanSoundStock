@@ -18,7 +18,7 @@ export class LoginDashboard extends Component {
     artistsInfo: [],
     reform: []
   }
-  
+
   addItUp = (a, b) => {
     return a + b;
   }

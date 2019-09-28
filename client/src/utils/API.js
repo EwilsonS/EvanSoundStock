@@ -31,14 +31,14 @@ export default {
   // updateUserOffline: function (id) {
   //   return axios.put("/api/users/logout/" + id)
   // },
-  saveMessage: function(message){
+  saveMessage: function (message) {
     return axios.post("/api/messages", message)
   },
-  getMessages: function(){
+  getMessages: function () {
     return axios.get("/api/messages")
   },
   // Deletes the user with the given id
-  deleteAccount: function(id) {
+  deleteAccount: function (id) {
     return axios.delete("/api/users/" + id);
   }
   // logout:
