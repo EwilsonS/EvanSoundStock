@@ -22,11 +22,11 @@ app.use(session({
   secret: 'keyboard-cat',
   resave: true,
   saveUninitialized: true,
-  cookie: {secure:false}
+  cookie: { secure: false }
 }));
 
 // Access the session as req.session
-app.get('/api/user/:id', function(req, res, next) {
+app.get('/api/user/:id', function (req, res, next) {
   var sessData = req.session;
   sessData.online = true;
   res.send(sessData);
@@ -41,6 +41,6 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
