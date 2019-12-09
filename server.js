@@ -26,7 +26,7 @@ app.use(session({
 }));
 
 // Access the session as req.session
-app.get('/api/user/:id', function (req, res, next) {
+app.get('/api/user/:id', (req, res, next) => {
   var sessData = req.session;
   sessData.online = true;
   res.send(sessData);
