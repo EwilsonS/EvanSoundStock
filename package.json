@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@types/jest": "^24.0.18",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.2",
     "benchmark": "^2.1.4",
     "body-parser": "^1.18.3",
