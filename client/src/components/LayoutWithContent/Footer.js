@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="col-md-4"></div>
       <div className="col-md-1 ">
         {/* <a href="" className="text-info">Facebook</a><br /> */}
-        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/soundstock/" className="text-info">LinkedIn</a><br />
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/evanlovesyou/" className="text-info">LinkedIn</a><br />
         {/* <a target="_blank" rel="noopener noreferrer" href="https://www.ascap.com/" className="text-info">Ascap</a><br /> */}
         {/* <a target="_blank" rel="noopener noreferrer" href="https://www.bmi.com/" className="text-info">BMI</a><br /> */}
         {/* <a target="_blank" rel="noopener noreferrer" href="https://www.sesac.com/#/" className="text-info">Sesac</a><br /> */}
