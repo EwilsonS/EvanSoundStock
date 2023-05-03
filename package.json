@@ -2,7 +2,7 @@
   "name": "mern",
   "version": "1.0.0",
   "engines": {
-    "node": "*"
+    "node": "16.x"
   },
   "description": "Mern Demo",
   "main": "server.js",
