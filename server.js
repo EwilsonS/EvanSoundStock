@@ -11,7 +11,7 @@ const PORT = process.env.PORT ? process.env.PORT : 3001;
 mongoose.Promise = global.Promise;
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/soundstock");
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://ew_admin:2UuFF5nQeuL3ryjN@cluster0.re5ggwo.mongodb.net/soundstock?retryWrites=true&w=majority");
 app.use(morgan('dev'))
 
 // Define middleware here
