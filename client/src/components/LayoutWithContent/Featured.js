@@ -32,7 +32,7 @@ function FeaturedArtists(props) {
         <p className="h4 text-light text-center feature-title">Featured Artists</p>
         {/* <br /> */}
         <div>
-          {props.artists.map(artist => (artist.name === "tree" || artist.name === "Wilson Wright") ? (
+          {props.artists.map(artist => (artist.name === "Pino" || artist.name === "Beaker") ? (
             <div className="card my-3 feature-card" key={artist._id}>
               <div className="">
               <h5 className="text-light">{artist.name}
